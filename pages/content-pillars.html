@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kerangka Content Pilar Batik Sejawat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f7f4ef;
+      color: #2a2a2a;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .glass {
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.78);
+    }
+
+    .card-hover {
+      transition: all 0.35s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #5c2d1f, #a86d3d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .progress-bar {
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #e5ddd2;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #5c2d1f, #a86d3d);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .accordion.active .accordion-content {
+      max-height: 2000px;
+    }
+
+    .accordion.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .floating {
+      animation: floating 4s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .pattern {
+      background-image: radial-gradient(rgba(92,45,31,0.08) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="relative overflow-hidden bg-gradient-to-br from-[#2d1810] via-[#5c2d1f] to-[#8b5a3c] text-white">
+    <div class="absolute inset-0 opacity-20 pattern"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <span class="inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-sm font-medium border border-white/20 mb-6">
+            Strategi Content Pilar • Batik Sejawat
+          </span>
+
+          <h1 class="text-5xl lg:text-7xl leading-tight font-bold mb-8">
+            Kerangka <span class="text-[#f3d2b0]">Content Pilar</span><br>
+            Batik Sejawat
+          </h1>
+
+          <p class="text-lg text-white/85 leading-relaxed mb-8 max-w-2xl">
+            Sebuah framework konten yang dibangun bukan dari kepentingan brand,
+            melainkan dari kebutuhan emosional, identitas profesi, dan perjalanan audiens.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#pilar" class="px-6 py-3 rounded-2xl bg-white text-[#5c2d1f] font-semibold hover:scale-105 transition">
+              Jelajahi Pilar
+            </a>
+            <a href="#proporsi" class="px-6 py-3 rounded-2xl border border-white/30 hover:bg-white/10 transition">
+              Lihat Proporsi
+            </a>
+          </div>
+        </div>
+
+        <div class="relative floating">
+          <div class="glass rounded-[32px] p-8 border border-white/20 shadow-2xl">
+            <h2 class="text-3xl font-bold text-[#5c2d1f] mb-6">
+              Kenapa Content Pilar Lama Tidak Bekerja?
+            </h2>
+
+            <div class="space-y-5 text-[#3a2a22] leading-relaxed">
+              <p>
+                Content pilar yang umum dipakai brand kecil biasanya hanya membagi konten berdasarkan format — edukasi, promosi, hiburan.
+              </p>
+
+              <p>
+                Masalahnya: itu hanya menjawab <strong>"konten apa yang mau dibuat"</strong>, bukan <strong>"kenapa audiens harus peduli."</strong>
+              </p>
+
+              <div class="rounded-2xl bg-[#f7ede5] p-5 border border-[#e2c6b0]">
+                <p class="font-semibold text-[#5c2d1f] mb-2">
+                  Insight Utama
+                </p>
+                <p>
+                  Untuk Batik Sejawat, yang dibutuhkan adalah pilar yang dibangun dari tujuan audiens, bukan dari kepentingan brand.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-4xl mx-auto mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-6 gradient-text">
+        Struktur Pilar yang Efektif
+      </h2>
+
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Sebuah content pilar yang baik harus mencakup 5 elemen untuk setiap pilarnya:
+      </p>
+
+      <div class="mt-10 grid md:grid-cols-5 gap-4">
+        <div class="glass rounded-2xl p-5 border border-[#eadfd4] font-semibold">Nama Pilar</div>
+        <div class="glass rounded-2xl p-5 border border-[#eadfd4] font-semibold">Tujuan</div>
+        <div class="glass rounded-2xl p-5 border border-[#eadfd4] font-semibold">Audiens</div>
+        <div class="glass rounded-2xl p-5 border border-[#eadfd4] font-semibold">Format Platform</div>
+        <div class="glass rounded-2xl p-5 border border-[#eadfd4] font-semibold">Contoh Konten</div>
+      </div>
+
+      <p class="mt-8 text-gray-600 leading-relaxed">
+        Tanpa kelima elemen ini, pilar hanya jadi label kosong yang tidak memandu tim dalam eksekusi harian.
+      </p>
+    </div>
+  </section>
+
+  <section id="pilar" class="pb-24 px-6 max-w-7xl mx-auto space-y-8">
+
+    <div class="accordion glass rounded-[28px] border border-[#eadfd4] overflow-hidden active">
+      <button class="w-full text-left p-8 flex items-center justify-between accordion-btn">
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-[#8b5a3c] mb-2">PILAR 1</p>
+          <h3 class="text-3xl font-bold text-[#5c2d1f]">Dari Meja Kuliah ke Helai Kain</h3>
+          <p class="mt-2 text-gray-600">Origin & Craftsmanship</p>
+        </div>
+        <svg class="arrow w-7 h-7 text-[#5c2d1f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+
+      <div class="accordion-content px-8 pb-8">
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Tujuan Pilar</h4>
+              <p class="leading-relaxed text-gray-700">
+                Membangun perceived value — kenapa batik ini layak dihargai Rp1 juta lebih, dan kenapa brand ini berbeda dari batik medis lainnya. Ini juga menjawab skeptisisme: “Emang beneran dibuat sama anak FK?”
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Audiens</h4>
+              <p class="leading-relaxed text-gray-700">
+                Dokter/nakes yang baru tahu brand ini, calon pembeli yang masih ragu soal harga, dan komunitas pecinta batik yang menghargai proses.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Isi Konten</h4>
+              <ul class="space-y-2 list-disc list-inside text-gray-700 leading-relaxed">
+                <li>Proses pembatik di Laweyan/Sragen menggambar motif organ secara tangan</li>
+                <li>Cerita 2017: 4 mahasiswa FK UNS mulai dari nol</li>
+                <li>Behind the scenes: dari sketsa motif anatomi ke kain jadi</li>
+                <li>Filosofi di balik satu motif spesifik</li>
+                <li>Founder story — masing-masing founder, told personally</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Format per Platform</h4>
+              <div class="space-y-3">
+                <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]">
+                  <strong>TikTok:</strong> Video proses makro canting + voiceover cerita
+                </div>
+                <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]">
+                  <strong>Instagram:</strong> Carousel “Dari sketsa ke kain” / Reels time-lapse
+                </div>
+                <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]">
+                  <strong>Threads:</strong> Thread cerita personal founder
+                </div>
+                <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]">
+                  <strong>WA Status:</strong> Foto behind the scenes kasual
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion glass rounded-[28px] border border-[#eadfd4] overflow-hidden">
+      <button class="w-full text-left p-8 flex items-center justify-between accordion-btn">
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-[#8b5a3c] mb-2">PILAR 2</p>
+          <h3 class="text-3xl font-bold text-[#5c2d1f]">Satu Motif, Satu Cerita Profesi</h3>
+          <p class="mt-2 text-gray-600">Professional Identity & Pride</p>
+        </div>
+        <svg class="arrow w-7 h-7 text-[#5c2d1f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+
+      <div class="accordion-content px-8 pb-8">
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Tujuan Pilar</h4>
+              <p class="leading-relaxed text-gray-700">
+                Ini pilar emosional terkuat. Tenaga medis tidak membeli batik karena butuh baju — mereka membeli karena kebanggaan profesi.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Audiens</h4>
+              <p class="leading-relaxed text-gray-700">
+                Dokter spesialis, dokter umum, koas, perawat, bidan, mahasiswa FK/FIK — siapapun yang punya kebanggaan pada profesinya.
+              </p>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Isi Konten</h4>
+              <ul class="space-y-2 list-disc list-inside text-gray-700 leading-relaxed">
+                <li>Dokter asli memakai batik saat bertugas</li>
+                <li>“Motif ini untuk siapa?”</li>
+                <li>Momen kebanggaan profesi yang relatable</li>
+                <li>Testimoni organik dari pembeli nyata</li>
+                <li>“Kenapa saya pakai Batik Sejawat”</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Format per Platform</h4>
+            <div class="space-y-3">
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>TikTok:</strong> POV video dokter pria/wanita berwibawa</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>Instagram:</strong> Foto model dokter asli + caption cerita profesi</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>Threads:</strong> Poll / pertanyaan relatable kehidupan medis</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>WA Status:</strong> Screenshot testimoni pelanggan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion glass rounded-[28px] border border-[#eadfd4] overflow-hidden">
+      <button class="w-full text-left p-8 flex items-center justify-between accordion-btn">
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-[#8b5a3c] mb-2">PILAR 3</p>
+          <h3 class="text-3xl font-bold text-[#5c2d1f]">Batik Bukan Sekadar Kain</h3>
+          <p class="mt-2 text-gray-600">Edukasi Motif & Budaya</p>
+        </div>
+        <svg class="arrow w-7 h-7 text-[#5c2d1f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+
+      <div class="accordion-content px-8 pb-8">
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Tujuan Pilar</h4>
+            <p class="leading-relaxed text-gray-700 mb-6">
+              Membangun otoritas dan keunikan. Ini yang membedakan Batik Sejawat dari toko batik biasa.
+            </p>
+
+            <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Isi Konten</h4>
+            <ul class="space-y-2 list-disc list-inside text-gray-700 leading-relaxed">
+              <li>Edukasi satu motif per konten</li>
+              <li>Perbandingan motif tradisional vs anatomi</li>
+              <li>Sejarah singkat batik</li>
+              <li>Fakta menarik proses pembuatan</li>
+              <li>Cara memahami filosofi motif</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Format per Platform</h4>
+            <div class="space-y-3">
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>TikTok:</strong> Video close-up makro + voiceover edukasi</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>Instagram:</strong> Carousel infografis visual</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>Threads:</strong> Thread singkat edukasi motif</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>WA Status:</strong> Fakta singkat + close-up motif</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion glass rounded-[28px] border border-[#eadfd4] overflow-hidden">
+      <button class="w-full text-left p-8 flex items-center justify-between accordion-btn">
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-[#8b5a3c] mb-2">PILAR 4</p>
+          <h3 class="text-3xl font-bold text-[#5c2d1f]">Teman Sejawat Bercerita</h3>
+          <p class="mt-2 text-gray-600">Community & Social Proof</p>
+        </div>
+        <svg class="arrow w-7 h-7 text-[#5c2d1f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+
+      <div class="accordion-content px-8 pb-8">
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Tujuan Pilar</h4>
+            <p class="leading-relaxed text-gray-700 mb-6">
+              Membangun kepercayaan lewat bukti nyata, bukan klaim brand.
+            </p>
+
+            <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Isi Konten</h4>
+            <ul class="space-y-2 list-disc list-inside text-gray-700 leading-relaxed">
+              <li>Foto/video pelanggan memakai produk</li>
+              <li>Testimoni spesifik dan relatable</li>
+              <li>Komunitas yang sudah memakai</li>
+              <li>User-generated content</li>
+              <li>Momen kolektif medis yang dikaitkan ke produk</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Format per Platform</h4>
+            <div class="space-y-3">
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>TikTok:</strong> Video pelanggan + overlay cerita</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>Instagram:</strong> Feed pelanggan asli + caption narasi</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>Threads:</strong> Cerita kasual pembeli</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>WA Status:</strong> Screenshot testimoni relevan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion glass rounded-[28px] border border-[#eadfd4] overflow-hidden">
+      <button class="w-full text-left p-8 flex items-center justify-between accordion-btn">
+        <div>
+          <p class="text-sm font-semibold tracking-widest text-[#8b5a3c] mb-2">PILAR 5</p>
+          <h3 class="text-3xl font-bold text-[#5c2d1f]">Pesan, Pilih, Milik</h3>
+          <p class="mt-2 text-gray-600">Produk & Konversi</p>
+        </div>
+        <svg class="arrow w-7 h-7 text-[#5c2d1f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+
+      <div class="accordion-content px-8 pb-8">
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Tujuan Pilar</h4>
+            <p class="leading-relaxed text-gray-700 mb-6">
+              Konten ini satu-satunya yang boleh terang-terangan jualan — tapi tetap harus dalam karakter brand.
+            </p>
+
+            <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Isi Konten</h4>
+            <ul class="space-y-2 list-disc list-inside text-gray-700 leading-relaxed">
+              <li>Showcase produk dengan detail close-up</li>
+              <li>Perbandingan jenis batik</li>
+              <li>Cara order step-by-step</li>
+              <li>Spotlight produk bulanan</li>
+              <li>Layanan custom jahit</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg text-[#5c2d1f] mb-3">Format per Platform</h4>
+            <div class="space-y-3">
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>TikTok:</strong> Showcase produk + CTA</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>Instagram:</strong> Foto produk real berkualitas</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>Threads:</strong> Promo atau produk baru</div>
+              <div class="rounded-2xl bg-[#f8f1ea] p-4 border border-[#eadfd4]"><strong>WA Status:</strong> Update stok & reminder order</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proporsi" class="bg-[#2d1810] text-white py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+          Proporsi Ideal Per Minggu
+        </h2>
+        <p class="text-white/75 text-lg leading-relaxed max-w-3xl mx-auto">
+          Dengan tim kecil dan resource terbatas, proporsi ini realistis untuk dijalankan.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+
+        <div>
+          <div class="flex justify-between mb-3">
+            <span>Pilar 1 — Origin</span>
+            <span>20%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:20%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-3">
+            <span>Pilar 2 — Identity</span>
+            <span>30%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:30%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-3">
+            <span>Pilar 3 — Edukasi</span>
+            <span>20%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:20%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-3">
+            <span>Pilar 4 — Community</span>
+            <span>15%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:15%"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between mb-3">
+            <span>Pilar 5 — Produk</span>
+            <span>15%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:15%"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-6 bg-gradient-to-b from-[#f7f4ef] to-[#efe5db]">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-8">
+        Satu Hal yang Membuat Kerangka Ini Berbeda
+      </h2>
+
+      <div class="glass rounded-[32px] p-10 border border-[#eadfd4] shadow-xl">
+        <p class="text-xl leading-relaxed text-gray-700 mb-6">
+          Kebanyakan brand membangun pilar dari pertanyaan:
+        </p>
+
+        <div class="rounded-2xl bg-[#f8f1ea] border border-[#eadfd4] p-6 mb-6">
+          <p class="text-2xl font-bold text-[#5c2d1f]">
+            “Kita mau posting apa?”
+          </p>
+        </div>
+
+        <p class="text-xl leading-relaxed text-gray-700 mb-6">
+          Batik Sejawat harus membangun dari pertanyaan:
+        </p>
+
+        <div class="rounded-2xl bg-[#5c2d1f] text-white p-8 shadow-2xl">
+          <p class="text-2xl font-bold leading-relaxed">
+            “Audiens kita lagi di tahap apa, dan mereka butuh apa dari kita sekarang?”
+          </p>
+        </div>
+
+        <p class="mt-8 text-lg text-gray-700 leading-relaxed">
+          Dengan 5 pilar ini, setiap konten punya rumah yang jelas — tim tidak perlu menebak-nebak lagi apakah konten yang dibuat sudah sesuai karakter brand atau belum.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#2d1810] text-white py-10 text-center text-sm tracking-wide">
+    Kerangka Strategi Konten • Batik Sejawat
+  </footer>
+
+  <script>
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach((accordion) => {
+      const button = accordion.querySelector('.accordion-btn');
+
+      button.addEventListener('click', () => {
+        accordion.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
