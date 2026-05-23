@@ -1,0 +1,596 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.bb{max-width:680px;padding:0}
+.cover{background:linear-gradient(135deg,#3C3489 0%,#534AB7 60%,#0F6E56 100%);border-radius:var(--border-radius-lg);padding:2.5rem 2rem 2rem;margin-bottom:2rem;color:#fff}
+.cover-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:0.7;margin-bottom:0.75rem}
+.cover-title{font-size:28px;font-weight:500;line-height:1.2;margin-bottom:0.5rem}
+.cover-sub{font-size:14px;opacity:0.75}
+.cover-meta{display:flex;gap:1.5rem;margin-top:1.5rem;padding-top:1.5rem;border-top:0.5px solid rgba(255,255,255,0.2)}
+.cover-meta-item{font-size:12px;opacity:0.7}
+.cover-meta-item strong{display:block;font-size:14px;opacity:1;font-weight:500}
+
+.toc{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:2rem}
+.toc-title{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:0.75rem}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:4px}
+.toc-list li{font-size:13px;color:var(--color-text-secondary);display:flex;align-items:center;gap:8px}
+.toc-num{font-size:11px;color:var(--color-text-tertiary);min-width:18px}
+
+.section{margin-bottom:2.5rem}
+.section-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:0.4rem}
+.section-title{font-size:20px;font-weight:500;color:var(--color-text-primary);margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:1rem}
+.card-label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:0.5rem}
+.card-title{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.5rem}
+.card-body{font-size:14px;color:var(--color-text-secondary);line-height:1.7}
+
+.highlight-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-left:3px solid #534AB7;border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0;padding:1.25rem 1.5rem;margin-bottom:1rem}
+.highlight-card.teal{border-left-color:#0F6E56}
+.highlight-card.amber{border-left-color:#BA7517}
+.highlight-card.coral{border-left-color:#993C1D}
+
+.big-quote{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1.75rem 2rem;margin-bottom:1.5rem;text-align:center}
+.big-quote-text{font-size:18px;font-weight:500;color:var(--color-text-primary);line-height:1.5;font-family:var(--font-serif)}
+.big-quote-attr{font-size:12px;color:var(--color-text-tertiary);margin-top:0.75rem}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1rem}
+
+.value-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem}
+.value-icon{font-size:20px;color:#534AB7;margin-bottom:0.5rem}
+.value-icon.teal{color:#0F6E56}
+.value-icon.amber{color:#BA7517}
+.value-icon.coral{color:#993C1D}
+.value-name{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.25rem}
+.value-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.6}
+
+.persona-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:1rem}
+.persona-header{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+.persona-avatar{width:44px;height:44px;border-radius:50%;background:#EEEDFE;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:14px;color:#534AB7}
+.persona-avatar.teal{background:#E1F5EE;color:#0F6E56}
+.persona-avatar.coral{background:#FAECE7;color:#993C1D}
+.persona-name{font-size:15px;font-weight:500;color:var(--color-text-primary)}
+.persona-role{font-size:12px;color:var(--color-text-secondary)}
+.persona-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:0.75rem}
+.tag{font-size:11px;padding:3px 10px;border-radius:20px;background:var(--color-background-secondary);color:var(--color-text-secondary)}
+.tag.purple{background:#EEEDFE;color:#3C3489}
+.tag.teal{background:#E1F5EE;color:#085041}
+.tag.amber{background:#FAEEDA;color:#633806}
+
+.voice-row{display:flex;gap:1rem;margin-bottom:0.75rem;align-items:flex-start}
+.voice-badge{min-width:90px;font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;text-align:center;background:#EEEDFE;color:#3C3489}
+.voice-badge.not{background:#FCEBEB;color:#A32D2D}
+.voice-text{font-size:13px;color:var(--color-text-secondary);line-height:1.6;padding-top:3px}
+
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.do-box{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-top:3px solid #0F6E56;border-radius:0 0 var(--border-radius-lg) var(--border-radius-lg);padding:1rem}
+.dont-box{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-top:3px solid #A32D2D;border-radius:0 0 var(--border-radius-lg) var(--border-radius-lg);padding:1rem}
+.do-dont-label{font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.75rem}
+.do-label{color:#0F6E56}
+.dont-label{color:#A32D2D}
+.do-dont ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.do-dont li{font-size:12px;color:var(--color-text-secondary);line-height:1.5;padding-left:14px;position:relative}
+.do-dont li::before{position:absolute;left:0;font-size:11px}
+.do-box li::before{content:"✓";color:#0F6E56}
+.dont-box li::before{content:"✕";color:#A32D2D}
+
+.word-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1rem}
+.word-chip{font-size:12px;padding:5px 14px;border-radius:20px;border:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary);background:var(--color-background-primary)}
+.word-chip.allowed{background:#E1F5EE;color:#085041;border-color:#9FE1CB}
+.word-chip.banned{background:#FCEBEB;color:#A32D2D;border-color:#F7C1C1}
+
+.platform-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:0.75rem}
+.platform-header{display:flex;align-items:center;gap:10px;margin-bottom:0.75rem}
+.platform-icon{font-size:18px;color:#534AB7}
+.platform-name{font-size:14px;font-weight:500;color:var(--color-text-primary)}
+.platform-role{font-size:11px;color:var(--color-text-tertiary)}
+.platform-body{font-size:12px;color:var(--color-text-secondary);line-height:1.7}
+
+.checklist{list-style:none;display:flex;flex-direction:column;gap:8px}
+.checklist li{font-size:13px;color:var(--color-text-secondary);display:flex;gap:10px;line-height:1.5}
+.check-icon{color:#0F6E56;font-size:15px;margin-top:2px;flex-shrink:0}
+.cross-icon{color:#A32D2D;font-size:15px;margin-top:2px;flex-shrink:0}
+
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:2rem 0}
+
+.footer{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;text-align:center}
+.footer-text{font-size:12px;color:var(--color-text-tertiary);line-height:1.7}
+</style>
+
+<div class="bb" id="top">
+<h2 class="sr-only">Brand Bible Batik Sejawat — dokumen panduan identitas dan suara brand lengkap</h2>
+
+<div class="cover">
+  <div class="cover-tag">Brand Bible · Dokumen Internal</div>
+  <div class="cover-title">Batik Sejawat<br>Brand Bible</div>
+  <div class="cover-sub">Panduan identitas, narasi, nilai, dan suara brand — untuk semua yang membuat konten atas nama Batik Sejawat</div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>Versi 1.0</strong>2025</div>
+    <div class="cover-meta-item"><strong>Berlaku untuk</strong>Semua platform & tim</div>
+    <div class="cover-meta-item"><strong>Dibuat oleh</strong>Marketing Batik Sejawat</div>
+  </div>
+</div>
+
+<div class="toc">
+  <div class="toc-title">Daftar isi</div>
+  <ul class="toc-list">
+    <li><a href="#foundation"><span class="toc-num">01</span> Brand Foundation — Siapa Kami</a></li>
+    <li><a href="#origin"><span class="toc-num">02</span> Origin Story — Dari Mana Kami Lahir</a></li>
+    <li><a href="#vision"><span class="toc-num">03</span> Visi, Misi & Nilai Brand</a></li>
+    <li><a href="#positioning"><span class="toc-num">04</span> Brand Positioning & Diferensiasi</a></li>
+    <li><a href="#audience"><span class="toc-num">05</span> Target Audiens & Persona</a></li>
+    <li><a href="#tone"><span class="toc-num">06</span> Tone of Voice — Cara Kami Bicara</a></li>
+    <li><a href="#vocab"><span class="toc-num">07</span> Kata yang Boleh & Tidak Boleh</a></li>
+    <li><a href="#platforms"><span class="toc-num">08</span> Panduan Per Platform</a></li>
+    <li><a href="#do-dont"><span class="toc-num">09</span> Do & Don't — Konten & Perilaku Brand</a></li>
+    <li><a href="#checklist"><span class="toc-num">10</span> Checklist Sebelum Publish</a></li>
+  </ul>
+</div>
+
+<div class="section" id="foundation">
+  <div class="section-label">01</div>
+  <div class="section-title">Brand Foundation — Siapa Kami</div>
+
+  <div class="big-quote">
+    <div class="big-quote-text">"Kami bukan sekadar menjual batik.<br>Kami merayakan kebanggaan profesi tenaga medis Indonesia lewat warisan budaya yang telah ada ribuan tahun."</div>
+    <div class="big-quote-attr">Pernyataan inti Batik Sejawat</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Satu kalimat positioning</div>
+    <div class="card-title">Batik motif anatomi medis pertama di Indonesia, lahir dari tangan alumni FK UNS sejak 2017.</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card-label">Apa yang kami jual</div>
+      <div class="card-body">Batik bermotif anatomi dan kedokteran — dari batik tulis premium hingga kain printing — yang dirancang khusus untuk tenaga medis Indonesia yang bangga dengan profesinya.</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Apa yang sebenarnya kami berikan</div>
+      <div class="card-body">Identitas visual profesi. Rasa bangga yang bisa dikenakan. Koneksi antara ilmu kedokteran modern dan kekayaan budaya batik Nusantara.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="origin">
+  <div class="section-label">02</div>
+  <div class="section-title">Origin Story — Dari Mana Kami Lahir</div>
+
+  <div class="highlight-card">
+    <div class="card-label">The founding moment</div>
+    <div class="card-body" style="font-size:14px;line-height:1.8">16 Januari 2017. Empat mahasiswa Fakultas Kedokteran Universitas Negeri Sebelas Maret (FK UNS) Solo memutuskan melakukan sesuatu yang tidak biasa: menggabungkan dua dunia yang jarang bertemu — ilmu anatomi kedokteran dan tradisi batik Jawa.<br><br>Bukan karena sudah punya modal besar. Bukan karena sudah punya pengalaman bisnis. Tapi karena mereka melihat celah yang tidak ada orang lain lihat: <strong style="font-weight:500;color:var(--color-text-primary)">tenaga medis Indonesia tidak punya batik yang benar-benar berbicara tentang profesi mereka.</strong></div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Tiga benang merah origin story yang wajib selalu hadir dalam narasi brand</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:0.25rem">
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div style="min-width:28px;height:28px;border-radius:50%;background:#EEEDFE;color:#534AB7;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center">1</div>
+        <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;padding-top:4px"><strong style="font-weight:500;color:var(--color-text-primary)">Lahir dari kampus medis</strong> — FK UNS bukan sekadar latar belakang, ini adalah bukti bahwa motif yang dibuat memang dipahami dari dalam, bukan sekadar estetika.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div style="min-width:28px;height:28px;border-radius:50%;background:#EEEDFE;color:#534AB7;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center">2</div>
+        <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;padding-top:4px"><strong style="font-weight:500;color:var(--color-text-primary)">Berakar di Solo</strong> — Surakarta adalah ibu kota batik Indonesia. Mitra pengrajin di Laweyan dan Sragen bukan sekadar vendor — mereka adalah penjaga tradisi yang kami hormati dan libatkan.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div style="min-width:28px;height:28px;border-radius:50%;background:#EEEDFE;color:#534AB7;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center">3</div>
+        <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;padding-top:4px"><strong style="font-weight:500;color:var(--color-text-primary)">Bertumbuh bersama komunitas</strong> — dari program Childhood Cancer Care, Sejawat Mengabdi, hingga PMBS — Batik Sejawat selalu percaya bahwa bisnis harus memberi manfaat lebih dari sekadar produk.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="vision">
+  <div class="section-label">03</div>
+  <div class="section-title">Visi, Misi & Nilai Brand</div>
+
+  <div class="highlight-card">
+    <div class="card-label">Visi</div>
+    <div class="card-body">Menjadi pusat batik motif kedokteran yang berkarakter dan menyejarah di tataran nasional dan internasional — brand yang masih dikenang dan dipakai generasi tenaga medis Indonesia jauh ke depan.</div>
+  </div>
+
+  <div class="highlight-card teal">
+    <div class="card-label">Misi yang hidup dalam konten</div>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-top:0.25rem">
+      <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6">→ Membangun brand yang ramah, bukan korporat yang dingin</div>
+      <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6">→ Menyediakan desain motif yang punya nilai estetika tinggi dan makna medis yang akurat</div>
+      <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6">→ Memberdayakan pengrajin batik lokal Solo dan Sragen dalam setiap helai yang dibuat</div>
+      <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6">→ Membangun mindset "Cinta Batik, Cinta Indonesia" lewat komunitas medis</div>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <div class="value-card">
+      <div class="value-icon"><i class="ti ti-heart" aria-hidden="true"></i></div>
+      <div class="value-name">Berkarya</div>
+      <div class="value-desc">Setiap motif lahir dari proses riset dan konsultasi medis — bukan sekadar gambar yang dibuat cantik.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon teal"><i class="ti ti-users" aria-hidden="true"></i></div>
+      <div class="value-name">Bermanfaat</div>
+      <div class="value-desc">Bisnis bukan hanya soal omset. Sebagian profit selalu dialokasikan untuk program sosial dan pemberdayaan komunitas.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon amber"><i class="ti ti-award" aria-hidden="true"></i></div>
+      <div class="value-name">Menyejarah</div>
+      <div class="value-desc">Kami ingin dikenang — bukan hanya sebagai toko batik, tapi sebagai brand yang ikut membentuk identitas profesi medis Indonesia.</div>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <div class="value-card">
+      <div class="value-icon coral"><i class="ti ti-bulb" aria-hidden="true"></i></div>
+      <div class="value-name">Autentik</div>
+      <div class="value-desc">Motif didesain melalui proses riset. Pengrajin adalah yang terbaik di kampung batik Sragen. Tidak ada shortcut untuk kualitas.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon"><i class="ti ti-friends" aria-hidden="true"></i></div>
+      <div class="value-name">Komunal</div>
+      <div class="value-desc">Sejawat artinya rekan seprofesi. Brand ini lahir dari komunitas dan selalu kembali ke komunitas.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon teal"><i class="ti ti-plant" aria-hidden="true"></i></div>
+      <div class="value-name">Lestari</div>
+      <div class="value-desc">Menjaga batik sebagai warisan UNESCO. Menjaga pengrajin lokal tetap eksis di era fast fashion.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="positioning">
+  <div class="section-label">04</div>
+  <div class="section-title">Brand Positioning & Diferensiasi</div>
+
+  <div class="card">
+    <div class="card-label">Positioning statement</div>
+    <div class="card-body" style="font-size:15px;color:var(--color-text-primary);line-height:1.7">Untuk tenaga medis Indonesia yang bangga dengan profesinya, Batik Sejawat adalah satu-satunya brand batik yang memahami dunia kedokteran dari dalam — karena kami lahir dari dalamnya.</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card-label">Diferensiasi utama (USP)</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:0.25rem">
+        <div class="tag purple" style="display:inline-block;width:fit-content">Motif berbasis riset anatomis</div>
+        <div style="font-size:12px;color:var(--color-text-secondary)">Detail organ digambar dengan akurasi medis, dikonsultasikan dengan ahli sebelum diproduksi.</div>
+        <div class="tag purple" style="display:inline-block;width:fit-content;margin-top:4px">Dibuat oleh "orang dalam"</div>
+        <div style="font-size:12px;color:var(--color-text-secondary)">Alumni FK UNS memahami konteks, bahasa, dan kebanggaan komunitas medis secara langsung.</div>
+        <div class="tag purple" style="display:inline-block;width:fit-content;margin-top:4px">Pengrajin terbaik Solo & Sragen</div>
+        <div style="font-size:12px;color:var(--color-text-secondary)">Kualitas batik yang berakar pada tradisi otentik Karesidenan Surakarta.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">Bukan kompetitor kami</div>
+      <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.8;margin-top:0.25rem">
+        Batik rumah sakit biasa → mereka menjual seragam.<br>
+        Batik motif flora/fauna → mereka menjual estetika umum.<br>
+        Toko batik online → mereka menjual kain.<br><br>
+        <strong style="font-weight:500;color:var(--color-text-primary)">Kami menjual kebanggaan profesi yang bisa dikenakan.</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="audience">
+  <div class="section-label">05</div>
+  <div class="section-title">Target Audiens & Persona</div>
+
+  <div class="persona-card">
+    <div class="persona-header">
+      <div class="persona-avatar">RD</div>
+      <div>
+        <div class="persona-name">dr. Rizka, 28 tahun</div>
+        <div class="persona-role">Dokter umum, baru selesai internship · Jakarta</div>
+      </div>
+    </div>
+    <div class="persona-tags">
+      <span class="tag purple">Bangga jadi dokter</span>
+      <span class="tag purple">Aktif di medsos</span>
+      <span class="tag purple">Peduli penampilan profesional</span>
+      <span class="tag teal">Budget moderat</span>
+    </div>
+    <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.7">Rizka sering scroll TikTok dan Instagram saat jaga malam. Dia akan langsung tertarik kalau melihat konten yang menggambarkan kehidupan dokter secara relatable — bukan iklan. Dia membeli bukan karena butuh baju, tapi karena ingin ada sesuatu yang menunjukkan identitas profesinya dengan elegan. Dia akan mention teman koas-nya di kolom komentar jika kontennya relevan.</div>
+  </div>
+
+  <div class="persona-card">
+    <div class="persona-header">
+      <div class="persona-avatar teal">AF</div>
+      <div>
+        <div class="persona-name">dr. Arif, SpPD, 38 tahun</div>
+        <div class="persona-role">Dokter spesialis penyakit dalam · RS Swasta Semarang</div>
+      </div>
+    </div>
+    <div class="persona-tags">
+      <span class="tag teal">Mapan finansial</span>
+      <span class="tag teal">Mengutamakan kualitas</span>
+      <span class="tag teal">Influential di circle IDI</span>
+      <span class="tag amber">Jarang medsos, sering WA</span>
+    </div>
+    <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.7">Arif tidak terlalu aktif di media sosial tapi sangat berpengaruh di grupnya. Dia membeli batik tulis Rp1jt+ bukan untuk pamer, tapi karena memahami nilai dari kain yang dibuat dengan tangan dan filosofi yang dalam. Dia adalah target utama referral dari founder dan komunitas IDI. Konten yang menyentuhnya bukan konten viral — tapi cerita yang dalam tentang proses dan makna.</div>
+  </div>
+
+  <div class="persona-card">
+    <div class="persona-header">
+      <div class="persona-avatar coral">KM</div>
+      <div>
+        <div class="persona-name">Karina, koas FK Undip, 23 tahun</div>
+        <div class="persona-role">Mahasiswa koas · Semarang</div>
+      </div>
+    </div>
+    <div class="persona-tags">
+      <span class="tag amber">Budget terbatas</span>
+      <span class="tag amber">TikTok & IG native</span>
+      <span class="tag amber">Aspirasional</span>
+      <span class="tag purple">Calon dokter yang bangga</span>
+    </div>
+    <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.7">Karina belum bisa beli batik tulis, tapi dia akan beli kain printing Rp200 ribu saat ada momen wisuda atau hari dokter. Dia adalah brand awareness yang berjalan — dia akan share konten Batik Sejawat ke grup angkatan, mention teman, dan suatu hari nanti ketika sudah punya penghasilan sendiri, dia akan kembali dan beli yang premium. Rawat dia sekarang, panen nanti.</div>
+  </div>
+</div>
+
+<div class="section" id="tone">
+  <div class="section-label">06</div>
+  <div class="section-title">Tone of Voice — Cara Kami Bicara</div>
+
+  <div class="card">
+    <div class="card-label">Satu karakter acuan — bayangkan ini saat menulis</div>
+    <div style="font-size:15px;font-weight:500;color:var(--color-text-primary);margin:0.5rem 0 0.25rem">"Kakak angkatan FK yang sudah praktek, tapi masih ingat betul rasanya ujian anatomi."</div>
+    <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.7">Hangat tapi tidak lebay. Berwibawa tapi tidak menggurui. Bicara dari pengalaman nyata. Kadang humor, selalu jujur. Tidak pernah terasa seperti iklan.</div>
+  </div>
+
+  <div style="margin-bottom:1rem">
+    <div style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.75rem">4 dimensi suara brand:</div>
+
+    <div class="voice-row">
+      <div class="voice-badge">Bangga</div>
+      <div class="voice-text">Tunjukkan keunikan dengan percaya diri, bukan dengan meremehkan brand lain. Kami bangga dengan apa yang kami buat tanpa perlu membuktikan bahwa orang lain kalah.</div>
+    </div>
+    <div class="voice-row">
+      <div class="voice-badge">Relatable</div>
+      <div class="voice-text">Masuk ke dunia mereka secara natural. Gunakan bahasa dokter/koas sehari-hari. Tahu kapan harus serius dan kapan bisa santai. Tapi jangan dipaksakan.</div>
+    </div>
+    <div class="voice-row">
+      <div class="voice-badge">Bercerita</div>
+      <div class="voice-text">Setiap konten dimulai dari satu cerita kecil — produk muncul natural di akhir, bukan di awal. Kami bukan toko. Kami adalah brand yang punya sesuatu untuk diceritakan.</div>
+    </div>
+    <div class="voice-row">
+      <div class="voice-badge">Mengajak</div>
+      <div class="voice-text">Setiap konten membuka ruang untuk respons. Bukan mengumumkan, tapi mengajak bicara. Ada pertanyaan, ada ruang komentar, ada undangan untuk terlibat.</div>
+    </div>
+  </div>
+
+  <div class="do-dont">
+    <div class="do-box">
+      <div class="do-dont-label do-label">Suara yang benar</div>
+      <ul>
+        <li>Kasual tapi tetap berkarakter</li>
+        <li>Specific dan berbasis cerita nyata</li>
+        <li>Humor yang relatable, tidak garing</li>
+        <li>Pertanyaan yang tulus</li>
+        <li>Klaim dengan bukti nyata</li>
+      </ul>
+    </div>
+    <div class="dont-box">
+      <div class="do-dont-label dont-label">Suara yang salah</div>
+      <ul>
+        <li>Formal dan kaku seperti press release</li>
+        <li>Superlative tanpa bukti ("terbaik!")</li>
+        <li>Lebay dan berlebihan (!!!)</li>
+        <li>Menggurui audiens</li>
+        <li>Broadcast satu arah tanpa CTA</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="vocab">
+  <div class="section-label">07</div>
+  <div class="section-title">Kata yang Boleh & Tidak Boleh Dipakai</div>
+
+  <div style="margin-bottom:1.25rem">
+    <div style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.75rem"><i class="ti ti-check" style="color:#0F6E56;margin-right:6px" aria-hidden="true"></i>Kosakata yang mencerminkan karakter Batik Sejawat</div>
+    <div class="word-grid">
+      <span class="word-chip allowed">Teman Sejawat</span>
+      <span class="word-chip allowed">Motif</span>
+      <span class="word-chip allowed">Pengrajin</span>
+      <span class="word-chip allowed">Helai</span>
+      <span class="word-chip allowed">Canting</span>
+      <span class="word-chip allowed">Malam</span>
+      <span class="word-chip allowed">Anatomi</span>
+      <span class="word-chip allowed">Berkarya</span>
+      <span class="word-chip allowed">Kebanggaan</span>
+      <span class="word-chip allowed">Profesi</span>
+      <span class="word-chip allowed">Mengabdi</span>
+      <span class="word-chip allowed">Warisan</span>
+      <span class="word-chip allowed">Tradisi</span>
+      <span class="word-chip allowed">Jaga malam</span>
+      <span class="word-chip allowed">Koas</span>
+      <span class="word-chip allowed">Nakes</span>
+      <span class="word-chip allowed">Stase</span>
+      <span class="word-chip allowed">Sejawat</span>
+      <span class="word-chip allowed">Laweyan</span>
+      <span class="word-chip allowed">Sragen</span>
+      <span class="word-chip allowed">FK UNS</span>
+    </div>
+  </div>
+
+  <div style="margin-bottom:1.25rem">
+    <div style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.75rem"><i class="ti ti-x" style="color:#A32D2D;margin-right:6px" aria-hidden="true"></i>Kosakata yang dilarang keras</div>
+    <div class="word-grid">
+      <span class="word-chip banned">Terbaik</span>
+      <span class="word-chip banned">Berkualitas tinggi</span>
+      <span class="word-chip banned">Harga terjangkau</span>
+      <span class="word-chip banned">Dapatkan sekarang!</span>
+      <span class="word-chip banned">Order sekarang</span>
+      <span class="word-chip banned">Jangan sampai kehabisan</span>
+      <span class="word-chip banned">Flash sale</span>
+      <span class="word-chip banned">Promo besar</span>
+      <span class="word-chip banned">Eksklusif</span>
+      <span class="word-chip banned">Pejuang kesehatan</span>
+      <span class="word-chip banned">Pahlawan nakes</span>
+      <span class="word-chip banned">Turut berduka cita</span>
+      <span class="word-chip banned">Halo semuanya</span>
+      <span class="word-chip banned">Klik link di bio</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Penjelasan kenapa kata-kata tertentu dilarang</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:0.25rem">
+      <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.6"><strong style="font-weight:500;color:var(--color-text-primary)">"Pejuang/Pahlawan nakes"</strong> — terlalu klise dan sudah overused pasca-pandemi. Tenaga medis adalah profesional, bukan simbol penderitaan.</div>
+      <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.6"><strong style="font-weight:500;color:var(--color-text-primary)">"Turut berduka cita"</strong> — konten duka cita terbukti viral tapi nol konversi. Merusak positioning brand dan mengacaukan algoritma.</div>
+      <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.6"><strong style="font-weight:500;color:var(--color-text-primary)">"Halo semuanya / Halo Teman Sejawat semuanya"</strong> — terasa seperti broadcast arisan, bukan brand yang punya karakter. Langsung masuk ke cerita atau hook.</div>
+      <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.6"><strong style="font-weight:500;color:var(--color-text-primary)">"Terbaik / Berkualitas tinggi"</strong> — klaim tanpa bukti tidak dipercaya. Tunjukkan prosesnya, biarkan audiens yang menyimpulkan.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="platforms">
+  <div class="section-label">08</div>
+  <div class="section-title">Panduan Per Platform</div>
+
+  <div class="platform-card">
+    <div class="platform-header">
+      <i class="ti ti-brand-instagram platform-icon" aria-hidden="true"></i>
+      <div>
+        <div class="platform-name">Instagram</div>
+        <div class="platform-role">Peran: Trust builder & katalog hidup</div>
+      </div>
+    </div>
+    <div class="platform-body">
+      <strong style="font-weight:500;color:var(--color-text-primary)">Untuk siapa:</strong> Orang yang sudah tahu Batik Sejawat dan datang untuk yakin sebelum beli. Ini adalah toko sekaligus galeri brand.<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">Cara bicara:</strong> Semi-formal tapi hangat. Caption dimulai dengan hook kuat di 2 baris pertama. Selalu ada satu CTA spesifik di akhir (bukan "DM kami" tapi "DM kata JANTUNG untuk info harga").<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">Waktu terbaik posting:</strong> 21.00–22.00 WIB (pola aktif nakes bersiap atau awal dinas malam).<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">Yang tidak boleh:</strong> Konten duka cita, repost tanpa adaptasi, emoji berlebihan, caption tanpa hook.
+    </div>
+  </div>
+
+  <div class="platform-card">
+    <div class="platform-header">
+      <i class="ti ti-brand-tiktok platform-icon" aria-hidden="true"></i>
+      <div>
+        <div class="platform-name">TikTok</div>
+        <div class="platform-role">Peran: Discovery engine — di sinilah orang pertama kali mengenal kami</div>
+      </div>
+    </div>
+    <div class="platform-body">
+      <strong style="font-weight:500;color:var(--color-text-primary)">Untuk siapa:</strong> Orang yang belum pernah dengar Batik Sejawat. TikTok bukan platform jualan — ini platform untuk dikenal.<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">Cara bicara:</strong> Sangat kasual, jujur, dan personal. 3 detik pertama harus ada hook visual atau teks. Tidak ada intro logo. Akhiri dengan cliffhanger yang memancing klik profil.<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">Hashtag wajib:</strong> #anakkedokteran #batikmedis #fkuns #bajudokter #koas<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">Yang tidak boleh:</strong> Live 2 jam tanpa persiapan, repost konten IG, musik galau di konten produk pria premium.
+    </div>
+  </div>
+
+  <div class="platform-card">
+    <div class="platform-header">
+      <i class="ti ti-brand-threads platform-icon" aria-hidden="true"></i>
+      <div>
+        <div class="platform-name">Threads</div>
+        <div class="platform-role">Peran: Conversation & positioning — membangun reputasi lewat obrolan</div>
+      </div>
+    </div>
+    <div class="platform-body">
+      <strong style="font-weight:500;color:var(--color-text-primary)">Untuk siapa:</strong> Dokter muda, koas, dan mahasiswa FK yang aktif berdiskusi dan berkeluh kesah secara blak-blakan di platform ini.<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">Cara bicara:</strong> Paling kasual dari semua platform. Tidak ada foto studio. Gunakan foto behind the scenes dari ponsel. Tulis seperti orang sedang ngobrol, bukan brand sedang mengumumkan.<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">Format andalan:</strong> Poll, pertanyaan pendek, thread cerita bersambung, hot take ringan seputar dunia medis + batik.<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">Yang tidak boleh:</strong> Foto katalog, caption panjang formal, repost dari IG tanpa adaptasi total.
+    </div>
+  </div>
+
+  <div class="platform-card">
+    <div class="platform-header">
+      <i class="ti ti-brand-whatsapp platform-icon" aria-hidden="true"></i>
+      <div>
+        <div class="platform-name">WhatsApp</div>
+        <div class="platform-role">Peran: Closing & retention — di sinilah transaksi terjadi</div>
+      </div>
+    </div>
+    <div class="platform-body">
+      <strong style="font-weight:500;color:var(--color-text-primary)">Untuk siapa:</strong> Calon pembeli yang sudah hampir memutuskan, dan pelanggan lama yang perlu dirawat.<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">Cara bicara:</strong> Personal dan responsif. Auto-reply harus informatif langsung — bukan "ada yang bisa dibantu?" tapi langsung kasih info produk + cara order.<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">WA Status:</strong> Dipakai aktif 2–3x seminggu. Foto behind the scenes, testimoni baru, update produk — semua kasual dan terasa manusiawi.<br><br>
+      <strong style="font-weight:500;color:var(--color-text-primary)">Yang tidak boleh:</strong> Broadcast massal tanpa segmentasi, auto-reply generik, membiarkan chat terlalu lama tidak dibalas.
+    </div>
+  </div>
+</div>
+
+<div class="section" id="do-dont">
+  <div class="section-label">09</div>
+  <div class="section-title">Do & Don't — Konten & Perilaku Brand</div>
+
+  <div class="do-dont">
+    <div class="do-box">
+      <div class="do-dont-label do-label">Yang selalu dilakukan</div>
+      <ul>
+        <li>Mulai konten dari cerita, bukan dari produk</li>
+        <li>Gunakan foto real — model dokter asli, pembatik asli</li>
+        <li>Tunjukkan proses — canting, malam, pengrajin</li>
+        <li>Sebut FK UNS dan tahun 2017 secara berkala</li>
+        <li>Aktifkan founder sebagai narasumber konten</li>
+        <li>CTA spesifik di setiap konten</li>
+        <li>Post di 21.00–22.00 WIB untuk IG</li>
+        <li>Close-up motif organ di setiap konten produk</li>
+        <li>Balas komentar dengan gaya yang sama casual-nya</li>
+        <li>Libatkan komunitas: BEM FK, IDI, grup koas</li>
+      </ul>
+    </div>
+    <div class="dont-box">
+      <div class="do-dont-label dont-label">Yang tidak pernah dilakukan</div>
+      <ul>
+        <li>Konten duka cita dokter/nakes</li>
+        <li>Konten isu nakes yang tidak berhubungan dengan produk</li>
+        <li>Mockup/AI — hanya foto real</li>
+        <li>Repost langsung tanpa adaptasi platform</li>
+        <li>Live TikTok tanpa persiapan hook dan interaksi</li>
+        <li>Caption lebih dari 5 baris tanpa hook di 2 baris pertama</li>
+        <li>Klaim superlative tanpa bukti konkret</li>
+        <li>Emoji berlebihan (lebih dari 2 per caption)</li>
+        <li>Pembuka "Halo Teman Sejawat semuanya..."</li>
+        <li>Konten yang bisa disalahartikan sebagai akun info nakes</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="checklist">
+  <div class="section-label">10</div>
+  <div class="section-title">Checklist Sebelum Publish</div>
+
+  <div class="card">
+    <div class="card-label">Tiga pertanyaan wajib — jawab semua sebelum klik publish</div>
+    <ul class="checklist" style="margin-top:0.75rem">
+      <li>
+        <i class="ti ti-help-circle check-icon" aria-hidden="true"></i>
+        <div><strong style="font-weight:500;color:var(--color-text-primary)">Ini terasa seperti cerita atau katalog?</strong><br><span style="font-size:12px">Kalau terasa seperti katalog — tambahkan satu cerita di awal sebelum masuk ke produk.</span></div>
+      </li>
+      <li>
+        <i class="ti ti-help-circle check-icon" aria-hidden="true"></i>
+        <div><strong style="font-weight:500;color:var(--color-text-primary)">Apakah dokter/nakes akan merasa "ini buat gue"?</strong><br><span style="font-size:12px">Kalau tidak — konten terlalu generik. Spesifikkan konteks atau situasi yang lebih dekat ke kehidupan mereka.</span></div>
+      </li>
+      <li>
+        <i class="ti ti-help-circle check-icon" aria-hidden="true"></i>
+        <div><strong style="font-weight:500;color:var(--color-text-primary)">Ada satu hal yang bisa mereka lakukan setelah lihat ini?</strong><br><span style="font-size:12px">Kalau tidak ada CTA — tambahkan satu tindakan spesifik di akhir.</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Checklist teknis per platform</div>
+    <ul class="checklist" style="margin-top:0.75rem">
+      <li><i class="ti ti-check check-icon" aria-hidden="true"></i><div style="font-size:13px;color:var(--color-text-secondary)"><strong style="font-weight:500;color:var(--color-text-primary)">IG:</strong> Hook di 2 baris pertama? CTA spesifik? Jadwal 21.00 WIB? Foto real (bukan mockup)?</div></li>
+      <li><i class="ti ti-check check-icon" aria-hidden="true"></i><div style="font-size:13px;color:var(--color-text-secondary)"><strong style="font-weight:500;color:var(--color-text-primary)">TikTok:</strong> Hook visual di 3 detik pertama? Cliffhanger di akhir? Hashtag medis tercantum? Tidak ada intro logo?</div></li>
+      <li><i class="ti ti-check check-icon" aria-hidden="true"></i><div style="font-size:13px;color:var(--color-text-secondary)"><strong style="font-weight:500;color:var(--color-text-primary)">Threads:</strong> Ditulis seperti orang ngobrol? Ada pertanyaan/poll/space untuk respons? Tidak ada foto studio?</div></li>
+      <li><i class="ti ti-check check-icon" aria-hidden="true"></i><div style="font-size:13px;color:var(--color-text-secondary)"><strong style="font-weight:500;color:var(--color-text-primary)">Semua platform:</strong> Tidak ada kata terlarang? Tidak ada konten duka cita? Tidak repost langsung tanpa adaptasi?</div></li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-text">
+    Brand Bible ini adalah dokumen hidup — diperbarui seiring brand Batik Sejawat berkembang.<br>
+    Setiap anggota tim yang membuat konten atas nama Batik Sejawat wajib membaca dan memahami dokumen ini.<br><br>
+    <strong style="font-weight:500;color:var(--color-text-primary)">Batik Sejawat · Surakarta · Sejak 16 Januari 2017</strong>
+  </div>
+</div>
+
+</div>
