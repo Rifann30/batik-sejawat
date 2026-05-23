@@ -175,10 +175,11 @@
 
   <section id="pilar" class="pb-24 px-6 max-w-7xl mx-auto space-y-8">
 
-    <div class="accordion glass rounded-[28px] border border-[#eadfd4] overflow-hidden">
-      <button class="w-full text-left p-8 flex items-center justify-between accordion-btn">
+    <div class="accordion glass rounded-[28px] border border-[#eadfd4] overflow-hidden" data-accordion>
+      <button class="w-full text-left p-8 flex items-center justify-between accordion-btn" type="button">
 
         <div>
+
           <p class="text-sm font-semibold tracking-widest text-[#8b5a3c] mb-2">PILAR 1</p>
           <h3 class="text-3xl font-bold text-[#5c2d1f]">Dari Meja Kuliah ke Helai Kain</h3>
           <p class="mt-2 text-gray-600">Origin & Craftsmanship</p>
@@ -530,15 +531,34 @@
   </footer>
 
   <script>
-    const accordions = document.querySelectorAll('.accordion');
+    const accordions = document.querySelectorAll('.accordion[data-accordion]');
 
     accordions.forEach((accordion) => {
       const button = accordion.querySelector('.accordion-btn');
+      const content = accordion.querySelector('.accordion-content');
 
       button.addEventListener('click', () => {
-        accordion.classList.toggle('active');
+        const isOpen = accordion.classList.contains('active');
+
+        // close all (lebih rapi & tidak berantakan)
+        accordions.forEach(a => {
+          if (a !== accordion) a.classList.remove('active');
+        });
+
+        accordion.classList.toggle('active', !isOpen);
+
+        // aksesibilitas sederhana
+        const expanded = !isOpen;
+        button.setAttribute('aria-expanded', String(expanded));
+        if (content) content.setAttribute('aria-hidden', String(!expanded));
       });
+
+      // initial state
+      const isInitiallyOpen = accordion.classList.contains('active');
+      button.setAttribute('aria-expanded', String(isInitiallyOpen));
+      if (content) content.setAttribute('aria-hidden', String(!isInitiallyOpen));
     });
+
   </script>
 
 </body>
