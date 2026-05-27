@@ -2,27 +2,83 @@
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Batik Sejawat — Brand Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Batik Sejawat — Brand Hub & Guideline</title>
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  
+  <!-- Icon System (Tabler Icons) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  
+  <!-- Main Styles -->
   <link rel="stylesheet" href="assets/styles.css" />
+  
+  <!-- Chart.js (Loaded globally for pages) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  
+  <!-- Sticky Premium Navigation Header -->
   <header class="site-header">
-    <div class="container">
-      <a class="brand" href="#brand-bible">Batik Sejawat</a>
+    <div class="container header-container">
+      <a class="brand" href="#/brand-bible">
+        <span class="brand-emblem">🩺</span>
+        <span class="brand-text">Batik Sejawat <span class="brand-sub">Brand Hub</span></span>
+      </a>
+      
+      <!-- Hamburger Menu for Mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <i class="ti ti-menu-2"></i>
+      </button>
+      
       <nav id="nav" class="main-nav"></nav>
     </div>
   </header>
 
-  <main id="app" class="container">
-    <!-- Pages load here -->
+  <!-- Main View Container with transition animations -->
+  <main id="app" class="container app-content" data-current-page="">
+    <!-- Dynamic page content will load here -->
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+      <p>Memuat Brand Hub...</p>
+    </div>
   </main>
 
+  <!-- Premium Footer -->
   <footer class="site-footer">
-    <div class="container">© Batik Sejawat — Brand Hub</div>
+    <div class="container footer-container">
+      <div class="footer-logo">Batik Sejawat</div>
+      <p class="footer-copy">© 2026 Batik Sejawat — Brand Hub. Didesain secara eksklusif untuk nakes Indonesia.</p>
+      <div class="footer-credits">Lahir dari FK UNS Solo sejak 2017</div>
+    </div>
   </footer>
 
   <script src="app.js"></script>
+  <script>
+    // Responsive mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      const icon = menuToggle.querySelector('i');
+      if (nav.classList.contains('open')) {
+        icon.className = 'ti ti-x';
+      } else {
+        icon.className = 'ti ti-menu-2';
+      }
+    });
+
+    // Close mobile nav when clicking nav items
+    nav.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        nav.classList.remove('open');
+        menuToggle.querySelector('i').className = 'ti ti-menu-2';
+      }
+    });
+  </script>
 </body>
 </html>
