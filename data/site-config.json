@@ -3,6 +3,7 @@
     { "id": "brand-bible", "title": "Brand Bible", "file": "pages/brand-bible.html" },
     { "id": "buyer-persona", "title": "Buyer Persona", "file": "pages/buyer-persona.html" },
     { "id": "brand-guideline", "title": "Brand Guideline", "file": "pages/brand-guideline.html" },
-    { "id": "content-pillars", "title": "Content Pillars", "file": "pages/content-pillars.html" }
+    { "id": "content-pillars", "title": "Content Pillars", "file": "pages/content-pillars.html" },
+    { "id": "marketing_strategy", "title": "Marketing Strategy", "file": "pages/marketing_strategy.html" }
   ]
 }
