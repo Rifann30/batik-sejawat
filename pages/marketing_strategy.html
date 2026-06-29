@@ -6,36 +6,21 @@
    ============================================================ */
 
 .page-ms {
-  --pu: #534ab7;
-  --pul: #eeedfe;
-  --pud: #3c3489;
-  --te: #0f6e56;
-  --tel: #e1f5ee;
-  --ted: #085041;
-  --am: #ba7517;
-  --aml: #faeeda;
-  --amd: #633806;
-  --co: #993c1d;
-  --col: #faece7;
-  --cod: #712b13;
-  --re: #a32d2d;
-  --rel: #fcebeb;
-  --red: #791f1f;
-  --gr: #3b6d11;
-  --grl: #eaf3de;
-  --grd: #27500a;
+  /* Brand Theme Colors */
+  --color-primary: #3c3489;
+  --color-primary-light: #eeedfe;
+  --color-teal: #0f6e56;
+  --color-teal-light: #e1f5ee;
+  --color-gold: #b8922a;
+  --color-gold-light: #f5e9cc;
+  --color-coral: #c4442a;
+  --color-coral-light: #f7e0da;
+  --color-forest: #2d5a27;
+  --color-forest-light: #dcecd9;
+  --color-warning-red: #a32d2d;
+  --color-warning-light: #fcebeb;
   
-  --color-background-primary: var(--color-bg-card);
-  --color-background-secondary: var(--color-bg-base);
-  --color-border-tertiary: var(--color-border);
-  --color-text-primary: var(--color-text-primary);
-  --color-text-secondary: var(--color-text-secondary);
-  --color-text-tertiary: var(--color-text-muted);
-  --border-radius-lg: 16px;
-  --border-radius-md: 10px;
-  --border-radius-sm: 6px;
-
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   max-width: 960px;
   margin: 0 auto;
   padding: 1.5rem 0 4rem;
@@ -54,10 +39,30 @@
   clip: rect(0,0,0,0);
 }
 
-/* ----- HERO / COVER ---------------------------------------- */
+/* ----- UTILITY CLASSES -------------------------------------- */
+.page-ms .mb-sm { margin-bottom: 0.5rem; }
+.page-ms .mb-md { margin-bottom: 1rem; }
+.page-ms .mb-lg { margin-bottom: 1.5rem; }
+.page-ms .mt-md { margin-top: 1rem; }
+.page-ms .mt-lg { margin-top: 1.5rem; }
+.page-ms .font-serif { font-family: var(--font-serif); }
+.page-ms .font-sans { font-family: var(--font-sans); }
+.page-ms .fw-bold { font-weight: 700; }
+.page-ms .fw-extra { font-weight: 800; }
+.page-ms .text-primary { color: var(--color-primary); }
+.page-ms .text-secondary { color: var(--color-text-secondary); }
+.page-ms .text-muted { color: var(--color-text-muted); }
+.page-ms .d-flex { display: flex; }
+.page-ms .align-center { align-items: center; }
+.page-ms .justify-between { justify-content: space-between; }
+.page-ms .flex-wrap { flex-wrap: wrap; }
+.page-ms .gap-sm { gap: 6px; }
+.page-ms .gap-md { gap: 12px; }
+
+/* ----- HERO COVER ---------------------------------------- */
 .page-ms .cover {
-  background: linear-gradient(135deg, #1a0f3a 0%, var(--color-primary) 45%, #0f5a4a 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #160e33 0%, var(--color-primary) 45%, var(--color-teal) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--border-radius-lg);
   padding: 3rem 2.5rem;
   margin-bottom: 2rem;
@@ -78,7 +83,7 @@
 .page-ms .cover-eye {
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-gold-light);
   margin-bottom: 0.75rem;
@@ -97,7 +102,7 @@
 
 .page-ms .cover-sub {
   font-size: 13.5px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
   margin-bottom: 2rem;
   max-width: 620px;
@@ -110,16 +115,14 @@
 }
 
 @media (max-width: 640px) {
-  .page-ms .kpi-row {
-    grid-template-columns: 1fr;
-  }
+  .page-ms .kpi-row { grid-template-columns: 1fr; }
 }
 
 .page-ms .kpi {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--border-radius-md);
-  padding: 1rem;
+  padding: 1.2rem 1rem;
   text-align: center;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -127,21 +130,21 @@
 }
 
 .page-ms .kpi:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .page-ms .kpi-n {
   font-family: var(--font-sans);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 800;
   color: var(--color-gold-light);
-  letter-spacing: -0.02em;
 }
 
 .page-ms .kpi-l {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.8);
   margin-top: 4px;
   line-height: 1.45;
   font-weight: 500;
@@ -149,31 +152,20 @@
 
 .page-ms .kpi-sub {
   font-size: 9px;
-  margin-top: 6px;
+  margin-top: 8px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 2px 6px;
+  padding: 3px 8px;
   border-radius: 4px;
   display: inline-block;
+  border: 1px solid transparent;
 }
 
 .page-ms .k-red {
   background: rgba(196, 68, 42, 0.2);
   color: #ffa191;
-  border: 1px solid rgba(196, 68, 42, 0.3);
-}
-
-.page-ms .k-amber {
-  background: rgba(184, 146, 42, 0.2);
-  color: #ffe6a3;
-  border: 1px solid rgba(184, 146, 42, 0.3);
-}
-
-.page-ms .k-green {
-  background: rgba(45, 90, 39, 0.2);
-  color: #bbf7b4;
-  border: 1px solid rgba(45, 90, 39, 0.3);
+  border-color: rgba(196, 68, 42, 0.3);
 }
 
 /* ----- TAB NAVIGATION -------------------------------------- */
@@ -187,15 +179,18 @@
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 76px;
+  z-index: 90;
 }
 
 .page-ms .nb {
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: .04em;
   text-transform: uppercase;
-  padding: 8px 16px;
+  padding: 10px 16px;
   border-radius: var(--border-radius-md);
   border: none;
   background: transparent;
@@ -216,6 +211,17 @@
   box-shadow: 0 4px 12px rgba(60, 52, 137, 0.25);
 }
 
+.page-ms .nb:focus-visible,
+.page-ms .p-btn:focus-visible,
+.page-ms .km-btn:focus-visible,
+.page-ms .sim-option:focus-visible,
+.page-ms .check-item input:focus-visible {
+  outline: 3px solid rgba(60, 52, 137, 0.35);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+
 /* ----- PANELS ---------------------------------------------- */
 .page-ms .panel {
   display: none;
@@ -227,7 +233,7 @@
 }
 
 @keyframes msFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -268,12 +274,15 @@
 }
 
 .page-ms .card-lbl {
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--color-text-muted);
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .page-ms .card-body {
@@ -283,21 +292,21 @@
 }
 
 .page-ms .hl {
-  background: var(--pul);
-  border-left: 4px solid var(--pud);
+  border-left: 4px solid var(--color-primary);
   border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
-  padding: 0.9rem 1.1rem;
+  padding: 1rem 1.25rem;
   margin-bottom: 1.5rem;
   font-size: 13.5px;
   color: var(--color-text-primary);
   line-height: 1.7;
+  background: var(--color-primary-light);
 }
 
-.page-ms .hl.te { border-left-color: var(--te); background: var(--tel); }
-.page-ms .hl.am { border-left-color: var(--am); background: var(--aml); }
-.page-ms .hl.co { border-left-color: var(--co); background: var(--col); }
-.page-ms .hl.gr { border-left-color: var(--gr); background: var(--grl); }
-.page-ms .hl.re { border-left-color: var(--re); background: var(--rel); }
+.page-ms .hl.te { border-left-color: var(--color-teal); background: var(--color-teal-light); }
+.page-ms .hl.am { border-left-color: var(--color-gold); background: var(--color-gold-light); }
+.page-ms .hl.co { border-left-color: var(--color-coral); background: var(--color-coral-light); }
+.page-ms .hl.gr { border-left-color: var(--color-forest); background: var(--color-forest-light); }
+.page-ms .hl.re { border-left-color: var(--color-warning-red); background: var(--color-warning-light); }
 
 /* ----- GRIDS ----------------------------------------------- */
 .page-ms .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
@@ -313,22 +322,92 @@
   display: inline-flex;
   align-items: center;
   font-size: 10.5px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 3px 10px;
   border-radius: 99px;
   border: 1px solid transparent;
   margin: 2px;
 }
 
-.page-ms .tp { background: var(--pul); color: var(--pud); border-color: rgba(60,52,137,.2); }
-.page-ms .tt { background: var(--tel); color: var(--ted); border-color: rgba(15,110,86,.2); }
-.page-ms .ta { background: var(--aml); color: var(--amd); border-color: rgba(184,146,42,.2); }
-.page-ms .tc { background: var(--col); color: var(--cod); border-color: rgba(196,68,42,.2); }
-.page-ms .tr { background: var(--rel); color: var(--red); border-color: rgba(163,45,45,.2); }
-.page-ms .tg { background: var(--grl); color: var(--grd); border-color: rgba(59,109,17,.2); }
-.page-ms .tn { background: var(--color-background-secondary); color: var(--color-text-secondary); border-color: var(--color-border); }
+.page-ms .tp { background: var(--color-primary-light); color: var(--color-primary); border-color: rgba(60,52,137,.2); }
+.page-ms .tt { background: var(--color-teal-light); color: var(--color-teal); border-color: rgba(15,110,86,.2); }
+.page-ms .ta { background: var(--color-gold-light); color: var(--color-gold); border-color: rgba(184,146,42,.2); }
+.page-ms .tc { background: var(--color-coral-light); color: var(--color-coral); border-color: rgba(196,68,42,.2); }
+.page-ms .tr { background: var(--color-warning-light); color: var(--color-warning-red); border-color: rgba(163,45,45,.2); }
+.page-ms .tg { background: var(--color-forest-light); color: var(--color-forest); border-color: rgba(59,109,17,.2); }
+.page-ms .tn { background: var(--color-bg-base); color: var(--color-text-secondary); border-color: var(--color-border); }
 
-/* ----- RUN-RATE CARDS -------------------------------------- */
+/* ----- RUN-RATE CARDS & CALCULATOR ------------------------- */
+.page-ms .rr-controller {
+  border: 1px solid var(--color-primary);
+  background: linear-gradient(180deg, var(--color-bg-card) 0%, var(--color-primary-light) 100%);
+  margin-bottom: 1.5rem;
+}
+
+.page-ms .rr-controller-header {
+  margin-bottom: 1rem;
+}
+
+.page-ms .rr-ctrl-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-ms .rr-ctrl-desc {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+.page-ms .rr-slider-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--color-bg-card);
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.page-ms .rr-slider-lbl {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: var(--color-text-primary);
+}
+
+.page-ms .rr-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--color-border);
+  outline: none;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.page-ms .rr-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(60, 52, 137, 0.3);
+  transition: transform 0.15s ease;
+}
+
+.page-ms .rr-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
 .page-ms .runrate {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -337,9 +416,7 @@
 }
 
 @media (max-width: 768px) {
-  .page-ms .runrate {
-    grid-template-columns: 1fr;
-  }
+  .page-ms .runrate { grid-template-columns: 1fr; }
 }
 
 .page-ms .rr-card {
@@ -359,8 +436,8 @@
 
 .page-ms .rr-title {
   font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 14.5px;
+  font-weight: 800;
   color: var(--color-dark);
   margin-bottom: 0.75rem;
 }
@@ -377,6 +454,7 @@
 .page-ms .rr-fill {
   height: 100%;
   border-radius: 99px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-ms .rr-row {
@@ -398,6 +476,154 @@
   padding-top: 0.75rem;
   border-top: 1px solid var(--color-border);
   line-height: 1.5;
+}
+
+/* ----- INTERACTIVE PERSONA HUB ----------------------------- */
+.page-ms .persona-hub {
+  margin-bottom: 1.5rem;
+}
+
+.page-ms .persona-selector {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  background: var(--color-bg-base);
+  padding: 4px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.page-ms .p-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 8px 12px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.page-ms .p-btn:hover {
+  background: rgba(255,255,255,0.7);
+  color: var(--color-primary);
+}
+
+.page-ms .p-btn.active.p1 { background: var(--color-primary-light); color: var(--color-primary); }
+.page-ms .p-btn.active.p2 { background: var(--color-teal-light); color: var(--color-teal); }
+.page-ms .p-btn.active.p3 { background: var(--color-gold-light); color: var(--color-gold); }
+.page-ms .p-btn.active.p4 { background: var(--color-coral-light); color: var(--color-coral); }
+.page-ms .p-btn.active.b2b { background: var(--color-forest-light); color: var(--color-forest); }
+
+.page-ms .persona-panel {
+  display: none;
+  animation: msFadeIn 0.35s ease-out;
+  /* Color configurations per panel */
+  --p-color: var(--color-primary);
+  --p-color-light: var(--color-primary-light);
+}
+
+.page-ms .persona-panel.p2 {
+  --p-color: var(--color-teal);
+  --p-color-light: var(--color-teal-light);
+}
+
+.page-ms .persona-panel.p3 {
+  --p-color: var(--color-gold);
+  --p-color-light: var(--color-gold-light);
+}
+
+.page-ms .persona-panel.p4 {
+  --p-color: var(--color-coral);
+  --p-color-light: var(--color-coral-light);
+}
+
+.page-ms .persona-panel.b2b {
+  --p-color: var(--color-forest);
+  --p-color-light: var(--color-forest-light);
+}
+
+.page-ms .persona-panel.active {
+  display: block;
+}
+
+.page-ms .persona-columns {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .page-ms .persona-columns { grid-template-columns: 1fr; }
+}
+
+.page-ms .persona-panel .p-sub-title {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--p-color);
+}
+
+.page-ms .p-journey-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  padding-left: 12px;
+  margin-top: 0.5rem;
+}
+
+.page-ms .p-journey-list::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 6px;
+  bottom: 6px;
+  width: 1.5px;
+  background: var(--color-border);
+}
+
+.page-ms .p-journey-item {
+  position: relative;
+  padding-left: 10px;
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.page-ms .p-journey-item::before {
+  content: '';
+  position: absolute;
+  left: -12.5px;
+  top: 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--p-color);
+  border: 1px solid var(--color-bg-card);
+}
+
+.page-ms .p-journey-stage {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 9px;
+  display: block;
+  color: var(--p-color);
+}
+
+.page-ms .p-journey-lbl {
+  font-weight: 700;
+  color: var(--color-text-primary);
 }
 
 /* ----- FUNNEL ---------------------------------------------- */
@@ -438,12 +664,16 @@
   margin-top: 1px;
 }
 
+.page-ms .fn1 { background: var(--color-primary-light); color: var(--color-primary); }
+.page-ms .fn2 { background: var(--color-teal-light); color: var(--color-teal); }
+.page-ms .fn3 { background: var(--color-gold-light); color: var(--color-gold); }
+
 .page-ms .fc {
   flex: 1;
 }
 
 .page-ms .ft {
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 3px;
@@ -465,11 +695,145 @@
 }
 
 .page-ms .fm-now {
-  color: var(--re);
+  color: var(--color-warning-red);
 }
 
 .page-ms .fm-target {
-  color: var(--gr);
+  color: var(--color-forest);
+}
+
+/* ----- FUNNEL SIMULATOR ------------------------------------ */
+.page-ms .funnel-simulator {
+  border: 1px solid var(--color-teal);
+  background: linear-gradient(180deg, var(--color-bg-card) 0%, var(--color-teal-light) 100%);
+  margin-bottom: 1.5rem;
+}
+
+.page-ms .sim-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+
+.page-ms .sim-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.page-ms .sim-option:hover {
+  border-color: var(--color-teal);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.page-ms .sim-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-teal);
+  cursor: pointer;
+}
+
+.page-ms .sim-label-text {
+  font-size: 12.5px;
+  color: var(--color-text-secondary);
+}
+
+.page-ms .sim-label-text strong {
+  color: var(--color-text-primary);
+}
+
+.page-ms .sim-result {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1rem;
+}
+
+.page-ms .sim-result-title {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-teal);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.page-ms .sim-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .page-ms .sim-metrics-grid { grid-template-columns: 1fr; }
+}
+
+.page-ms .sim-metric-card {
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  padding: 0.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.page-ms .sim-metric-label {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.page-ms .sim-metric-value {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin: 3px 0;
+}
+
+.page-ms .sim-metric-delta {
+  font-size: 9.5px;
+  font-weight: 700;
+}
+
+.page-ms .sim-progress-wrap {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.page-ms .sim-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.page-ms .sim-progress-bar {
+  height: 6px;
+  background: var(--color-bg-base);
+  border-radius: 99px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.page-ms .sim-progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.5s ease;
 }
 
 /* ----- SCORECARDS ------------------------------------------ */
@@ -500,13 +864,16 @@
 .page-ms .sc-name {
   font-family: var(--font-sans);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .page-ms .sc-role {
-  font-size: 11.5px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   color: var(--color-text-muted);
   background: var(--color-bg-base);
   border-radius: 99px;
@@ -522,9 +889,7 @@
 }
 
 @media (max-width: 768px) {
-  .page-ms .sc-metrics {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .page-ms .sc-metrics { grid-template-columns: repeat(2, 1fr); }
 }
 
 .page-ms .sc-metric {
@@ -543,16 +908,16 @@
 
 .page-ms .sc-metric-val {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-dark);
   margin-top: 2px;
 }
 
 .page-ms .sc-metric-target {
-  font-size: 10px;
-  color: var(--gr);
+  font-size: 9.5px;
+  color: var(--color-forest);
   margin-top: 2px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 /* ----- CUSTOMER JOURNEY ------------------------------------ */
@@ -607,11 +972,11 @@
 
 .page-ms .cj-em {
   font-size: 10px;
-  color: var(--pud);
+  color: var(--color-primary);
   font-weight: 700;
 }
 
-/* ----- CONTENT PILAR --------------------------------------- */
+/* ----- CONTENT PILLAR --------------------------------------- */
 .page-ms .pilar-card {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -648,7 +1013,7 @@
 }
 
 .page-ms .pilar-title {
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 700;
   color: var(--color-dark);
 }
@@ -682,46 +1047,447 @@
 .page-ms .pilar-fill {
   height: 100%;
   border-radius: 99px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ----- KEY MESSAGE ----------------------------------------- */
-.page-ms .km-card {
-  background: var(--color-bg-card);
+/* ----- KEY MESSAGE SIMULATOR ------------------------------- */
+.page-ms .km-simulator-card {
+  padding: 1.5rem;
+}
+
+.page-ms .km-selector {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  background: var(--color-bg-base);
+  padding: 4px;
+  border-radius: var(--border-radius-md);
   border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-lg);
-  padding: 1.3rem 1.5rem;
-  margin-bottom: 1rem;
-  box-shadow: var(--shadow-sm);
-  border-left: 4px solid var(--color-primary);
+}
+
+.page-ms .km-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 8px 12px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
   transition: var(--transition-smooth);
 }
 
-.page-ms .km-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+.page-ms .km-btn:hover {
+  background: rgba(255,255,255,0.7);
+  color: var(--color-primary);
 }
 
-.page-ms .km-persona {
-  font-size: 10.5px;
+.page-ms .km-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.page-ms .km-sim-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .page-ms .km-sim-layout { grid-template-columns: 1fr; }
+}
+
+.page-ms .km-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.page-ms .km-badge {
+  display: inline-block;
+  font-size: 9px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  margin-bottom: 6px;
 }
 
-.page-ms .km-msg {
-  font-size: 15px;
-  font-style: italic;
+.page-ms .km-info-section {
+  background: var(--color-bg-base);
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.page-ms .km-info-lbl {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.page-ms .km-info-val {
+  font-size: 13px;
+  line-height: 1.55;
   color: var(--color-dark);
-  line-height: 1.65;
-  margin-bottom: 0.6rem;
-  font-weight: 500;
 }
 
-.page-ms .km-proof {
-  font-size: 12.5px;
-  color: var(--color-text-secondary);
-  line-height: 1.65;
+.page-ms .km-mockup-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-base);
+  border-radius: var(--border-radius-lg);
+  border: 1px dashed var(--color-border-hover);
+  padding: 1.5rem;
+  min-height: 380px;
+}
+
+/* Simulated devices */
+.page-ms .device-container {
+  width: 100%;
+  max-width: 300px;
+  box-shadow: var(--shadow-lg);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 8px solid #0f172a;
+  background: #fff;
+  aspect-ratio: 9 / 16;
+  position: relative;
+}
+
+/* WhatsApp Mockup */
+.page-ms .mock-wa {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #efeae2;
+  font-size: 11.5px;
+}
+
+.page-ms .mock-wa-header {
+  background: var(--color-teal);
+  color: #fff;
+  padding: 10px 14px 10px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-ms .mock-wa-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 11px;
+  color: var(--color-teal);
+}
+
+.page-ms .mock-wa-title {
+  font-weight: 700;
+}
+
+.page-ms .mock-wa-status {
+  font-size: 9px;
+  opacity: 0.8;
+}
+
+.page-ms .mock-wa-body {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.page-ms .mock-wa-bubble {
+  max-width: 85%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  line-height: 1.4;
+  position: relative;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+}
+
+.page-ms .mock-wa-bubble.left {
+  background: #fff;
+  align-self: flex-start;
+  border-top-left-radius: 0;
+}
+
+.page-ms .mock-wa-bubble.right {
+  background: #d9fdd3;
+  align-self: flex-end;
+  border-top-right-radius: 0;
+}
+
+.page-ms .mock-wa-time {
+  font-size: 8px;
+  color: var(--color-text-muted);
+  text-align: right;
+  margin-top: 3px;
+  display: block;
+}
+
+/* TikTok Mockup */
+.page-ms .mock-tt {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.85) 100%), #1a1b24;
+  color: #fff;
+  padding: 12px;
+  position: relative;
+}
+
+.page-ms .mock-tt-bg-art {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  opacity: 0.08;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.page-ms .mock-tt-sidebar {
+  position: absolute;
+  right: 10px;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.page-ms .mock-tt-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.page-ms .mock-tt-count {
+  font-size: 9px;
+  margin-top: 2px;
+  font-weight: 700;
+}
+
+.page-ms .mock-tt-content {
+  position: relative;
+  z-index: 2;
+  padding-right: 40px;
+  font-size: 11px;
+}
+
+.page-ms .mock-tt-user {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.page-ms .mock-tt-desc {
+  line-height: 1.4;
+  margin-bottom: 6px;
+  opacity: 0.95;
+}
+
+.page-ms .mock-tt-music {
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.8;
+}
+
+/* Instagram Mockup */
+.page-ms .mock-ig {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  font-size: 11px;
+}
+
+.page-ms .mock-ig-header {
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-ms .mock-ig-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  padding: 1.5px;
+}
+
+.page-ms .mock-ig-avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.page-ms .mock-ig-user {
+  font-weight: 700;
+}
+
+.page-ms .mock-ig-loc {
+  font-size: 8px;
+  color: var(--color-text-muted);
+  display: block;
+}
+
+.page-ms .mock-ig-photo {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-teal) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.4;
+  position: relative;
+}
+
+.page-ms .mock-ig-photo-title {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.page-ms .mock-ig-photo-sub {
+  font-size: 9.5px;
+  opacity: 0.85;
+}
+
+.page-ms .mock-ig-actions {
+  padding: 8px 10px;
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.page-ms .mock-ig-likes {
+  padding: 0 10px;
+  font-weight: 700;
+}
+
+.page-ms .mock-ig-caption {
+  padding: 4px 10px 10px;
+  line-height: 1.4;
+}
+
+/* Premium Gift Box & Slide Pitch Mockups */
+.page-ms .mock-premium-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #111827;
+  color: #fff;
+  padding: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.page-ms .gift-box-art {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--border-radius-md);
+  border: 2px solid var(--color-gold);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.page-ms .gift-box-art::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 50%;
+  width: 10px;
+  transform: translateX(-50%);
+  background: var(--color-gold);
+}
+
+.page-ms .gift-box-art::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  height: 10px;
+  transform: translateY(-50%);
+  background: var(--color-gold);
+}
+
+.page-ms .mock-pitch {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0f172a;
+  color: #fff;
+  padding: 1.5rem;
+  justify-content: center;
+}
+
+.page-ms .mock-pitch-title {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-gold-light);
+  border-bottom: 2px solid var(--color-gold);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.page-ms .mock-pitch-text {
+  font-size: 11.5px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.page-ms .mock-pitch-footer {
+  font-size: 9px;
+  margin-top: auto;
+  color: var(--color-text-muted);
 }
 
 /* ----- CHANNEL & CHART ------------------------------------- */
@@ -736,7 +1502,7 @@
   font-size: 12.5px;
   min-width: 90px;
   color: var(--color-text-secondary);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .page-ms .ch-bar-w {
@@ -762,48 +1528,102 @@
 }
 
 /* ----- WEEKLY CALENDAR ------------------------------------ */
-.page-ms .week-row {
-  display: grid;
-  grid-template-columns: 80px 1.2fr 2fr 1.2fr 0.8fr;
-  gap: 0;
+.page-ms .week-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  background: var(--color-bg-card);
+}
+
+.page-ms .week-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  text-align: left;
+}
+
+.page-ms .week-table th {
+  background: var(--color-bg-base);
+  color: var(--color-text-muted);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
   border-bottom: 1px solid var(--color-border);
 }
 
-@media (max-width: 640px) {
-  .page-ms .week-row {
-    grid-template-columns: 70px 1fr 1fr;
-  }
-  .page-ms .week-row .wk-cell:nth-child(3),
-  .page-ms .week-row .wk-cell:nth-child(4) {
-    display: none;
-  }
-}
-
-.page-ms .wk-cell {
-  padding: 10px 12px;
-  font-size: 12px;
+.page-ms .week-table td {
+  padding: 12px 16px;
+  font-size: 12.5px;
   color: var(--color-text-secondary);
-  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   line-height: 1.5;
 }
 
-.page-ms .wk-cell:last-child {
-  border-right: none;
+.page-ms .week-table tr {
+  cursor: pointer;
+  transition: var(--transition-smooth);
 }
 
-.page-ms .wk-cell.hdr {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--color-text-muted);
-  background: var(--color-bg-base);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.page-ms .week-table tr:last-child td {
+  border-bottom: none;
 }
 
-.page-ms .wk-cell.day {
+.page-ms .week-table tr:hover td {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.page-ms .week-table tr.active td {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.page-ms .week-table td.day {
   font-weight: 700;
   color: var(--color-dark);
-  background: var(--color-bg-base);
+}
+
+.page-ms .week-table tr.active td.day {
+  color: #fff;
+}
+
+/* Calendar detail panel */
+.page-ms .cal-detail-card {
+  margin-top: 1rem;
+  border-left: 4px solid var(--color-primary);
+  background: linear-gradient(180deg, var(--color-bg-card) 0%, var(--color-primary-light) 100%);
+  animation: msFadeIn 0.3s ease-out;
+}
+
+.page-ms .cal-detail-title {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-ms .cal-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.page-ms .cal-check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.page-ms .cal-check-item i {
+  color: var(--color-primary);
 }
 
 /* ----- ROADMAP TIMELINE ------------------------------------ */
@@ -835,18 +1655,19 @@
 .page-ms .q-title {
   font-family: var(--font-sans);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-dark);
 }
 
 .page-ms .q-period {
-  font-size: 11.5px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   color: var(--color-text-muted);
   background: var(--color-bg-base);
   border: 1px solid var(--color-border);
   border-radius: 99px;
   padding: 3px 10px;
+  text-transform: uppercase;
 }
 
 .page-ms .q-grid {
@@ -857,9 +1678,7 @@
 }
 
 @media (max-width: 640px) {
-  .page-ms .q-grid {
-    grid-template-columns: 1fr;
-  }
+  .page-ms .q-grid { grid-template-columns: 1fr; }
 }
 
 .page-ms .q-metric {
@@ -877,10 +1696,79 @@
 }
 
 .page-ms .q-metric-l {
-  font-size: 10px;
+  font-size: 10.5px;
   color: var(--color-text-muted);
   margin-top: 4px;
   line-height: 1.4;
+}
+
+/* ----- ROADMAP INTERACTIVE CHECKLISTS ---------------------- */
+.page-ms .roadmap-progress-wrap {
+  border: 1px solid var(--color-primary);
+  background: linear-gradient(180deg, var(--color-bg-card) 0%, var(--color-primary-light) 100%);
+  margin-bottom: 1.5rem;
+}
+
+.page-ms .roadmap-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: var(--color-text-primary);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.page-ms .roadmap-progress-bar {
+  height: 8px;
+  background: var(--color-bg-base);
+  border-radius: 99px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.page-ms .roadmap-progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--color-primary);
+}
+
+.page-ms .checklist-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 0.5rem;
+}
+
+.page-ms .check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.page-ms .check-item:hover {
+  background: var(--color-bg-card);
+  border-color: var(--color-border-hover);
+}
+
+.page-ms .check-item input {
+  margin-top: 3px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.page-ms .check-item.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+  background: rgba(0, 0, 0, 0.02);
 }
 
 /* ----- FOOTER & MISC --------------------------------------- */
@@ -894,7 +1782,7 @@
   background: var(--color-dark);
   color: rgba(255, 255, 255, 0.75);
   border-radius: var(--border-radius-lg);
-  padding: 2rem 1.75rem;
+  padding: 2.5rem 1.75rem;
   font-size: 13px;
   line-height: 1.8;
   text-align: center;
@@ -921,33 +1809,33 @@
         <div class="kpi">
           <div class="kpi-n">21%</div>
           <div class="kpi-l">Batik Tulis realisasi (25/120 pcs)</div>
-          <div class="kpi-sub k-red">perlu 2,7x pace</div>
+          <div class="kpi-sub k-red" id="kpi-tulis-gap">perlu 2.7x pace</div>
         </div>
         <div class="kpi">
           <div class="kpi-n">24%</div>
           <div class="kpi-l">Printing realisasi (99/420 m)</div>
-          <div class="kpi-sub k-red">perlu 2,3x pace</div>
+          <div class="kpi-sub k-red" id="kpi-print-gap">perlu 2.3x pace</div>
         </div>
         <div class="kpi">
           <div class="kpi-n">22%</div>
           <div class="kpi-l">Seragaman realisasi (2.180/10.000 m)</div>
-          <div class="kpi-sub k-red">perlu 2,6x pace</div>
+          <div class="kpi-sub k-red" id="kpi-b2b-gap">perlu 2.6x pace</div>
         </div>
       </div>
     </div>
 
     <!-- TAB NAVIGATION -->
     <div class="nav-row" role="tablist" aria-label="Navigasi Halaman Strategi Marketing">
-      <button class="nb on" onclick="show('dash', this)" role="tab">01 · Dashboard &amp; Tujuan</button>
-      <button class="nb" onclick="show('persona', this)" role="tab">02 · Persona &amp; Prioritas</button>
-      <button class="nb" onclick="show('funnel', this)" role="tab">03 · Funnel</button>
-      <button class="nb" onclick="show('channel', this)" role="tab">04 · Channel Scorecard</button>
-      <button class="nb" onclick="show('journey', this)" role="tab">05 · Customer Journey</button>
-      <button class="nb" onclick="show('strategi', this)" role="tab">06 · Strategi Inti</button>
-      <button class="nb" onclick="show('pilar', this)" role="tab">07 · Content Pilar</button>
-      <button class="nb" onclick="show('keymsg', this)" role="tab">08 · Key Message</button>
-      <button class="nb" onclick="show('distribusi', this)" role="tab">09 · Distribusi</button>
-      <button class="nb" onclick="show('roadmap', this)" role="tab">10 · Roadmap Kuartalan</button>
+      <button class="nb on" onclick="show('dash', this)" role="tab" aria-selected="true" aria-controls="p-dash">01 · Dashboard &amp; Tujuan</button>
+      <button class="nb" onclick="show('persona', this)" role="tab" aria-selected="false" aria-controls="p-persona">02 · Persona &amp; Prioritas</button>
+      <button class="nb" onclick="show('funnel', this)" role="tab" aria-selected="false" aria-controls="p-funnel">03 · Funnel</button>
+      <button class="nb" onclick="show('channel', this)" role="tab" aria-selected="false" aria-controls="p-channel">04 · Channel Scorecard</button>
+      <button class="nb" onclick="show('journey', this)" role="tab" aria-selected="false" aria-controls="p-journey">05 · Customer Journey</button>
+      <button class="nb" onclick="show('strategi', this)" role="tab" aria-selected="false" aria-controls="p-strategi">06 · Strategi Inti</button>
+      <button class="nb" onclick="show('pilar', this)" role="tab" aria-selected="false" aria-controls="p-pilar">07 · Content Pilar</button>
+      <button class="nb" onclick="show('keymsg', this)" role="tab" aria-selected="false" aria-controls="p-keymsg">08 · Key Message</button>
+      <button class="nb" onclick="show('distribusi', this)" role="tab" aria-selected="false" aria-controls="p-distribusi">09 · Distribusi</button>
+      <button class="nb" onclick="show('roadmap', this)" role="tab" aria-selected="false" aria-controls="p-roadmap">10 · Roadmap Kuartalan</button>
     </div>
 
     <!-- 01 DASHBOARD -->
@@ -957,60 +1845,75 @@
 
       <div class="hl re">Per Mei 2026, sudah 5 dari 12 bulan berjalan (41,7%) — tapi ketiga lini produk masih di bawah 25% realisasi. Gap ini harus ditutup dengan run-rate 2,3–2,7x lipat dari pace saat ini. Ini bukan target aspirasional — ini target yang sudah ditetapkan perusahaan dan sedang tertinggal.</div>
 
-      <div class="card-lbl" style="margin-bottom:0.5rem">Run-rate yang dibutuhkan — sisa 7 bulan (Jun–Des 2026)</div>
-      <div class="runrate">
-        <div class="rr-card">
-          <div class="rr-title">Batik Tulis</div>
-          <div class="rr-bar"><div class="rr-fill" style="width:21%;background:var(--re)"></div></div>
-          <div class="rr-row"><span>Realisasi</span><b>25 / 120 pcs</b></div>
-          <div class="rr-row"><span>Pace saat ini</span><b>5 pcs/bln</b></div>
-          <div class="rr-row"><span>Pace dibutuhkan</span><b style="color:var(--re)">13,6 pcs/bln</b></div>
-          <div class="rr-gap">Gap: <b style="color:var(--re)">2,7x</b> — didorong oleh P2 (dokter senior, AOV Rp1,35jt) &amp; launching motif baru per bulan</div>
+      <!-- RUN-RATE SIMULATOR CONTROLLER -->
+      <div class="rr-controller card">
+        <div class="rr-controller-header">
+          <div class="rr-ctrl-title"><i class="ti ti-adjustments-horizontal"></i> Simulator Target Run-Rate 2026</div>
+          <div class="rr-ctrl-desc">Sesuaikan sisa bulan di tahun 2026 untuk melihat target pace bulanan yang dibutuhkan dan gap multiplier secara real-time.</div>
         </div>
-        <div class="rr-card">
-          <div class="rr-title">Batik Printing</div>
-          <div class="rr-bar"><div class="rr-fill" style="width:24%;background:var(--am)"></div></div>
-          <div class="rr-row"><span>Realisasi</span><b>99 / 420 m</b></div>
-          <div class="rr-row"><span>Pace saat ini</span><b>19,8 m/bln</b></div>
-          <div class="rr-row"><span>Pace dibutuhkan</span><b style="color:var(--am)">45,9 m/bln</b></div>
-          <div class="rr-gap">Gap: <b style="color:var(--am)">2,3x</b> — didorong oleh P1 &amp; P3 lewat TikTok/IG, entry point Rp99rb</div>
-        </div>
-        <div class="rr-card">
-          <div class="rr-title">Seragaman B2B</div>
-          <div class="rr-bar"><div class="rr-fill" style="width:22%;background:var(--am)"></div></div>
-          <div class="rr-row"><span>Realisasi</span><b>2.180 / 10.000 m</b></div>
-          <div class="rr-row"><span>Pace saat ini</span><b>436 m/bln</b></div>
-          <div class="rr-row"><span>Pace dibutuhkan</span><b style="color:var(--am)">1.117 m/bln</b></div>
-          <div class="rr-gap">Gap: <b style="color:var(--am)">2,6x</b> — didorong oleh Google Maps + pipeline (MTQ Kalbar 2.500m, LARS DHP 600m)</div>
+        <div class="rr-slider-wrap">
+          <div class="rr-slider-lbl fw-bold">
+            <span>Sisa Waktu: <span id="sisa-bulan-val" class="text-primary fw-extra">7</span> Bulan (Jun–Des 2026)</span>
+            <span class="text-muted">Elapsed: 5 Bulan (41.7%)</span>
+          </div>
+          <input type="range" id="sisa-bulan-slider" min="1" max="12" value="7" step="1" class="rr-slider" aria-label="Sisa Bulan">
         </div>
       </div>
 
-      <div class="card-lbl" style="margin-bottom:0.5rem;margin-top:1rem">Cashflow April vs Mei 2026 — volatilitas yang harus distabilkan</div>
+      <div class="card-lbl mb-sm"><i class="ti ti-activity"></i> Run-rate yang dibutuhkan — Berdasarkan Sisa Bulan</div>
+      <div class="runrate">
+        <div class="rr-card" id="rr-tulis" data-target="120" data-realized="25" data-pace-cur="5">
+          <div class="rr-title">Batik Tulis</div>
+          <div class="rr-bar"><div class="rr-fill" style="width:21%;background:var(--color-coral)"></div></div>
+          <div class="rr-row"><span>Realisasi</span><b>25 / 120 pcs</b></div>
+          <div class="rr-row"><span>Pace saat ini</span><b>5 pcs/bln</b></div>
+          <div class="rr-row"><span>Pace dibutuhkan</span><b class="req-pace" style="color:var(--color-coral)">13.6 pcs/bln</b></div>
+          <div class="rr-gap">Gap: <b class="gap-mult" style="color:var(--color-coral)">2.7x</b> — didorong oleh P2 (dokter senior, AOV Rp1,35jt) &amp; launching motif baru per bulan</div>
+        </div>
+        <div class="rr-card" id="rr-print" data-target="420" data-realized="99" data-pace-cur="19.8">
+          <div class="rr-title">Batik Printing</div>
+          <div class="rr-bar"><div class="rr-fill" style="width:24%;background:var(--color-gold)"></div></div>
+          <div class="rr-row"><span>Realisasi</span><b>99 / 420 m</b></div>
+          <div class="rr-row"><span>Pace saat ini</span><b>19.8 m/bln</b></div>
+          <div class="rr-row"><span>Pace dibutuhkan</span><b class="req-pace" style="color:var(--color-gold)">45.9 m/bln</b></div>
+          <div class="rr-gap">Gap: <b class="gap-mult" style="color:var(--color-gold)">2.3x</b> — didorong oleh P1 &amp; P3 lewat TikTok/IG, entry point Rp99rb</div>
+        </div>
+        <div class="rr-card" id="rr-b2b" data-target="10000" data-realized="2180" data-pace-cur="436">
+          <div class="rr-title">Seragaman B2B</div>
+          <div class="rr-bar"><div class="rr-fill" style="width:22%;background:var(--color-gold)"></div></div>
+          <div class="rr-row"><span>Realisasi</span><b>2.180 / 10.000 m</b></div>
+          <div class="rr-row"><span>Pace saat ini</span><b>436 m/bln</b></div>
+          <div class="rr-row"><span>Pace dibutuhkan</span><b class="req-pace" style="color:var(--color-gold)">1.117 m/bln</b></div>
+          <div class="rr-gap">Gap: <b class="gap-mult" style="color:var(--color-gold)">2.6x</b> — didorong oleh Google Maps + pipeline (MTQ Kalbar 2.500m, LARS DHP 600m)</div>
+        </div>
+      </div>
+
+      <div class="card-lbl mb-sm mt-lg"><i class="ti ti-chart-bar"></i> Cashflow April vs Mei 2026 — volatilitas yang harus distabilkan</div>
       <div style="position:relative;width:100%;height:220px;margin-bottom:0.75rem">
         <canvas id="cashflowChart" role="img" aria-label="Grafik batang perbandingan income dan expense April dan Mei 2026. April: income 130 juta, expense 103 juta, surplus 26 juta. Mei: income 35 juta, expense 56 juta, defisit 21 juta.">April: income Rp130jt, expense Rp103jt, surplus Rp26jt. Mei: income Rp35jt, expense Rp56jt, defisit -Rp21jt.</canvas>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:0.75rem;font-size:11px;color:var(--color-text-secondary)">
-        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#1D9E75"></span>Income</span>
-        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#D85A30"></span>Expense</span>
+      <div class="d-flex gap-md mb-sm font-sans fw-bold" style="font-size:11px;color:var(--color-text-secondary)">
+        <span class="d-flex align-center gap-sm"><span style="width:12px;height:12px;border-radius:3px;background:linear-gradient(#10b981, #0f6e56)"></span>Income</span>
+        <span class="d-flex align-center gap-sm"><span style="width:12px;height:12px;border-radius:3px;background:linear-gradient(#f97316, #c4442a)"></span>Expense</span>
       </div>
 
       <div class="card">
-        <div class="card-lbl">Mengapa volatilitas ini terjadi — dan target diversifikasi</div>
-        <div class="card-body">Selisih Rp129,9jt (April) ke Rp34,9jt (Mei) = -73% dalam satu bulan, murni karena 1 closing seragaman besar (1.262m) di April vs hanya 30m di Mei. Saat ini <b style="font-weight:500;color:var(--color-text-primary)">80%+ revenue bergantung pada B2B</b>. Target diversifikasi: B2C (retail + printing) menyumbang minimal 25–30% dari total revenue bulanan dalam 12 bulan, sehingga satu bulan tanpa closing B2B besar tidak lagi menyebabkan defisit operasional.</div>
+        <div class="card-lbl"><i class="ti ti-help-circle"></i> Mengapa volatilitas ini terjadi — dan target diversifikasi</div>
+        <div class="card-body">Selisih Rp129,9jt (April) ke Rp34,9jt (Mei) = -73% dalam satu bulan, murni karena 1 closing seragaman besar (1.262m) di April vs hanya 30m di Mei. Saat ini <b class="fw-bold text-primary">80%+ revenue bergantung pada B2B</b>. Target diversifikasi: B2C (retail + printing) menyumbang minimal 25–30% dari total revenue bulanan dalam 12 bulan, sehingga satu bulan tanpa closing B2B besar tidak lagi menyebabkan defisit operasional.</div>
       </div>
 
       <div class="g3">
         <div class="card">
-          <div class="card-lbl">North star B2C</div>
-          <div class="card-body" style="font-size:12px">Target realistis 12 bulan: <b style="font-weight:500;color:var(--color-text-primary)">66 transaksi/tahun</b> (dari baseline ~40), AOV blended <b style="font-weight:500;color:var(--color-text-primary)">Rp489rb</b>, kontribusi revenue <b style="font-weight:500;color:var(--color-text-primary)">~Rp32jt</b> tambahan.</div>
+          <div class="card-lbl"><i class="ti ti-target-arrow"></i> North star B2C</div>
+          <div class="card-body" style="font-size:12px">Target realistis 12 bulan: <b class="fw-bold text-primary">66 transaksi/tahun</b> (dari baseline ~40), AOV blended <b class="fw-bold text-primary">Rp489rb</b>, kontribusi revenue <b class="fw-bold text-primary">~Rp32jt</b> tambahan.</div>
         </div>
         <div class="card">
-          <div class="card-lbl">North star konversi</div>
-          <div class="card-body" style="font-size:12px">Retail WA: pulihkan dari <b style="font-weight:500;color:var(--color-text-primary)">16,7% → 30%+</b> (level April). B2B leads: naikkan dari <b style="font-weight:500;color:var(--color-text-primary)">8,2% rata-rata → 15%</b>.</div>
+          <div class="card-lbl"><i class="ti ti-arrow-loop-right"></i> North star konversi</div>
+          <div class="card-body" style="font-size:12px">Retail WA: pulihkan dari <b class="fw-bold text-primary">16,7% → 30%+</b> (level April). B2B leads: naikkan dari <b class="fw-bold text-primary">8,2% rata-rata → 15%</b>.</div>
         </div>
         <div class="card">
-          <div class="card-lbl">North star awareness</div>
-          <div class="card-body" style="font-size:12px">TikTok CTR profil: <b style="font-weight:500;color:var(--color-text-primary)">0,23% → 1%</b>. Threads ER: <b style="font-weight:500;color:var(--color-text-primary)">0,25% → 1,5%</b>. FB retensi 1 menit: <b style="font-weight:500;color:var(--color-text-primary)">0,22% → 8%</b>.</div>
+          <div class="card-lbl"><i class="ti ti-eye"></i> North star awareness</div>
+          <div class="card-body" style="font-size:12px">TikTok CTR profil: <b class="fw-bold text-primary">0,23% → 1%</b>. Threads ER: <b class="fw-bold text-primary">0,25% → 1,5%</b>. FB retensi 1 menit: <b class="fw-bold text-primary">0,22% → 8%</b>.</div>
         </div>
       </div>
     </div>
@@ -1018,37 +1921,211 @@
     <!-- 02 PERSONA -->
     <div class="panel" id="p-persona" role="tabpanel">
       <div class="sec-eye">02</div>
-      <h2 class="sec-h2">Buyer Persona &amp; Prioritas — Ringkasan Kuantitatif</h2>
+      <h2 class="sec-h2">Buyer Persona &amp; Prioritas — Hub Interaktif</h2>
 
-      <div class="hl">4 persona dipetakan langsung ke 3 lini produk resmi: P2 (dokter senior) → Batik Tulis, P1+P3 → Batik Printing &amp; semi-tulis, P4 (gifter) → Printing/produk jadi. Seragaman B2B dijangkau lewat jalur institusi terpisah (Google Maps, founder network, IDI).</div>
+      <div class="hl">4 persona dipetakan langsung ke 3 lini produk resmi: P2 (dokter senior) → Batik Tulis, P1+P3 → Batik Printing &amp; semi-tulis, P4 (gifter) → Printing/produk jadi. Seragaman B2B dijangkau lewat jalur institusi terpisah. Di bawah ini adalah Hub Integratif yang menghubungkan profil, pesan utama, dan perjalanan pelanggan secara langsung.</div>
 
-      <div class="card">
-        <div class="card-lbl">P1 — Dokter Muda (25–32 thn) · Kontribusi ke Batik Printing &amp; Semi-Tulis</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:0.4rem 0 0.5rem"><span class="tag tp">AOV Rp350rb</span><span class="tag tn">Target 28 pcs/thn</span><span class="tag tn">Frekuensi 2–4x/thn</span><span class="tag tn">TikTok &amp; IG</span></div>
-        <div class="card-body" style="font-size:12px">Populasi: ±320K dokter umum, 18K lulusan baru/tahun. Channel utama TikTok (85% bobot) &amp; IG (75%). Kontribusi revenue ~Rp9,8jt/tahun, ~40% dari total B2C.</div>
-      </div>
+      <!-- INTERACTIVE PERSONA HUB -->
+      <div class="persona-hub">
+        <div class="persona-selector">
+          <button class="p-btn active p1" onclick="selectPersona('p1', this)" data-controls="ph-p1" aria-pressed="true">P1 · Dr. Muda</button>
+          <button class="p-btn p2" onclick="selectPersona('p2', this)" data-controls="ph-p2" aria-pressed="false">P2 · Dr. Senior</button>
+          <button class="p-btn p3" onclick="selectPersona('p3', this)" data-controls="ph-p3" aria-pressed="false">P3 · Mhs FK/Koas</button>
+          <button class="p-btn p4" onclick="selectPersona('p4', this)" data-controls="ph-p4" aria-pressed="false">P4 · Gifter</button>
+          <button class="p-btn b2b" onclick="selectPersona('b2b', this)" data-controls="ph-b2b" aria-pressed="false">B2B · Institusi</button>
+        </div>
 
-      <div class="card">
-        <div class="card-lbl">P2 — Dokter Senior/Spesialis (33–50 thn) · Kontribusi ke Batik Tulis</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:0.4rem 0 0.5rem"><span class="tag tt">AOV Rp1,35jt</span><span class="tag tn">Target 11 pcs/thn</span><span class="tag tn">Frekuensi 1–2x/thn</span><span class="tag tn">WA &amp; founder network</span></div>
-        <div class="card-body" style="font-size:12px">Populasi: ±50K spesialis aktif, 3.500 baru/tahun. Channel utama WA (90%) &amp; founder network (80%). Kontribusi revenue ~Rp14,9jt/tahun, ~35% dari total B2C — AOV tertinggi, paling sejalan dengan run-rate Batik Tulis 13,6 pcs/bln.</div>
-      </div>
+        <div class="persona-content">
+          <!-- P1 Panel -->
+          <div class="persona-panel active p1" id="ph-p1">
+            <div class="persona-columns">
+              <div class="card">
+                <div class="p-sub-title">Profil &amp; Finansial</div>
+                <div class="mb-sm">
+                  <span class="tag tp">AOV Rp350rb</span>
+                  <span class="tag tn">Target 28 pcs/thn</span>
+                  <span class="tag tn">Freq 2–4x/thn</span>
+                  <span class="tag tn">TikTok &amp; IG</span>
+                </div>
+                <div class="card-body" style="font-size:12px; padding:0">
+                  <p class="mb-sm"><b>Populasi:</b> ±320K dokter umum, 18K lulusan baru/tahun.</p>
+                  <p class="mb-sm"><b>Saluran Utama:</b> TikTok (85% bobot) &amp; IG (75%).</p>
+                  <p><b>Kontribusi:</b> Revenue ~Rp9,8jt/tahun, menyumbang ~40% dari total retail B2C.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="p-sub-title">Key Message (Pesan Utama)</div>
+                <div class="km-msg" style="font-size:13.5px">"Ada batik yang benar-benar ngerti dunia lo — karena yang bikinnya juga pernah di posisi yang sama."</div>
+                <div class="card-body" style="font-size:12px; padding:0; margin-top:0.5rem">
+                  <p><b>Bukti Pendukung:</b> Motif dari alumni FK, konten relatable kehidupan koas/internship.</p>
+                  <p class="mt-sm"><b>Target Metrik:</b> TikTok CTR profil 0,23% → 1%.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="p-sub-title">Customer Journey</div>
+                <div class="p-journey-list">
+                  <div class="p-journey-item"><span class="p-journey-stage">Aware</span><span class="p-journey-lbl">TikTok/IG:</span> 58K views (TikTok) + 18,8K views (IG)</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Interest</span><span class="p-journey-lbl">Profile visit:</span> 134 (TikTok 0,23%) + 592 (IG 3,1%)</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Consider</span><span class="p-journey-lbl">Klik WA:</span> 78 klik dari 592 profile visit IG (13,2%)</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Purchase</span><span class="p-journey-lbl">Closing WA:</span> 16,7–33,3% dari leads WA retail</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Advocate</span><span class="p-journey-lbl">Referral:</span> Target 1,5x referral multiplier</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <div class="card">
-        <div class="card-lbl">P3 — Mahasiswa FK/Koas (20–25 thn) · Awareness untuk Printing</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:0.4rem 0 0.5rem"><span class="tag ta">AOV Rp180rb</span><span class="tag tn">Target 17 pcs/thn</span><span class="tag tn">Viral multiplier 5–10x</span><span class="tag tn">TikTok FYP</span></div>
-        <div class="card-body" style="font-size:12px">Populasi: ±90K mahasiswa FK, 18K masuk/tahun. Kontribusi revenue kecil (~Rp3,1jt/tahun, 7%) tapi 1 share menjangkau 200–500 sejawat — investasi jangka panjang menjadi P1/P2.</div>
-      </div>
+          <!-- P2 Panel -->
+          <div class="persona-panel p2" id="ph-p2">
+            <div class="persona-columns">
+              <div class="card">
+                <div class="p-sub-title">Profil &amp; Finansial</div>
+                <div class="mb-sm">
+                  <span class="tag tt">AOV Rp1,35jt</span>
+                  <span class="tag tn">Target 11 pcs/thn</span>
+                  <span class="tag tn">Freq 1–2x/thn</span>
+                  <span class="tag tn">WA &amp; Network</span>
+                </div>
+                <div class="card-body" style="font-size:12px; padding:0">
+                  <p class="mb-sm"><b>Populasi:</b> ±50K spesialis aktif, 3.500 baru/tahun.</p>
+                  <p class="mb-sm"><b>Saluran Utama:</b> WA (90%) &amp; founder network (80%).</p>
+                  <p><b>Kontribusi:</b> Revenue ~Rp14,9jt/tahun, ~35% dari total B2C. AOV tertinggi, paling sejalan dengan run-rate Batik Tulis 13,6 pcs/bln.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="p-sub-title">Key Message (Pesan Utama)</div>
+                <div class="km-msg" style="font-size:13.5px">"Ini bukan sekadar batik — ini karya yang punya cerita, dibuat dengan tangan, dan motifnya akurat secara medis."</div>
+                <div class="card-body" style="font-size:12px; padding:0; margin-top:0.5rem">
+                  <p><b>Bukti Pendukung:</b> Proses canting, riset motif anatomi, nama pengrajin Laweyan/Sragen.</p>
+                  <p class="mt-sm"><b>Target Metrik:</b> Dorong run-rate Batik Tulis 13,6 pcs/bln.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="p-sub-title">Customer Journey</div>
+                <div class="p-journey-list">
+                  <div class="p-journey-item"><span class="p-journey-stage">Aware</span><span class="p-journey-lbl">Founder Network:</span> Rekomendasi rekan sejawat / IDI</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Interest</span><span class="p-journey-lbl">Event tatap muka:</span> ISMOAC 2026 (dr. Rine &amp; dr. Tjahya)</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Consider</span><span class="p-journey-lbl">Direct WA:</span> CS konsultasi ukuran / motif anatomi</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Purchase</span><span class="p-journey-lbl">Direct Closing:</span> Transaksi pameran / transfer bank</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Advocate</span><span class="p-journey-lbl">Offline Share:</span> Dipakai di kongres medis, memicu word-of-mouth</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <div class="card">
-        <div class="card-lbl">P4 — Gifter &amp; Keluarga Nakes · Konversi Tertinggi, Underserved</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:0.4rem 0 0.5rem"><span class="tag tc">AOV Rp450rb</span><span class="tag tn">Target 10 pcs/thn</span><span class="tag tn">Konversi 60–70%</span><span class="tag tn">Google &amp; WA</span></div>
-        <div class="card-body" style="font-size:12px">Konversi inquiry→beli tertinggi dari semua segmen (60–70% vs rata-rata retail 25,6%). Kontribusi ~Rp4,5jt/tahun (11%). Saat ini tidak ada dedicated gifting flow — quick win konversi tinggi dengan effort rendah.</div>
-      </div>
+          <!-- P3 Panel -->
+          <div class="persona-panel p3" id="ph-p3">
+            <div class="persona-columns">
+              <div class="card">
+                <div class="p-sub-title">Profil &amp; Finansial</div>
+                <div class="mb-sm">
+                  <span class="tag ta">AOV Rp180rb</span>
+                  <span class="tag tn">Target 17 pcs/thn</span>
+                  <span class="tag tn">Freq Multiplier</span>
+                  <span class="tag tn">TikTok FYP</span>
+                </div>
+                <div class="card-body" style="font-size:12px; padding:0">
+                  <p class="mb-sm"><b>Populasi:</b> ±90K mahasiswa FK, 18K masuk/tahun.</p>
+                  <p class="mb-sm"><b>Saluran Utama:</b> TikTok FYP (95%).</p>
+                  <p><b>Kontribusi:</b> Kontribusi revenue kecil (~Rp3,1jt/tahun, 7%) tapi 1 share menjangkau 200–500 sejawat (awareness multiplier tinggi). Investasi jangka panjang menjadi P1/P2.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="p-sub-title">Key Message (Pesan Utama)</div>
+                <div class="km-msg" style="font-size:13.5px">"Jadi calon dokter itu susah — setidaknya ada satu hal yang bisa bikin lo bangga di tengah semua itu."</div>
+                <div class="card-body" style="font-size:12px; padding:0; margin-top:0.5rem">
+                  <p><b>Bukti Pendukung:</b> Konten relatable stase/jaga/ujian, entry point Rp99rb.</p>
+                  <p class="mt-sm"><b>Target Metrik:</b> Viral multiplier 5–10x untuk awareness Printing.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="p-sub-title">Customer Journey</div>
+                <div class="p-journey-list">
+                  <div class="p-journey-item"><span class="p-journey-stage">Aware</span><span class="p-journey-lbl">TikTok Search/FYP:</span> Menemukan video tren stase koas</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Interest</span><span class="p-journey-lbl">Profile view &amp; Save:</span> Menyimpan video produk/filosofi</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Consider</span><span class="p-journey-lbl">Shopee/Tokped:</span> Memasukkan keranjang belanja</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Purchase</span><span class="p-journey-lbl">Self-Buy/Gifting:</span> Membeli kemeja printing / aksesoris</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Advocate</span><span class="p-journey-lbl">UGC Share:</span> Post foto di lingkungan FK, mention brand</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <div class="card">
-        <div class="card-lbl">B2B Institusi — Seragaman Sejawat (di luar 4 persona B2C)</div>
-        <div class="card-body" style="font-size:12px">73 leads (Apr+Mei) → 6 closing = <b style="font-weight:500;color:var(--color-text-primary)">8,2% konversi rata-rata</b>, avg deal size ~545m. Channel masuk dominan: <b style="font-weight:500;color:var(--color-text-primary)">Google Maps</b> (custom &amp; seragaman), founder network, sales outreach (168 email + 288 DM IG + 17 WA + 50 komentar/bulan, hanya 5,2% respons DM IG). Target run-rate: 1.117m/bln membutuhkan ~2 closing/bln di avg deal size saat ini, atau konversi naik ke 12–15% pada volume leads yang sama.</div>
+          <!-- P4 Panel -->
+          <div class="persona-panel p4" id="ph-p4">
+            <div class="persona-columns">
+              <div class="card">
+                <div class="p-sub-title">Profil &amp; Finansial</div>
+                <div class="mb-sm">
+                  <span class="tag tc">AOV Rp450rb</span>
+                  <span class="tag tn">Target 10 pcs/thn</span>
+                  <span class="tag tn">Conv 60–70%</span>
+                  <span class="tag tn">Google &amp; WA</span>
+                </div>
+                <div class="card-body" style="font-size:12px; padding:0">
+                  <p class="mb-sm"><b>Populasi:</b> Keluarga/pasangan nakes &amp; institusi penyuplai kado.</p>
+                  <p class="mb-sm"><b>Saluran Utama:</b> Google Search &amp; WhatsApp.</p>
+                  <p><b>Kontribusi:</b> ~Rp4,5jt/tahun (11%). Konversi inquiry→beli tertinggi (60–70% vs retail 25,6%). Saat ini tidak ada dedicated gifting flow — quick win konversi tinggi dengan effort rendah.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="p-sub-title">Key Message (Pesan Utama)</div>
+                <div class="km-msg" style="font-size:13.5px">"Kasih hadiah yang menunjukkan kamu benar-benar mengerti betapa kerasnya dia berjuang menjadi dokter."</div>
+                <div class="card-body" style="font-size:12px; padding:0; margin-top:0.5rem">
+                  <p><b>Bukti Pendukung:</b> Panduan motif per spesialisasi medis, packaging premium exclusive.</p>
+                  <p class="mt-sm"><b>Target Metrik:</b> Luncurkan dedicated gifting flow untuk konversi maksimal.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="p-sub-title">Customer Journey</div>
+                <div class="p-journey-list">
+                  <div class="p-journey-item"><span class="p-journey-stage">Aware</span><span class="p-journey-lbl">Google Search:</span> Mencari kata kunci "kado untuk dokter"</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Interest</span><span class="p-journey-lbl">Website/IG:</span> Masuk ke landing page hadiah premium</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Consider</span><span class="p-journey-lbl">WA Consultation:</span> Minta rekomendasi motif spesialisasi</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Purchase</span><span class="p-journey-lbl">Closing WA:</span> Konversi cepat 60–70% dengan packaging</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Advocate</span><span class="p-journey-lbl">Feedback:</span> Mengirimkan foto unboxing kado premium</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B2B Panel -->
+          <div class="persona-panel b2b" id="ph-b2b">
+            <div class="persona-columns">
+              <div class="card">
+                <div class="p-sub-title">Profil &amp; Finansial</div>
+                <div class="mb-sm">
+                  <span class="tag tg">AOV High (B2B)</span>
+                  <span class="tag tn">Target 10K m/thn</span>
+                  <span class="tag tn">Conv 8.2% avg</span>
+                  <span class="tag tn">Google Maps &amp; Sales</span>
+                </div>
+                <div class="card-body" style="font-size:12px; padding:0">
+                  <p class="mb-sm"><b>Populasi:</b> Rumah Sakit, Fakultas Kedokteran, Asosiasi IDI regional.</p>
+                  <p class="mb-sm"><b>Saluran Utama &amp; Aktivitas:</b> Dominan Google Maps, founder network, dan sales outreach (168 email + 288 DM IG + 17 WA + 50 komentar/bulan, hanya 5,2% respons DM IG).</p>
+                  <p><b>Kontribusi &amp; Analisis:</b> 80%+ revenue bisnis. 73 leads (Apr+Mei) → 6 closing = 8,2% konversi, avg deal size ~545m. Target run-rate 1.117m/bln membutuhkan ~2 closing/bln pada avg deal size saat ini, atau konversi naik ke 12–15% pada volume leads yang sama.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="p-sub-title">Key Message (Pesan Utama)</div>
+                <div class="km-msg" style="font-size:13.5px">"Seragam yang membawa identitas institusi sekaligus warisan budaya — dikerjakan oleh tim yang memahami kebutuhan medis dari dalam."</div>
+                <div class="card-body" style="font-size:12px; padding:0; margin-top:0.5rem">
+                  <p><b>Bukti Pendukung:</b> Portofolio seragaman RS/FK UNS, rekomendasi resmi IDI.</p>
+                  <p class="mt-sm"><b>Target Metrik:</b> Optimasi Google Maps untuk dorong run-rate 1.117m/bln.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="p-sub-title">Customer Journey</div>
+                <div class="p-journey-list">
+                  <div class="p-journey-item"><span class="p-journey-stage">Aware</span><span class="p-journey-lbl">Google Maps/Ref:</span> Menemukan produsen batik medis</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Interest</span><span class="p-journey-lbl">Inquiry WA:</span> Mengirim spesifikasi awal &amp; volume seragam</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Consider</span><span class="p-journey-lbl">Proposal &amp; Sampel:</span> Negosiasi penawaran, review sampel kain</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Purchase</span><span class="p-journey-lbl">Contract Signed:</span> Purchase Order (MTQ Kalbar, LARS DHP)</div>
+                  <div class="p-journey-item"><span class="p-journey-stage">Advocate</span><span class="p-journey-lbl">Re-order:</span> Kontrak jangka panjang untuk residen baru</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1059,7 +2136,66 @@
 
       <div class="hl">Setiap tahap funnel sudah punya angka aktual. Target di kolom kanan adalah target 12 bulan berdasarkan benchmark realistis dari channel sejenis.</div>
 
-      <div class="card-lbl" style="margin-bottom:0.5rem">Funnel TikTok — Discovery (60 hari terakhir)</div>
+      <!-- FUNNEL SIMULATOR BOX -->
+      <div class="funnel-simulator card">
+        <div class="rr-controller-header">
+          <div class="rr-ctrl-title"><i class="ti ti-adjustments-horizontal"></i> Simulator Dampak Perbaikan Funnel (B2C)</div>
+          <div class="rr-ctrl-desc">Aktifkan rekomendasi perbaikan di bawah untuk mensimulasikan peningkatan performa funnel terhadap leads WA dan revenue retail B2C bulanan.</div>
+        </div>
+        <div class="sim-options">
+          <label class="sim-option">
+            <input type="checkbox" id="sim-opt-cs" class="sim-checkbox">
+            <span class="sim-label-text">
+              <strong>Optimalkan WA CS</strong> (Memulihkan conversion rate retail WA dari 16.7% ke 30.0%)
+            </span>
+          </label>
+          <label class="sim-option">
+            <input type="checkbox" id="sim-opt-tiktok" class="sim-checkbox">
+            <span class="sim-label-text">
+              <strong>CTA Cliffhanger TikTok</strong> (Meningkatkan profil CTR dari 0.23% ke 1.00%, menambah +22 leads WA/bln)
+            </span>
+          </label>
+          <label class="sim-option">
+            <input type="checkbox" id="sim-opt-ig" class="sim-checkbox">
+            <span class="sim-label-text">
+              <strong>Optimasi Link Profil Instagram</strong> (Meningkatkan profil-ke-WA click dari 13.2% ke 18.0%, menambah +28 leads WA/bln)
+            </span>
+          </label>
+        </div>
+        
+        <div class="sim-result">
+          <div class="sim-result-title">Hasil Simulasi Bulanan:</div>
+          <div class="sim-metrics-grid">
+            <div class="sim-metric-card">
+              <span class="sim-metric-label">Total Leads WA</span>
+              <span class="sim-metric-value" id="sim-val-leads">18 leads</span>
+              <span class="sim-metric-delta text-muted" id="sim-delta-leads">Status Quo</span>
+            </div>
+            <div class="sim-metric-card">
+              <span class="sim-metric-label">Transaksi Retail</span>
+              <span class="sim-metric-value" id="sim-val-sales">3.0 order</span>
+              <span class="sim-metric-delta text-muted" id="sim-delta-sales">Status Quo</span>
+            </div>
+            <div class="sim-metric-card">
+              <span class="sim-metric-label">Revenue B2C</span>
+              <span class="sim-metric-value" id="sim-val-rev">Rp 1.47 Jt</span>
+              <span class="sim-metric-delta text-muted" id="sim-delta-rev">Status Quo</span>
+            </div>
+          </div>
+          
+          <div class="sim-progress-wrap">
+            <div class="sim-progress-labels">
+              <span>Progress Target Stabilisasi Cashflow B2C (Rp2.69 Jt/bln)</span>
+              <span id="sim-progress-pct" class="fw-bold">55%</span>
+            </div>
+            <div class="sim-progress-bar">
+              <div class="sim-progress-fill" id="sim-progress-fill" style="width: 55%; background: var(--color-coral)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-lbl mb-sm"><i class="ti ti-brand-tiktok"></i> Funnel TikTok — Discovery (60 hari terakhir)</div>
       <div class="funnel-wrap">
         <div class="fs">
           <div class="fnum fn1">1</div>
@@ -1087,7 +2223,7 @@
         </div>
       </div>
 
-      <div class="card-lbl" style="margin-bottom:0.5rem">Funnel Instagram — Trust &amp; Consideration (30 hari terakhir)</div>
+      <div class="card-lbl mb-sm"><i class="ti ti-brand-instagram"></i> Funnel Instagram — Trust &amp; Consideration (30 hari terakhir)</div>
       <div class="funnel-wrap">
         <div class="fs">
           <div class="fnum fn1">1</div>
@@ -1115,7 +2251,7 @@
         </div>
       </div>
 
-      <div class="card-lbl" style="margin-bottom:0.5rem">Funnel WhatsApp — Closing Retail vs B2B (Apr–Mei 2026)</div>
+      <div class="card-lbl mb-sm"><i class="ti ti-brand-whatsapp"></i> Funnel WhatsApp — Closing Retail vs B2B (Apr–Mei 2026)</div>
       <div class="funnel-wrap">
         <div class="fs">
           <div class="fnum fn1">1</div>
@@ -1139,16 +2275,16 @@
             <div class="ft">Response time &amp; rate</div>
             <div class="fd">Response rate 100%, avg 10–20 menit — ini sudah excellent dan harus dipertahankan sebagai standar SOP.</div>
           </div>
-          <div class="fm fm-now" style="color:var(--gr)">100% / 10–20m</div>
+          <div class="fm fm-now" style="color:var(--color-forest)">100% / 10–20m</div>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-lbl">Kebocoran terbesar — diurutkan berdasarkan dampak ke revenue</div>
-        <div style="display:flex;flex-direction:column;gap:6px;margin-top:0.5rem">
-          <div style="font-size:12px;color:var(--color-text-secondary);padding-left:12px;position:relative;line-height:1.5"><span style="position:absolute;left:0;color:var(--re)">1</span><b style="font-weight:500;color:var(--color-text-primary)">Retail WA conversion 33,3%→16,7% (Apr→Mei):</b> Jika konversi Mei kembali to level April pada 18 leads, closing naik dari 3 ke 6 — dampak langsung ke run-rate Printing &amp; Batik Tulis.</div>
-          <div style="font-size:12px;color:var(--color-text-secondary);padding-left:12px;position:relative;line-height:1.5"><span style="position:absolute;left:0;color:var(--re)">2</span><b style="font-weight:500;color:var(--color-text-primary)">TikTok CTR 0,23%:</b> Jika naik ke 1% pada volume 58K views/60hr, profile visit naik dari 134 ke ~580 — 4,3x lipat top-of-funnel IG.</div>
-          <div style="font-size:12px;color:var(--color-text-secondary);padding-left:12px;position:relative;line-height:1.5"><span style="position:absolute;left:0;color:var(--am)">3</span><b style="font-weight:500;color:var(--color-text-primary)">IG profile visit→WA click 13,2%:</b> Naik ke 18% pada 592 visit = +39 klik WA tambahan/bulan tanpa traffic baru.</div>
+        <div class="card-lbl"><i class="ti ti-alert-triangle"></i> Kebocoran terbesar — diurutkan berdasarkan dampak ke revenue</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:0.5rem">
+          <div style="font-size:12.5px;color:var(--color-text-secondary);padding-left:18px;position:relative;line-height:1.55"><span style="position:absolute;left:0;font-weight:800;color:var(--color-warning-red)">1</span><b class="fw-bold text-primary">Retail WA conversion 33,3%→16,7% (Apr→Mei):</b> Jika konversi Mei kembali to level April pada 18 leads, closing naik dari 3 ke 6 — dampak langsung ke run-rate Printing &amp; Batik Tulis.</div>
+          <div style="font-size:12.5px;color:var(--color-text-secondary);padding-left:18px;position:relative;line-height:1.55"><span style="position:absolute;left:0;font-weight:800;color:var(--color-warning-red)">2</span><b class="fw-bold text-primary">TikTok CTR 0,23%:</b> Jika naik ke 1% pada volume 58K views/60hr, profile visit naik dari 134 ke ~580 — 4,3x lipat top-of-funnel IG.</div>
+          <div style="font-size:12.5px;color:var(--color-text-secondary);padding-left:18px;position:relative;line-height:1.55"><span style="position:absolute;left:0;font-weight:800;color:var(--color-coral)">3</span><b class="fw-bold text-primary">IG profile visit→WA click 13,2%:</b> Naik ke 18% pada 592 visit = +39 klik WA tambahan/bulan tanpa traffic baru.</div>
         </div>
       </div>
     </div>
@@ -1159,80 +2295,80 @@
       <h2 class="sec-h2">Channel Scorecard — Metrik Aktual vs Target</h2>
 
       <div class="scorecard">
-        <div class="sc-head"><span class="sc-name">TikTok</span><span class="sc-role">Discovery — Prioritas 1</span></div>
+        <div class="sc-head"><span class="sc-name"><i class="ti ti-brand-tiktok" style="color:var(--color-primary)"></i> TikTok</span><span class="sc-role">Discovery — Prioritas 1</span></div>
         <div class="sc-metrics">
           <div class="sc-metric"><div class="sc-metric-lbl">Views (60 hari)</div><div class="sc-metric-val">58.000</div><div class="sc-metric-target">target: 100.000+</div></div>
           <div class="sc-metric"><div class="sc-metric-lbl">Traffic dari Search</div><div class="sc-metric-val">97,6%</div><div class="sc-metric-target">pertahankan SEO</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">CTR ke Profil</div><div class="sc-metric-val">0,23%</div><div class="sc-metric-target">target: 1%</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Demografi P/L</div><div class="sc-metric-val">87% / 13%</div><div class="sc-metric-target">seimbangkan ke 60/40</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">CTR ke Profil</div><div class="sc-metric-val" style="color:var(--color-warning-red)">0,23%</div><div class="sc-metric-target">target: 1%</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Demografi P/L</div><div class="sc-metric-val">87% / 13%</div><div class="sc-metric-target">seimbangkan 60/40</div></div>
         </div>
-        <div class="card-body" style="font-size:11px">Aksi kuantitatif: tambah cliffhanger CTA di akhir setiap video → target CTR 1% = 580 profile visit/60hr (4,3x lipat).</div>
+        <div class="card-body" style="font-size:11.5px; margin-top: 0.5rem"><b>Aksi kuantitatif:</b> tambah cliffhanger CTA di akhir setiap video → target CTR 1% = 580 profile visit/60hr (4,3x lipat).</div>
       </div>
 
       <div class="scorecard">
-        <div class="sc-head"><span class="sc-name">Instagram</span><span class="sc-role">Trust Builder — Prioritas 2</span></div>
+        <div class="sc-head"><span class="sc-name"><i class="ti ti-brand-instagram" style="color:var(--color-teal)"></i> Instagram</span><span class="sc-role">Trust Builder — Prioritas 2</span></div>
         <div class="sc-metrics">
           <div class="sc-metric"><div class="sc-metric-lbl">Views (30 hari)</div><div class="sc-metric-val">18.837</div><div class="sc-metric-target">target: 25.000+</div></div>
           <div class="sc-metric"><div class="sc-metric-lbl">Reach non-follower</div><div class="sc-metric-val">61,1%</div><div class="sc-metric-target">pertahankan</div></div>
           <div class="sc-metric"><div class="sc-metric-lbl">Profile Visit Rate</div><div class="sc-metric-val">3,1%</div><div class="sc-metric-target">target: 5%</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Klik WA / Profile Visit</div><div class="sc-metric-val">13,2%</div><div class="sc-metric-target">target: 18%</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Klik WA / Profile Visit</div><div class="sc-metric-val" style="color:var(--color-warning-red)">13,2%</div><div class="sc-metric-target">target: 18%</div></div>
         </div>
-        <div class="card-body" style="font-size:11px">Posting jam 21.00–22.00 WIB (waktu aktif puncak nakes: 12 malam = 2.885, 3 pagi = 3.076 interaksi). Highlight per spesialisasi medis.</div>
+        <div class="card-body" style="font-size:11.5px; margin-top: 0.5rem"><b>Aksi kuantitatif:</b> Posting jam 21.00–22.00 WIB (waktu aktif puncak nakes: 12 malam = 2.885, 3 pagi = 3.076 interaksi). Highlight per spesialisasi medis.</div>
       </div>
 
       <div class="scorecard">
-        <div class="sc-head"><span class="sc-name">Threads</span><span class="sc-role">Conversation — Prioritas 4</span></div>
+        <div class="sc-head"><span class="sc-name"><i class="ti ti-brand-threads" style="color:var(--color-coral)"></i> Threads</span><span class="sc-role">Conversation — Prioritas 4</span></div>
         <div class="sc-metrics">
           <div class="sc-metric"><div class="sc-metric-lbl">Total Views</div><div class="sc-metric-val">16.800</div><div class="sc-metric-target">followers: 1.339</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Engagement Rate</div><div class="sc-metric-val">0,25%</div><div class="sc-metric-target">target: 1,5%</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Engagement Rate</div><div class="sc-metric-val" style="color:var(--color-warning-red)">0,25%</div><div class="sc-metric-target">target: 1,5%</div></div>
           <div class="sc-metric"><div class="sc-metric-lbl">Total Interaksi</div><div class="sc-metric-val">42</div><div class="sc-metric-target">target: 250 (6x)</div></div>
           <div class="sc-metric"><div class="sc-metric-lbl">Top post views</div><div class="sc-metric-val">220</div><div class="sc-metric-target">format: poll/hot-take</div></div>
         </div>
-        <div class="card-body" style="font-size:11px">16.800 views dengan 42 interaksi = "ghost town" — konten dilihat tapi diabaikan. Beralih total ke format poll, pertanyaan terbuka, dan thread cerita bersambung.</div>
+        <div class="card-body" style="font-size:11.5px; margin-top: 0.5rem"><b>Aksi kuantitatif:</b> 16.800 views dengan 42 interaksi = "ghost town" — konten dilihat tapi diabaikan. Beralih total ke format poll, pertanyaan terbuka, dan thread cerita bersambung.</div>
       </div>
 
       <div class="scorecard">
-        <div class="sc-head"><span class="sc-name">Facebook</span><span class="sc-role">Reels Growth — Prioritas 4</span></div>
+        <div class="sc-head"><span class="sc-name"><i class="ti ti-brand-facebook" style="color:var(--color-primary)"></i> Facebook</span><span class="sc-role">Reels Growth — Prioritas 4</span></div>
         <div class="sc-metrics">
-          <div class="sc-metric"><div class="sc-metric-lbl">Reels growth</div><div class="sc-metric-val">+550%</div><div class="sc-metric-target">format terbaik</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Reels growth</div><div class="sc-metric-val" style="color:var(--color-forest)">+550%</div><div class="sc-metric-target">format terbaik</div></div>
           <div class="sc-metric"><div class="sc-metric-lbl">3-sec retention</div><div class="sc-metric-val">23,7%</div><div class="sc-metric-target">217/917 views</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">1-min retention</div><div class="sc-metric-val">0,22%</div><div class="sc-metric-target">target: 8–10%</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Demografi emas</div><div class="sc-metric-val">25–44 thn: 67%</div><div class="sc-metric-target">57% pria</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">1-min retention</div><div class="sc-metric-val" style="color:var(--color-warning-red)">0,22%</div><div class="sc-metric-target">target: 8–10%</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Demografi emas</div><div class="sc-metric-val">25-44 thn: 67%</div><div class="sc-metric-target">57% pria</div></div>
         </div>
-        <div class="card-body" style="font-size:11px">Demografi paling matched dengan P2 (dokter spesialis muda/residen). Potong durasi Reels ke 15–20 detik, ganti visual setiap 1,5–2 detik untuk naikkan retensi 1 menit dari 0,22% ke target 8%.</div>
+        <div class="card-body" style="font-size:11.5px; margin-top: 0.5rem"><b>Aksi kuantitatif:</b> Demografi paling matched dengan P2 (dokter spesialis muda/residen). Potong durasi Reels ke 15–20 detik, ganti visual setiap 1,5–2 detik untuk naikkan retensi 1 menit dari 0,22% ke target 8%.</div>
       </div>
 
       <div class="scorecard">
-        <div class="sc-head"><span class="sc-name">WhatsApp</span><span class="sc-role">Closing — Prioritas 3</span></div>
+        <div class="sc-head"><span class="sc-name"><i class="ti ti-brand-whatsapp" style="color:var(--color-teal)"></i> WhatsApp</span><span class="sc-role">Closing — Prioritas 3</span></div>
         <div class="sc-metrics">
-          <div class="sc-metric"><div class="sc-metric-lbl">Response rate</div><div class="sc-metric-val">100%</div><div class="sc-metric-target">pertahankan</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Response time</div><div class="sc-metric-val">10–20 mnt</div><div class="sc-metric-target">pertahankan</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Response rate</div><div class="sc-metric-val" style="color:var(--color-forest)">100%</div><div class="sc-metric-target">pertahankan</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Response time</div><div class="sc-metric-val" style="color:var(--color-forest)">10–20 mnt</div><div class="sc-metric-target">pertahankan</div></div>
           <div class="sc-metric"><div class="sc-metric-lbl">Retail conversion</div><div class="sc-metric-val">16,7–33,3%</div><div class="sc-metric-target">target: 30%+ stabil</div></div>
           <div class="sc-metric"><div class="sc-metric-lbl">B2B conversion</div><div class="sc-metric-val">8–8,7%</div><div class="sc-metric-target">target: 15%</div></div>
         </div>
-        <div class="card-body" style="font-size:11px">Risiko: broadcast blast Hari Kartini menyebabkan banned massal. Wajib segmentasi manual (&lt;50 kontak/batch) atau migrasi WA Business API.</div>
+        <div class="card-body" style="font-size:11.5px; margin-top: 0.5rem"><b>Risiko:</b> broadcast blast Hari Kartini menyebabkan banned massal. Wajib segmentasi manual (&lt;50 kontak/batch) atau migrasi WA Business API.</div>
       </div>
 
       <div class="scorecard">
-        <div class="sc-head"><span class="sc-name">Google Maps</span><span class="sc-role">B2B &amp; Custom Driver — Prioritas 1 untuk B2B</span></div>
+        <div class="sc-head"><span class="sc-name"><i class="ti ti-map-pin" style="color:var(--color-gold)"></i> Google Maps</span><span class="sc-role">B2B &amp; Custom Driver — Prioritas 1 untuk B2B</span></div>
         <div class="sc-metrics">
-          <div class="sc-metric"><div class="sc-metric-lbl">Status optimasi</div><div class="sc-metric-val">Minimal</div><div class="sc-metric-target">perlu overhaul</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Kontribusi B2B</div><div class="sc-metric-val">Mayoritas</div><div class="sc-metric-target">channel intent tertinggi</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Foto produk</div><div class="sc-metric-val">Outdated</div><div class="sc-metric-target">target: 15+ foto baru</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Review</div><div class="sc-metric-val">Minim</div><div class="sc-metric-target">target: +10 review</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Status optimasi</div><div class="sc-metric-val" style="color:var(--color-warning-red)">Minimal</div><div class="sc-metric-target">perlu overhaul</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Kontribusi B2B</div><div class="sc-metric-val">Mayoritas</div><div class="sc-metric-target">intent tertinggi</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Foto produk</div><div class="sc-metric-val" style="color:var(--color-warning-red)">Outdated</div><div class="sc-metric-target">target: 15+ baru</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Review</div><div class="sc-metric-val" style="color:var(--color-warning-red)">Minim</div><div class="sc-metric-target">target: +10 review</div></div>
         </div>
-        <div class="card-body" style="font-size:11px">Channel dengan ROI tertinggi per jam — mayoritas order custom &amp; seragaman datang dari sini, tapi nyaris tidak dioptimasi. Quick win terbesar untuk run-rate Seragaman 1.117m/bln.</div>
+        <div class="card-body" style="font-size:11.5px; margin-top: 0.5rem"><b>Aksi kuantitatif:</b> Channel dengan ROI tertinggi per jam — mayoritas order custom &amp; seragaman datang dari sini, tapi nyaris tidak dioptimasi. Quick win terbesar untuk run-rate Seragaman 1.117m/bln.</div>
       </div>
 
       <div class="scorecard">
-        <div class="sc-head"><span class="sc-name">Website &amp; Marketplace</span><span class="sc-role">Konversi &amp; Distribusi — Prioritas 5</span></div>
+        <div class="sc-head"><span class="sc-name"><i class="ti ti-world" style="color:var(--color-coral)"></i> Website &amp; Marketplace</span><span class="sc-role">Konversi &amp; Distribusi — Prioritas 5</span></div>
         <div class="sc-metrics">
-          <div class="sc-metric"><div class="sc-metric-lbl">CRO issue</div><div class="sc-metric-val">3 kritis</div><div class="sc-metric-target">headline, tombol WA, sold-out</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Sold-out → waiting list</div><div class="sc-metric-val">Belum ada</div><div class="sc-metric-target">tangkap leads WA</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Shopee/Tokped</div><div class="sc-metric-val">Terisolasi</div><div class="sc-metric-target">integrasikan ke database</div></div>
-          <div class="sc-metric"><div class="sc-metric-lbl">Menu B2B</div><div class="sc-metric-val">Belum ada</div><div class="sc-metric-target">"Corporate Order" page</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">CRO issue</div><div class="sc-metric-val" style="color:var(--color-warning-red)">3 kritis</div><div class="sc-metric-target">headline, tombol, soldout</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Sold-out → WL</div><div class="sc-metric-val" style="color:var(--color-warning-red)">Belum ada</div><div class="sc-metric-target">tangkap leads WA</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Shopee/Tokped</div><div class="sc-metric-val">Terisolasi</div><div class="sc-metric-target">integrasi database</div></div>
+          <div class="sc-metric"><div class="sc-metric-lbl">Menu B2B</div><div class="sc-metric-val" style="color:var(--color-warning-red)">Belum ada</div><div class="sc-metric-target">"Corporate Order"</div></div>
         </div>
-        <div class="card-body" style="font-size:11px">3 perbaikan minimum: headline value proposition, tombol WA solid/sticky, dan menu khusus Seragaman Instansi dengan portofolio RS.</div>
+        <div class="card-body" style="font-size:11.5px; margin-top: 0.5rem"><b>Aksi kuantitatif:</b> 3 perbaikan minimum: headline value proposition, tombol WA solid/sticky, dan menu khusus Seragaman Instansi dengan portofolio RS.</div>
       </div>
     </div>
 
@@ -1255,17 +2391,17 @@
 
       <div class="g2">
         <div class="card">
-          <div class="card-lbl">Journey P2 — Dokter Senior (offline-heavy)</div>
-          <div class="card-body" style="font-size:12px">Bukti nyata dari ISMOAC 2026: dr. Rine M (2,5m) &amp; dr. Tjahya (25m) closing cash langsung di pameran — tanpa funnel digital sama sekali. Channel: founder network → WA langsung → evaluasi 1–3 minggu → closing. <b style="font-weight:500;color:var(--color-text-primary)">Konversi event tatap muka jauh lebih tinggi dari 5,2% respons DM IG.</b></div>
+          <div class="card-lbl"><i class="ti ti-user-circle"></i> Journey P2 — Dokter Senior (offline-heavy)</div>
+          <div class="card-body">Bukti nyata dari ISMOAC 2026: dr. Rine M (2,5m) &amp; dr. Tjahya (25m) closing cash langsung di pameran — tanpa funnel digital sama sekali. Channel: founder network → WA langsung → evaluasi 1–3 minggu → closing. <b class="fw-bold text-primary">Konversi event tatap muka jauh lebih tinggi dari 5,2% respons DM IG.</b></div>
         </div>
         <div class="card">
-          <div class="card-lbl">Journey P4 — Gifter (paling efisien)</div>
-          <div class="card-body" style="font-size:12px">Google search → website/IG → DM WA minta panduan motif → closing. Konversi 60–70% — <b style="font-weight:500;color:var(--color-text-primary)">2,3x lebih tinggi</b> dari rata-rata retail (25,6%). Saat ini tidak ada dedicated landing page atau highlight gifting.</div>
+          <div class="card-lbl"><i class="ti ti-gift"></i> Journey P4 — Gifter (paling efisien)</div>
+          <div class="card-body">Google search → website/IG → DM WA minta panduan motif → closing. Konversi 60–70% — <b class="fw-bold text-primary">2,3x lebih tinggi</b> dari rata-rata retail (25,6%). Saat ini tidak ada dedicated landing page atau highlight gifting.</div>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-lbl">Journey Institusi B2B — Seragaman (jalur tertinggi nilai)</div>
+        <div class="card-lbl"><i class="ti ti-building-hospital"></i> Journey Institusi B2B — Seragaman (jalur tertinggi nilai)</div>
         <div class="card-body">Google Maps/referral → kontak WA/sales → 73 leads (Apr+Mei) → 13 prospek lanjut → 6 closing (8,2%) → avg deal 545m. Pipeline tertahan: MTQ Kalbar 2.500m + LARS DHP 600m (3.100m, setara hampir 3 bulan run-rate) berstatus HOLD menunggu approval internal instansi — perlu follow-up terjadwal, bukan menunggu pasif.</div>
       </div>
     </div>
@@ -1275,24 +2411,24 @@
       <div class="sec-eye">06</div>
       <h2 class="sec-h2">Strategi Inti — Berbasis Bukti Data</h2>
 
-      <div class="card" style="border-left:4px solid var(--pu);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0">
-        <div class="card-lbl" style="color:var(--pu)">Strategi 1 — Tutup Kebocoran Sebelum Tambah Traffic</div>
+      <div class="card" style="border-left:4px solid var(--color-primary);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0">
+        <div class="card-lbl" style="color:var(--color-primary)"><i class="ti ti-droplet-half-2"></i> Strategi 1 — Tutup Kebocoran Sebelum Tambah Traffic</div>
         <div class="card-body">Data menunjukkan masalah terbesar bukan kekurangan views (TikTok 58K, IG 18,8K sudah cukup besar) — tapi kebocoran konversi: TikTok CTR 0,23%, IG profile→WA 13,2%, retail WA conversion turun ke 16,7%. Menambah produksi konten tanpa menutup kebocoran ini = membuang energi tim. Prioritas: CTA cliffhanger, perbaikan highlight IG, audit SOP follow-up CS — semua effort rendah, dampak langsung terukur.</div>
       </div>
 
-      <div class="card" style="border-left:4px solid var(--te);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0">
-        <div class="card-lbl" style="color:var(--te)">Strategi 2 — Google Maps &amp; Offline Event sebagai Mesin B2B</div>
+      <div class="card" style="border-left:4px solid var(--color-teal);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0">
+        <div class="card-lbl" style="color:var(--color-teal)"><i class="ti ti-map-pin"></i> Strategi 2 — Google Maps &amp; Offline Event sebagai Mesin B2B</div>
         <div class="card-body">Dua channel dengan konversi tertinggi (Google Maps untuk seragaman, tatap muka di event medis untuk retail — bukti ISMOAC) justru paling tidak terdigitalisasi dan paling sedikit effort yang dialokasikan. Sementara 288 DM IG hanya 5,2% respons. Alokasikan ulang effort sales dari volume outreach digital ke optimasi Google Maps + partisipasi event medis terjadwal.</div>
       </div>
 
-      <div class="card" style="border-left:4px solid var(--am);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0">
-        <div class="card-lbl" style="color:var(--am)">Strategi 3 — Medical Heritage sebagai Differentiator di Setiap Konten</div>
+      <div class="card" style="border-left:4px solid var(--color-gold);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0">
+        <div class="card-lbl" style="color:var(--color-gold)"><i class="ti ti-dna"></i> Strategi 3 — Medical Heritage sebagai Differentiator di Setiap Konten</div>
         <div class="card-body">Skor Medical Branding dari desainer hanya 6,5/10 vs Heritage 8,5/10 — feed sudah premium tapi belum "kedokteran". Setiap konten produk wajib: close-up motif organ + 1 kalimat konteks medis/FK UNS. Target: naikkan skor Medical Branding ke 8+ dalam 2 bulan, sambil mempertahankan skor Heritage.</div>
       </div>
 
-      <div class="card" style="border-left:4px solid var(--co);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0">
-        <div class="card-lbl" style="color:var(--co)">Strategi 4 — Diversifikasi Revenue untuk Stabilitas Cashflow</div>
-        <div class="card-body">Target B2C 66 transaksi/tahun (~Rp32jt) bukan sekadar growth — ini stabilizer. Jika B2C mencapai 25–30% dari revenue bulanan, defisit seperti Mei (-Rp21jt akibat 1 closing B2B tertunda) bisa diserap. P4 (gifter, konversi 60–70%) dan P1 (TikTok/printing) adalah jalur tercepat ke target ini.</div>
+      <div class="card" style="border-left:4px solid var(--color-coral);border-radius:0 var(--border-radius-lg) var(--border-radius-lg) 0">
+        <div class="card-lbl" style="color:var(--color-coral)"><i class="ti ti-scale-balance"></i> Strategi 4 — Diversifikasi Revenue untuk Stabilitas Cashflow</div>
+        <div class="card-body">Target B2C 66 transaksi/tahun (~Rp32jt) bukan sekadar growth — ini stabilizer. Jika B2C mencapai 25–30% dari revenue bulanan, defisit seperti Mei (-Rp21jt akibat 1 closing B2B tertunda) bisa diserap. P4 (gifter, konversi 60–70%) and P1 (TikTok/printing) adalah jalur tercepat ke target ini.</div>
       </div>
     </div>
 
@@ -1305,17 +2441,17 @@
 
       <div class="pilar-card">
         <div class="pilar-head">
-          <div class="pilar-num" style="background:var(--pul);color:var(--pud)">P1</div>
+          <div class="pilar-num" style="background:var(--color-primary-light);color:var(--color-primary)">P1</div>
           <div class="pilar-title">Dari Meja Kuliah ke Helai Kain — Origin &amp; Craftsmanship</div>
           <div class="pilar-meta"><div class="pilar-pct">20%</div><div class="pilar-out">~11 aset/bln</div></div>
         </div>
-        <div class="pilar-bar"><div class="pilar-fill" style="width:20%;background:var(--pu)"></div></div>
+        <div class="pilar-bar"><div class="pilar-fill" style="width:20%;background:var(--color-primary)"></div></div>
         <div class="card-body" style="font-size:12px">Proses canting close-up, origin story FK UNS, 4 founder bercerita. Mendukung Strategi 3 (Medical Heritage) — wajib hadir di P2 dan TikTok minggu.</div>
       </div>
 
       <div class="pilar-card">
         <div class="pilar-head">
-          <div class="pilar-num" style="background:#E6E5FA;color:var(--pud)">P2</div>
+          <div class="pilar-num" style="background:var(--color-primary-light);color:var(--color-primary)">P2</div>
           <div class="pilar-title">Satu Motif, Satu Cerita Profesi — Professional Identity</div>
           <div class="pilar-meta"><div class="pilar-pct">30%</div><div class="pilar-out">~17 aset/bln</div></div>
         </div>
@@ -1325,36 +2461,36 @@
 
       <div class="pilar-card">
         <div class="pilar-head">
-          <div class="pilar-num" style="background:var(--tel);color:var(--ted)">P3</div>
+          <div class="pilar-num" style="background:var(--color-teal-light);color:var(--color-teal)">P3</div>
           <div class="pilar-title">Batik Bukan Sekadar Kain — Edukasi Motif &amp; Budaya</div>
           <div class="pilar-meta"><div class="pilar-pct">20%</div><div class="pilar-out">~11 aset/bln</div></div>
         </div>
-        <div class="pilar-bar"><div class="pilar-fill" style="width:20%;background:var(--te)"></div></div>
+        <div class="pilar-bar"><div class="pilar-fill" style="width:20%;background:var(--color-teal)"></div></div>
         <div class="card-body" style="font-size:12px">Carousel filosofi motif + medical context. Format Threads: thread "hal yang tidak kamu tahu" — target naikkan ER Threads dari 0,25% ke 1,5%.</div>
       </div>
 
       <div class="pilar-card">
         <div class="pilar-head">
-          <div class="pilar-num" style="background:var(--aml);color:var(--amd)">P4</div>
+          <div class="pilar-num" style="background:var(--color-gold-light);color:var(--color-gold)">P4</div>
           <div class="pilar-title">Teman Sejawat Bercerita — Community &amp; Social Proof</div>
           <div class="pilar-meta"><div class="pilar-pct">15%</div><div class="pilar-out">~8 aset/bln</div></div>
         </div>
-        <div class="pilar-bar"><div class="pilar-fill" style="width:15%;background:var(--am)"></div></div>
+        <div class="pilar-bar"><div class="pilar-fill" style="width:15%;background:var(--color-gold)"></div></div>
         <div class="card-body" style="font-size:12px">UGC, testimoni dari closing aktual (termasuk dokumentasi event ISMOAC). Dokumentasikan setiap closing offline sebagai konten — sumber konten gratis dari aktivitas yang sudah berjalan.</div>
       </div>
 
       <div class="pilar-card">
         <div class="pilar-head">
-          <div class="pilar-num" style="background:var(--col);color:var(--cod)">P5</div>
+          <div class="pilar-num" style="background:var(--color-coral-light);color:var(--color-coral)">P5</div>
           <div class="pilar-title">Pesan, Pilih, Milik — Produk &amp; Konversi</div>
           <div class="pilar-meta"><div class="pilar-pct">15%</div><div class="pilar-out">~8 aset/bln</div></div>
         </div>
-        <div class="pilar-bar"><div class="pilar-fill" style="width:15%;background:var(--co)"></div></div>
+        <div class="pilar-bar"><div class="pilar-fill" style="width:15%;background:var(--color-coral)"></div></div>
         <div class="card-body" style="font-size:12px">Showcase produk real + CTA spesifik. "Launching Sphenoid" sudah membuktikan format ini bekerja (audiens penasaran dengan motif spotlight). Termasuk waiting list "sold out" untuk tangkap leads WA.</div>
       </div>
 
       <div class="card">
-        <div class="card-lbl">Output video tambahan (TikTok + FB Reels)</div>
+        <div class="card-lbl"><i class="ti ti-video"></i> Output video tambahan (TikTok + FB Reels)</div>
         <div class="card-body">Target 8–12 Reels/bulan (2–3/minggu sesuai rekomendasi data FB +550%), durasi 15–20 detik, mayoritas dari pilar P1 &amp; P2. Satu sesi produksi di Laweyan/Sragen dapat menghasilkan 1 video TikTok + 3–5 foto IG + 2–3 WA Status + 1 thread Threads — efisiensi 1:8 untuk tim kecil.</div>
       </div>
     </div>
@@ -1362,36 +2498,48 @@
     <!-- 08 KEY MESSAGE -->
     <div class="panel" id="p-keymsg" role="tabpanel">
       <div class="sec-eye">08</div>
-      <h2 class="sec-h2">Key Message per Persona</h2>
+      <h2 class="sec-h2">Key Message &amp; Visualisasi Kampanye</h2>
+      <div class="hl co">Key message tidak boleh hanya menjadi teks dokumen. Di bawah ini adalah simulator visualisasi kampanye untuk melihat bagaimana pesan utama dan bukti pendukung diterjemahkan secara nyata ke dalam media distribusi utama masing-masing persona.</div>
 
-      <div class="km-card" style="border-left-color:var(--pu)">
-        <div class="km-persona" style="color:var(--pu)">P1 — Dokter Muda</div>
-        <div class="km-msg">"Ada batik yang benar-benar ngerti dunia lo — karena yang bikinnya juga pernah di posisi yang sama."</div>
-        <div class="km-proof">Bukti: motif dari alumni FK, konten relatable kehidupan koas/internship. Target: TikTok CTR 0,23%→1%.</div>
-      </div>
+      <div class="km-simulator-card card">
+        <div class="km-selector">
+          <button class="km-btn active" data-persona="p1" onclick="selectKMPersona('p1', this)">P1 · Dr. Muda</button>
+          <button class="km-btn" data-persona="p2" onclick="selectKMPersona('p2', this)">P2 · Dr. Senior</button>
+          <button class="km-btn" data-persona="p3" onclick="selectKMPersona('p3', this)">P3 · Mhs FK/Koas</button>
+          <button class="km-btn" data-persona="p4" onclick="selectKMPersona('p4', this)">P4 · Gifter</button>
+          <button class="km-btn" data-persona="b2b" onclick="selectKMPersona('b2b', this)">B2B · Institusi</button>
+        </div>
 
-      <div class="km-card" style="border-left-color:var(--te)">
-        <div class="km-persona" style="color:var(--te)">P2 — Dokter Senior/Spesialis</div>
-        <div class="km-msg">"Ini bukan sekadar batik — ini karya yang punya cerita, dibuat dengan tangan, dan motifnya akurat secara medis."</div>
-        <div class="km-proof">Bukti: proses canting, riset motif anatomi, nama pengrajin Laweyan/Sragen. Target: dorong run-rate Batik Tulis 13,6 pcs/bln.</div>
-      </div>
+        <div class="km-sim-layout">
+          <!-- Sidebar Detail Info -->
+          <div class="km-info-panel">
+            <div class="km-info-header">
+              <span class="km-badge" id="km-info-badge">TikTok Ads / Organik</span>
+              <h3 id="km-info-title" class="font-sans fw-extra text-primary" style="font-size: 16px;">P1 — Dokter Muda</h3>
+            </div>
+            <div class="km-info-body">
+              <div class="km-info-section">
+                <span class="km-info-lbl">Pesan Utama (Key Message)</span>
+                <p class="km-info-val fw-bold" id="km-info-msg">"Ada batik yang benar-benar ngerti dunia lo — karena yang bikinnya juga pernah di posisi yang sama."</p>
+              </div>
+              <div class="km-info-section mt-md">
+                <span class="km-info-lbl">Bukti Pendukung (Proof)</span>
+                <p class="km-info-val text-secondary" id="km-info-proof">Motif dari alumni FK, konten relatable kehidupan koas/internship.</p>
+              </div>
+              <div class="km-info-section mt-md">
+                <span class="km-info-lbl">Target Metrik Kampanye</span>
+                <p class="km-info-val text-primary fw-bold" id="km-info-metric">TikTok CTR Profil 0.23% → 1.00%</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="km-card" style="border-left-color:var(--am)">
-        <div class="km-persona" style="color:var(--am)">P3 — Mahasiswa FK/Koas</div>
-        <div class="km-msg">"Jadi calon dokter itu susah — setidaknya ada satu hal yang bisa bikin lo bangga di tengah semua itu."</div>
-        <div class="km-proof">Bukti: konten relatable stase/jaga/ujian, entry point Rp99rb. Target: viral multiplier 5–10x untuk awareness Printing.</div>
-      </div>
-
-      <div class="km-card" style="border-left-color:var(--co)">
-        <div class="km-persona" style="color:var(--co)">P4 — Gifter &amp; Keluarga</div>
-        <div class="km-msg">"Kasih hadiah yang menunjukkan kamu benar-benar mengerti betapa kerasnya dia berjuang menjadi dokter."</div>
-        <div class="km-proof">Bukti: panduan motif per spesialisasi, packaging premium. Target: manfaatkan konversi 60–70% dengan dedicated flow.</div>
-      </div>
-
-      <div class="km-card" style="border-left-color:var(--gr)">
-        <div class="km-persona" style="color:var(--gr)">B2B — Seragaman Institusi</div>
-        <div class="km-msg">"Seragam yang membawa identitas institusi sekaligus warisan budaya — dikerjakan oleh tim yang memahami kebutuhan medis dari dalam."</div>
-        <div class="km-proof">Bukti: portofolio RS/FK, testimoni IDI. Target: optimasi Google Maps untuk dorong run-rate 1.117m/bln.</div>
+          <!-- Live Device Mockup -->
+          <div class="km-mockup-panel">
+            <div class="device-container" id="device-container">
+              <!-- Content rendered dynamically by selectKMPersona script -->
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1401,39 +2549,92 @@
       <h2 class="sec-h2">Distribusi Konten — Kalender &amp; Alokasi Effort</h2>
 
       <div class="card">
-        <div class="card-lbl">Kalender konten mingguan</div>
-        <div style="overflow-x:auto; margin-top:0.5rem;">
-          <div class="week-row" style="min-width:600px">
-            <div class="wk-cell hdr day">Hari</div>
-            <div class="wk-cell hdr">Platform</div>
-            <div class="wk-cell hdr">Konten &amp; Pilar</div>
-            <div class="wk-cell hdr">Target Metrik</div>
-            <div class="wk-cell hdr">Jam</div>
-          </div>
-          <div class="week-row" style="min-width:600px"><div class="wk-cell day">Senin</div><div class="wk-cell">Instagram</div><div class="wk-cell">Foto produk real + cerita profesi (P2)</div><div class="wk-cell">Profile visit 5%</div><div class="wk-cell">21.00</div></div>
-          <div class="week-row" style="min-width:600px"><div class="wk-cell day">Selasa</div><div class="wk-cell">Threads</div><div class="wk-cell">Poll/hot-take dunia medis (P2/P3)</div><div class="wk-cell">ER 1,5%</div><div class="wk-cell">20.00</div></div>
-          <div class="week-row" style="min-width:600px"><div class="wk-cell day">Rabu</div><div class="wk-cell">TikTok</div><div class="wk-cell">Proses canting + cliffhanger (P1)</div><div class="wk-cell">CTR 1%</div><div class="wk-cell">19.00</div></div>
-          <div class="week-row" style="min-width:600px"><div class="wk-cell day">Kamis</div><div class="wk-cell">WA Status</div><div class="wk-cell">Testimoni/BTS (P4)</div><div class="wk-cell">UGC trigger</div><div class="wk-cell">08.00</div></div>
-          <div class="week-row" style="min-width:600px"><div class="wk-cell day">Jumat</div><div class="wk-cell">Facebook</div><div class="wk-cell">Reels 15–20s identity (P2)</div><div class="wk-cell">1-min ret. 8%</div><div class="wk-cell">19.00</div></div>
-          <div class="week-row" style="min-width:600px"><div class="wk-cell day">Sabtu</div><div class="wk-cell">TikTok</div><div class="wk-cell">Founder/origin story (P1)</div><div class="wk-cell">Demografi 60/40</div><div class="wk-cell">17.00</div></div>
-          <div class="week-row" style="min-width:600px"><div class="wk-cell day">Minggu</div><div class="wk-cell">Threads/IG</div><div class="wk-cell">Thread panjang / carousel edukasi (P3)</div><div class="wk-cell">Interaksi +6x</div><div class="wk-cell">10.00</div></div>
+        <div class="card-lbl"><i class="ti ti-calendar-event"></i> Kalender konten mingguan (Klik baris hari untuk melihat detail tugas)</div>
+        <div class="week-table-wrap mt-md">
+          <table class="week-table">
+            <thead>
+              <tr>
+                <th>Hari</th>
+                <th>Platform</th>
+                <th>Konten &amp; Pilar</th>
+                <th>Target Metrik</th>
+                <th>Jam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr onclick="showCalendarDetail('senin', this)" class="active">
+                <td class="day">Senin</td>
+                <td>Instagram</td>
+                <td>Foto produk real + cerita profesi (P2)</td>
+                <td>Profile visit 5%</td>
+                <td>21.00</td>
+              </tr>
+              <tr onclick="showCalendarDetail('selasa', this)">
+                <td class="day">Selasa</td>
+                <td>Threads</td>
+                <td>Poll/hot-take dunia medis (P2/P3)</td>
+                <td>ER 1,5%</td>
+                <td>20.00</td>
+              </tr>
+              <tr onclick="showCalendarDetail('rabu', this)">
+                <td class="day">Rabu</td>
+                <td>TikTok</td>
+                <td>Proses canting + cliffhanger (P1)</td>
+                <td>CTR 1%</td>
+                <td>19.00</td>
+              </tr>
+              <tr onclick="showCalendarDetail('kamis', this)">
+                <td class="day">Kamis</td>
+                <td>WA Status</td>
+                <td>Testimoni/BTS (P4)</td>
+                <td>UGC trigger</td>
+                <td>08.00</td>
+              </tr>
+              <tr onclick="showCalendarDetail('jumat', this)">
+                <td class="day">Jumat</td>
+                <td>Facebook</td>
+                <td>Reels 15–20s identity (P2)</td>
+                <td>1-min ret. 8%</td>
+                <td>19.00</td>
+              </tr>
+              <tr onclick="showCalendarDetail('sabtu', this)">
+                <td class="day">Sabtu</td>
+                <td>TikTok</td>
+                <td>Founder/origin story (P1)</td>
+                <td>Demografi 60/40</td>
+                <td>17.00</td>
+              </tr>
+              <tr onclick="showCalendarDetail('minggu', this)">
+                <td class="day">Minggu</td>
+                <td>Threads/IG</td>
+                <td>Thread panjang / carousel edukasi (P3)</td>
+                <td>Interaksi +6x</td>
+                <td>10.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Dynamic Drawer detail calendar -->
+        <div class="cal-detail-card card" id="cal-detail-box">
+          <!-- Populated dynamically by javascript showCalendarDetail -->
         </div>
       </div>
 
       <div class="g2">
         <div class="card">
-          <div class="card-lbl">Alokasi effort tim per channel</div>
+          <div class="card-lbl"><i class="ti ti-chart-donut"></i> Alokasi effort tim per channel</div>
           <div style="margin-top:0.5rem">
-            <div class="ch-row"><span class="ch-name">TikTok</span><div class="ch-bar-w"><div class="ch-bar" style="width:75%;background:var(--pu)"></div></div><span class="ch-pct">30%</span></div>
-            <div class="ch-row"><span class="ch-name">Instagram</span><div class="ch-bar-w"><div class="ch-bar" style="width:65%;background:var(--pu)"></div></div><span class="ch-pct">25%</span></div>
-            <div class="ch-row"><span class="ch-name">Google Maps</span><div class="ch-bar-w"><div class="ch-bar" style="width:50%;background:var(--gr)"></div></div><span class="ch-pct">15%</span></div>
-            <div class="ch-row"><span class="ch-name">WhatsApp/CS</span><div class="ch-bar-w"><div class="ch-bar" style="width:40%;background:var(--te)"></div></div><span class="ch-pct">15%</span></div>
-            <div class="ch-row"><span class="ch-name">Facebook</span><div class="ch-bar-w"><div class="ch-bar" style="width:25%;background:var(--am)"></div></div><span class="ch-pct">10%</span></div>
-            <div class="ch-row"><span class="ch-name">Threads</span><div class="ch-bar-w"><div class="ch-bar" style="width:15%;background:var(--co)"></div></div><span class="ch-pct">5%</span></div>
+            <div class="ch-row"><span class="ch-name">TikTok</span><div class="ch-bar-w"><div class="ch-bar" style="width:30%;background:var(--color-primary)"></div></div><span class="ch-pct">30%</span></div>
+            <div class="ch-row"><span class="ch-name">Instagram</span><div class="ch-bar-w"><div class="ch-bar" style="width:25%;background:var(--color-primary)"></div></div><span class="ch-pct">25%</span></div>
+            <div class="ch-row"><span class="ch-name">Google Maps</span><div class="ch-bar-w"><div class="ch-bar" style="width:15%;background:var(--color-forest)"></div></div><span class="ch-pct">15%</span></div>
+            <div class="ch-row"><span class="ch-name">WhatsApp/CS</span><div class="ch-bar-w"><div class="ch-bar" style="width:15%;background:var(--color-teal)"></div></div><span class="ch-pct">15%</span></div>
+            <div class="ch-row"><span class="ch-name">Facebook</span><div class="ch-bar-w"><div class="ch-bar" style="width:10%;background:var(--color-gold)"></div></div><span class="ch-pct">10%</span></div>
+            <div class="ch-row"><span class="ch-name">Threads</span><div class="ch-bar-w"><div class="ch-bar" style="width:5%;background:var(--color-coral)"></div></div><span class="ch-pct">5%</span></div>
           </div>
         </div>
         <div class="card">
-          <div class="card-lbl">Pergeseran dari kondisi saat ini</div>
+          <div class="card-lbl"><i class="ti ti-git-compare"></i> Pergeseran dari kondisi saat ini</div>
           <div class="card-body" style="font-size:12px">Google Maps naik dari hampir 0% effort ke 15% — perubahan terbesar, sejalan dengan Strategi 2. Sales effort bergeser dari volume DM (288/bln, 5,2% respons) ke kualitas: optimasi Google Maps + persiapan event medis terjadwal seperti ISMOAC.</div>
         </div>
       </div>
@@ -1446,44 +2647,70 @@
 
       <div class="hl">Target disusun mundur dari kebutuhan run-rate tahunan (Batik Tulis 13,6 pcs/bln, Printing 45,9 m/bln, Seragaman 1.117 m/bln) — Q3 menjadi titik tercepat harus tercapai run-rate penuh karena Q4 biasanya terpotong libur akhir tahun.</div>
 
-      <div class="quarter-card" style="border-left-color:var(--re)">
+      <!-- ROADMAP KESIAPAN PROGRESS TRACKER -->
+      <div class="roadmap-progress-wrap card">
+        <div class="roadmap-progress-labels">
+          <span>Kesiapan Operasional Roadmap &amp; Mitigasi Risiko</span>
+          <span id="roadmap-progress-pct" class="fw-bold">0%</span>
+        </div>
+        <div class="roadmap-progress-bar">
+          <div class="roadmap-progress-fill" id="roadmap-progress-fill" style="width: 0%;"></div>
+        </div>
+        <p class="text-muted mt-sm" style="font-size: 11px; margin-top: 6px; line-height: 1.45;">
+          Centang item checkpoint dan mitigasi risiko di bawah untuk melacak tingkat kesiapan operasional strategi Anda secara real-time.
+        </p>
+      </div>
+
+      <div class="quarter-card" style="border-left-color:var(--color-warning-red)">
         <div class="q-head"><div class="q-title">Q3 2026 — Stabilisasi &amp; Tutup Kebocoran</div><div class="q-period">Jul–Sep</div></div>
         <div class="q-grid">
           <div class="q-metric"><div class="q-metric-n">8 pcs/bln</div><div class="q-metric-l">Batik Tulis (60% dari target run-rate)</div></div>
           <div class="q-metric"><div class="q-metric-n">30 m/bln</div><div class="q-metric-l">Printing (65% dari target run-rate)</div></div>
           <div class="q-metric"><div class="q-metric-n">700 m/bln</div><div class="q-metric-l">Seragaman (63% dari target run-rate)</div></div>
         </div>
-        <div class="card-body" style="font-size:11px;margin-top:0.5rem">Fokus: implementasi CTA cliffhanger TikTok, perbaikan Google Maps, restorasi retail conversion ke 30%. Closing pipeline tertahan (MTQ Kalbar + LARS DHP, 3.100m) ditargetkan masuk di periode ini.</div>
+        <div class="card-body" style="font-size:11.5px;margin-top:0.5rem">Fokus: implementasi CTA cliffhanger TikTok, perbaikan Google Maps, restorasi retail conversion ke 30%. Closing pipeline tertahan (MTQ Kalbar + LARS DHP, 3.100m) ditargetkan masuk di periode ini.</div>
       </div>
 
-      <div class="quarter-card" style="border-left-color:var(--am)">
+      <div class="quarter-card" style="border-left-color:var(--color-gold)">
         <div class="q-head"><div class="q-title">Q4 2026 — Full Run-Rate</div><div class="q-period">Okt–Des</div></div>
         <div class="q-grid">
           <div class="q-metric"><div class="q-metric-n">13,6 pcs/bln</div><div class="q-metric-l">Batik Tulis — 120 pcs tercapai</div></div>
           <div class="q-metric"><div class="q-metric-n">45,9 m/bln</div><div class="q-metric-l">Printing — 420m tercapai</div></div>
           <div class="q-metric"><div class="q-metric-n">1.117 m/bln</div><div class="q-metric-l">Seragaman — 10.000m tercapai</div></div>
         </div>
-        <div class="card-body" style="font-size:11px;margin-top:0.5rem">Fokus: TikTok CTR 1%, IG profile→WA 18%, Threads ER 1,5%, FB 1-min retention 8%. B2C berkontribusi 25–30% revenue bulanan sebagai stabilizer cashflow.</div>
+        <div class="card-body" style="font-size:11.5px;margin-top:0.5rem">Fokus: TikTok CTR 1%, IG profile→WA 18%, Threads ER 1,5%, FB 1-min retention 8%. B2C berkontribusi 25–30% revenue bulanan sebagai stabilizer cashflow.</div>
       </div>
 
-      <div class="g3" style="margin-top:0.75rem">
+      <!-- INTERACTIVE ROADMAP CHECKLIST -->
+      <div class="card-lbl mb-sm mt-lg"><i class="ti ti-checkbox"></i> Rencana Aksi &amp; Pemantauan Risiko (Interaktif)</div>
+      <div class="g3">
         <div class="card">
           <div class="card-lbl">Checkpoint bulanan (wajib)</div>
-          <div class="card-body" style="font-size:12px">Review setiap tanggal 1: realisasi pcs/meter vs run-rate, conversion rate retail &amp; B2B, dan 1 metrik channel yang paling tertinggal dari target.</div>
+          <div class="checklist-wrap" data-checklist-id="chk-monthly">
+            <label class="check-item"><input type="checkbox" onchange="toggleCheck(this)"> <span>Review realisasi pcs/meter vs run-rate</span></label>
+            <label class="check-item"><input type="checkbox" onchange="toggleCheck(this)"> <span>Review conversion rate retail &amp; B2B</span></label>
+            <label class="check-item"><input type="checkbox" onchange="toggleCheck(this)"> <span>Review 1 metrik channel yang paling tertinggal</span></label>
+          </div>
         </div>
         <div class="card">
           <div class="card-lbl">Sinyal early-warning</div>
-          <div class="card-body" style="font-size:12px">Jika konversi retail WA turun di bawah 20% selama 2 bulan berturut → audit SOP CS segera, jangan tunggu kuartal berikutnya.</div>
+          <div class="checklist-wrap" data-checklist-id="chk-warning">
+            <label class="check-item"><input type="checkbox" onchange="toggleCheck(this)"> <span>Audit SOP CS segera jika konversi retail WA &lt; 20% selama 2 bulan berturut</span></label>
+          </div>
         </div>
         <div class="card">
           <div class="card-lbl">Risiko yang dipantau</div>
-          <div class="card-body" style="font-size:12px">WA banned (broadcast), pipeline B2B HOLD &gt;2 bulan, dan reach IG yang belum pulih pasca-rebranding (&gt;3 bulan stagnan).</div>
+          <div class="checklist-wrap" data-checklist-id="chk-risks">
+            <label class="check-item"><input type="checkbox" onchange="toggleCheck(this)"> <span>Pantau WA banned (akibat broadcast)</span></label>
+            <label class="check-item"><input type="checkbox" onchange="toggleCheck(this)"> <span>Pantau pipeline B2B HOLD &gt; 2 bulan</span></label>
+            <label class="check-item"><input type="checkbox" onchange="toggleCheck(this)"> <span>Pantau reach IG pasca-rebranding</span></label>
+          </div>
         </div>
       </div>
 
       <div class="footer">
         Semua target di dokumen ini diturunkan langsung dari data aktual Apr–Mei 2026 dan target resmi tahunan (120 pcs Batik Tulis, 420m Printing, 10.000m Seragaman). Review ulang setiap akhir kuartal dengan data realisasi terbaru — target run-rate akan bergeser otomatis berdasarkan sisa waktu dan sisa target.<br><br>
-        <strong style="font-weight:500;color:var(--color-text-primary)">Batik Sejawat · Marketing Strategy Data-Driven v2 · 2026</strong>
+        <strong style="font-weight:700;color:var(--color-primary-light)">Batik Sejawat · Marketing Strategy Data-Driven v2 · 2026</strong>
       </div>
     </div>
 
@@ -1495,12 +2722,16 @@
 window.show = function(id, btn) {
   const container = document.querySelector('.page-ms');
   if (!container) return;
-  
+
+  const targetId = 'p-' + id;
+  const targetPanel = document.getElementById(targetId);
+
   // Toggle panel visibility
   container.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
-  const targetPanel = document.getElementById('p-' + id);
   if (targetPanel) {
     targetPanel.classList.add('on');
+    window.scrollTo({ top: container.offsetTop - 80, behavior: 'smooth' });
+
     // Animate custom bar fills in the newly opened panel
     targetPanel.querySelectorAll('.ch-bar, .pilar-fill').forEach(bar => {
       const targetWidth = bar.style.width;
@@ -1510,22 +2741,612 @@ window.show = function(id, btn) {
       }, 50);
     });
   }
+
+  // Toggle button active class + aria
+  container.querySelectorAll('.nb').forEach(b => {
+    const controls = b.getAttribute('aria-controls');
+    const isActive = controls === targetId;
+    b.classList.toggle('on', isActive);
+    b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+  });
+};
+
+// Interactive Persona Hub Selector
+window.selectPersona = function(id, btn) {
+  const panel = document.getElementById('ph-' + id);
+  if (!panel) return;
+
+  // Update tabs
+  const selector = btn.closest('.persona-selector');
+  selector.querySelectorAll('.p-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Update aria
+  selector.querySelectorAll('.p-btn').forEach(b => {
+    const controls = b.getAttribute('data-controls');
+    const isActive = controls === 'ph-' + id;
+    b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  });
+
+  // Update panels
+  const parent = panel.closest('.persona-content');
+  parent.querySelectorAll('.persona-panel').forEach(p => p.classList.remove('active'));
+  panel.classList.add('active');
+};
+
+// Interactive Run-rate Calculator
+(function initRunRateCalculator() {
+  const slider = document.getElementById('sisa-bulan-slider');
+  const displayVal = document.getElementById('sisa-bulan-val');
   
-  // Toggle button active class
-  container.querySelectorAll('.nb').forEach(b => b.classList.remove('on'));
-  if (btn) {
-    btn.classList.add('on');
-  } else if (window.event && window.event.currentTarget) {
-    window.event.currentTarget.classList.add('on');
+  if (!slider) return;
+  
+  const cards = {
+    tulis: document.getElementById('rr-tulis'),
+    print: document.getElementById('rr-print'),
+    b2b: document.getElementById('rr-b2b')
+  };
+  
+  const coverGaps = {
+    tulis: document.getElementById('kpi-tulis-gap'),
+    print: document.getElementById('kpi-print-gap'),
+    b2b: document.getElementById('kpi-b2b-gap')
+  };
+
+  function updateRates(sisaBulan) {
+    displayVal.textContent = sisaBulan;
+    
+    // Batik Tulis
+    if (cards.tulis) {
+      const target = parseFloat(cards.tulis.dataset.target);
+      const realized = parseFloat(cards.tulis.dataset.realized);
+      const paceCur = parseFloat(cards.tulis.dataset.paceCur);
+      const req = (target - realized) / sisaBulan;
+      const gap = req / paceCur;
+      
+      cards.tulis.querySelector('.req-pace').textContent = req.toFixed(1) + ' pcs/bln';
+      cards.tulis.querySelector('.gap-mult').textContent = gap.toFixed(1) + 'x';
+      if (coverGaps.tulis) coverGaps.tulis.textContent = 'perlu ' + gap.toFixed(1) + 'x pace';
+    }
+    
+    // Batik Printing
+    if (cards.print) {
+      const target = parseFloat(cards.print.dataset.target);
+      const realized = parseFloat(cards.print.dataset.realized);
+      const paceCur = parseFloat(cards.print.dataset.paceCur);
+      const req = (target - realized) / sisaBulan;
+      const gap = req / paceCur;
+      
+      cards.print.querySelector('.req-pace').textContent = req.toFixed(1) + ' m/bln';
+      cards.print.querySelector('.gap-mult').textContent = gap.toFixed(1) + 'x';
+      if (coverGaps.print) coverGaps.print.textContent = 'perlu ' + gap.toFixed(1) + 'x pace';
+    }
+    
+    // Seragaman B2B
+    if (cards.b2b) {
+      const target = parseFloat(cards.b2b.dataset.target);
+      const realized = parseFloat(cards.b2b.dataset.realized);
+      const paceCur = parseFloat(cards.b2b.dataset.paceCur);
+      const req = (target - realized) / sisaBulan;
+      const gap = req / paceCur;
+      
+      cards.b2b.querySelector('.req-pace').textContent = Math.round(req).toLocaleString('id-ID') + ' m/bln';
+      cards.b2b.querySelector('.gap-mult').textContent = gap.toFixed(1) + 'x';
+      if (coverGaps.b2b) coverGaps.b2b.textContent = 'perlu ' + gap.toFixed(1) + 'x pace';
+    }
+  }
+  
+  slider.addEventListener('input', (e) => {
+    updateRates(parseInt(e.target.value));
+  });
+})();
+
+// Interactive Funnel Simulator
+(function initFunnelSimulator() {
+  const chkCS = document.getElementById('sim-opt-cs');
+  const chkTikTok = document.getElementById('sim-opt-tiktok');
+  const chkIG = document.getElementById('sim-opt-ig');
+  
+  if (!chkCS || !chkTikTok || !chkIG) return;
+  
+  const valLeads = document.getElementById('sim-val-leads');
+  const valSales = document.getElementById('sim-val-sales');
+  const valRev = document.getElementById('sim-val-rev');
+  
+  const deltaLeads = document.getElementById('sim-delta-leads');
+  const deltaSales = document.getElementById('sim-delta-sales');
+  const deltaRev = document.getElementById('sim-delta-rev');
+  
+  const progressPct = document.getElementById('sim-progress-pct');
+  const progressFill = document.getElementById('sim-progress-fill');
+  
+  const baselineLeads = 18; // leads per month (Mei baseline)
+  const baselineConv = 0.167; // 16.7% WA conversion
+  const b2cAov = 489000; // Rp 489,000 Blended B2C AOV
+  const targetMonthlyB2CRev = 2690000; // Rp 2.69 Jt/month target
+
+  function calculateSimulation() {
+    let leads = baselineLeads;
+    let conv = baselineConv;
+    
+    if (chkTikTok.checked) {
+      leads += 22; // CTA TikTok CTR 0.23% -> 1% adds +22 leads
+    }
+    if (chkIG.checked) {
+      leads += 28; // IG Profile WA click 13.2% -> 18% adds +28 leads
+    }
+    if (chkCS.checked) {
+      conv = 0.30; // WA conversion optimized from 16.7% to 30%
+    }
+    
+    const sales = leads * conv;
+    const revenue = sales * b2cAov;
+    
+    // Update DOM values
+    valLeads.textContent = Math.round(leads) + ' leads';
+    valSales.textContent = sales.toFixed(1) + ' order';
+    valRev.textContent = 'Rp ' + (revenue / 1000000).toFixed(2) + ' Jt';
+    
+    // Update Deltas
+    const addedLeads = leads - baselineLeads;
+    if (addedLeads > 0) {
+      deltaLeads.textContent = '+' + addedLeads + ' leads';
+      deltaLeads.className = 'sim-metric-delta';
+      deltaLeads.style.color = 'var(--color-forest)';
+    } else {
+      deltaLeads.textContent = 'Status Quo';
+      deltaLeads.className = 'sim-metric-delta text-muted';
+      deltaLeads.style.color = '';
+    }
+    
+    const baseSales = baselineLeads * baselineConv;
+    const addedSales = sales - baseSales;
+    if (addedSales > 0) {
+      deltaSales.textContent = '+' + addedSales.toFixed(1) + ' order';
+      deltaSales.className = 'sim-metric-delta';
+      deltaSales.style.color = 'var(--color-forest)';
+    } else {
+      deltaSales.textContent = 'Status Quo';
+      deltaSales.className = 'sim-metric-delta text-muted';
+      deltaSales.style.color = '';
+    }
+    
+    const baseRev = baseSales * b2cAov;
+    const addedRev = revenue - baseRev;
+    if (addedRev > 0) {
+      deltaRev.textContent = '+Rp ' + (addedRev / 1000).toFixed(0) + ' Rb';
+      deltaRev.className = 'sim-metric-delta';
+      deltaRev.style.color = 'var(--color-forest)';
+    } else {
+      deltaRev.textContent = 'Status Quo';
+      deltaRev.className = 'sim-metric-delta text-muted';
+      deltaRev.style.color = '';
+    }
+    
+    // Target Progress Bar
+    const progress = Math.min(100, Math.round((revenue / targetMonthlyB2CRev) * 100));
+    progressPct.textContent = progress + '%';
+    progressFill.style.width = progress + '%';
+    
+    // Dynamic Progress Color
+    if (progress < 70) {
+      progressFill.style.background = 'var(--color-coral)';
+    } else if (progress < 99) {
+      progressFill.style.background = 'var(--color-gold)';
+    } else {
+      progressFill.style.background = 'var(--color-forest)';
+      progressPct.textContent = progress + '% (Target Tercapai!)';
+    }
+  }
+  
+  [chkCS, chkTikTok, chkIG].forEach(chk => {
+    chk.addEventListener('change', calculateSimulation);
+  });
+  
+  // Run on start
+  calculateSimulation();
+})();
+
+// Interactive Key Message Mockup Simulator
+const kmDetails = {
+  p1: {
+    badge: 'TikTok Ads / Organik',
+    title: 'P1 — Dokter Muda (25–32 thn)',
+    msg: '"Ada batik yang benar-benar ngerti dunia lo — karena yang bikinnya juga pernah di posisi yang sama."',
+    proof: 'Desain dikerjakan langsung oleh alumni Fakultas Kedokteran. Menggunakan referensi hook cerita stase koas, ujian OSCE, dan kehidupan internship nakes.',
+    metric: 'TikTok CTR Profil: 0.23% → 1.00% (+22 Leads WA/bln)',
+    deviceHtml: `
+      <div class="mock-tt">
+        <div class="mock-tt-bg-art">🩺</div>
+        <div class="mock-tt-sidebar">
+          <div class="mock-tt-icon"><i class="ti ti-heart-filled" style="color: #ff3b30;"></i></div>
+          <span class="mock-tt-count">14.2K</span>
+          <div class="mock-tt-icon"><i class="ti ti-message-2-filled"></i></div>
+          <span class="mock-tt-count">384</span>
+          <div class="mock-tt-icon"><i class="ti ti-share-3-filled"></i></div>
+          <span class="mock-tt-count">1.2K</span>
+        </div>
+        <div class="mock-tt-content">
+          <div class="mock-tt-user">@batiksejawat</div>
+          <div class="mock-tt-desc">Batik yang ngerti sibuknya sejawat nakes. Motif anatomi medis resmi buatan alumni FK UNS. 🩺🧬 #nakes #koaslife #dokter #batikmedis</div>
+          <div class="mock-tt-music"><i class="ti ti-music"></i> Suara Asli - Batik Sejawat</div>
+        </div>
+      </div>
+    `
+  },
+  p2: {
+    badge: 'WhatsApp CS & Direct Network',
+    title: 'P2 — Dokter Senior / Spesialis (33–50 thn)',
+    msg: '"Ini bukan sekadar batik — ini karya yang punya cerita, dibuat dengan tangan, dan motifnya akurat secara medis."',
+    proof: 'Proses canting tradisional Solo, riset stilisasi anatomi di bawah supervisi medis, nama pengrajin Laweyan/Sragen di setiap helai kain tulis eksklusif (AOV Rp1.350.000).',
+    metric: 'Closing Rate Batik Tulis: Capai 13.6 pcs/bulan (Realisasi 25/120)',
+    deviceHtml: `
+      <div class="mock-wa">
+        <div class="mock-wa-header">
+          <div class="mock-wa-avatar">DS</div>
+          <div>
+            <div class="mock-wa-title">dr. Rine (Sejawat Senior)</div>
+            <div class="mock-wa-status">online</div>
+          </div>
+        </div>
+        <div class="mock-wa-body">
+          <div class="mock-wa-bubble left">
+            Dok, batik tulis anatomi Ginjal yang dipakai kemarin di ISMOAC masih ada stock? Rekan sejawat spesialis saya tertarik memesan.
+            <span class="mock-wa-time">10:42</span>
+          </div>
+          <div class="mock-wa-bubble right">
+            Halo dr. Rine! Masih ada dok. Batik Tulis kami dibuat eksklusif 1 helai per motif secara manual di Laweyan, Solo. Motif Ginjal didesain akurat secara klinis. Bisa kami kirimkan katalog motif spesialisasi lainnya ke WhatsApp Dokter? 🩺✨
+            <span class="mock-wa-time">10:44 <i class="ti ti-checks" style="color:#53bdeb;"></i></span>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  p3: {
+    badge: 'Instagram Feed & Threads',
+    title: 'P3 — Mahasiswa FK / Koas (20–25 thn)',
+    msg: '"Jadi calon dokter itu susah — setidaknya ada satu hal yang bisa bikin lo bangga di tengah semua itu."',
+    proof: 'Katalog Batik Printing Anatomi dengan entry-point terjangkau (Rp99.000), kemudahan pemesanan via marketplace Shopee/Tokopedia, dan konten komedi relatable.',
+    metric: 'Multiplier Awareness: TikTok & IG Reach non-followers naik 2x lipat',
+    deviceHtml: `
+      <div class="mock-ig">
+        <div class="mock-ig-header">
+          <div class="mock-ig-avatar">
+            <div class="mock-ig-avatar-inner">BS</div>
+          </div>
+          <div>
+            <span class="mock-ig-user">batiksejawat</span>
+            <span class="mock-ig-loc">Fakultas Kedokteran</span>
+          </div>
+        </div>
+        <div class="mock-ig-photo">
+          <div class="mock-ig-photo-title">Ujian OSCE Lulus,<br>Penampilan Harus Berkelas!</div>
+          <div class="mock-ig-photo-sub">Batik Anatomi Kedokteran · Mulai Rp99rb</div>
+        </div>
+        <div class="mock-ig-actions">
+          <i class="ti ti-heart" style="color:#ff3040"></i>
+          <i class="ti ti-message-circle"></i>
+          <i class="ti ti-send"></i>
+        </div>
+        <div class="mock-ig-likes">Disukai oleh koas_life dan 512 lainnya</div>
+        <div class="mock-ig-caption">
+          <b>batiksejawat</b> Lulus stase dengan bangga! Batik printing anatomi kami super adem untuk jaga malam. Link di bio untuk katalog Shopee.
+        </div>
+      </div>
+    `
+  },
+  p4: {
+    badge: 'Google Search & WhatsApp Gift Flow',
+    title: 'P4 — Gifter & Keluarga Nakes',
+    msg: '"Kasih hadiah yang menunjukkan kamu benar-benar mengerti betapa kerasnya dia berjuang menjadi dokter."',
+    proof: 'Panduan pencarian motif spesialisasi (kado spesifik), packaging box premium exclusive dengan segel lilin wax seal, kartu ucapan medis kustom gratis.',
+    metric: 'Inquiry-to-Buy Conversion: Pertahankan di level 60%–70%',
+    deviceHtml: `
+      <div class="mock-premium-box">
+        <div class="gift-box-art">🎁</div>
+        <h4 class="font-sans fw-extra" style="color:var(--color-gold-light); font-size:12px; letter-spacing:1px;">EXCLUSIVE GIFT PACK</h4>
+        <p style="font-size:10px; margin: 6px 0; opacity:0.85; line-height:1.4;">
+          Batik Anatomi Premium + Luxury Box + Wax-Sealed Medical Greeting Card
+        </p>
+        <span style="font-size:9px; background:var(--color-gold); color:#111827; padding:2px 8px; border-radius:4px; font-weight:700;">CONVERSION 65%</span>
+      </div>
+    `
+  },
+  b2b: {
+    badge: 'Google Maps, Email Pitch, & Proposal',
+    title: 'B2B — Instansi & Seragaman',
+    msg: '"Seragam yang membawa identitas institusi sekaligus warisan budaya — dikerjakan oleh tim yang memahami kebutuhan medis."',
+    proof: 'Portofolio seragaman RSUD, FK UNS Solo, Asosiasi IDI, dan pipeline aktif MTQ Kalbar (2.500m) serta LARS DHP (600m).',
+    metric: 'Realisasi Target B2B: Kejar run-rate 1.117 meter/bulan',
+    deviceHtml: `
+      <div class="mock-pitch">
+        <div class="mock-pitch-title">PROPOSAL KORPORAT</div>
+        <p class="mock-pitch-text">
+          <b>Kemitraan Seragam Batik Medis Custom</b><br>
+          Menyelaraskan visual institusi rumah sakit Anda dengan stilisasi anatomis orisinil dan kenyamanan standar nakes.<br><br>
+          <i>Mitra Aktif: RSUD Dr. Moewardi, FK UNS, LARS DHP</i>
+        </p>
+        <div class="mock-pitch-footer">Batik Sejawat Corporate © 2026</div>
+      </div>
+    `
   }
 };
 
-// Initialize Cashflow Chart
+window.selectKMPersona = function(personaId, btn) {
+  const container = document.getElementById('p-keymsg');
+  if (!container) return;
+
+  // Update button active state
+  container.querySelectorAll('.km-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Update sidebar info
+  const data = kmDetails[personaId];
+  if (data) {
+    document.getElementById('km-info-badge').textContent = data.badge;
+    document.getElementById('km-info-title').textContent = data.title;
+    document.getElementById('km-info-msg').textContent = data.msg;
+    document.getElementById('km-info-proof').textContent = data.proof;
+    document.getElementById('km-info-metric').textContent = data.metric;
+
+    // Update live mockup render with small transition
+    const device = document.getElementById('device-container');
+    if (device) {
+      device.style.transition = 'opacity 160ms ease, transform 160ms ease';
+      device.style.opacity = '0';
+      device.style.transform = 'translateY(6px)';
+      setTimeout(() => {
+        device.innerHTML = data.deviceHtml;
+        device.style.opacity = '1';
+        device.style.transform = 'translateY(0)';
+      }, 160);
+    }
+  }
+};
+
+// Run key message simulator initialization on start
+(function initKeyMessageSimulator() {
+  const initialBtn = document.querySelector('.page-ms .km-btn.active');
+  if (initialBtn) {
+    const pId = initialBtn.dataset.persona;
+    selectKMPersona(pId, initialBtn);
+  }
+})();
+
+
+// Interactive Weekly Calendar Drawer
+const calendarDetails = {
+  senin: {
+    hari: 'Senin',
+    platform: 'Instagram Post / Carousel',
+    pilar: 'P2 · Professional Identity (30% Alokasi)',
+    hook: '"Bukan mobil mewah, bukan jam tangan ratusan juta. Tapi batik medis anatomi ini yang menceritakan perjalanan dedikasi Dokter."',
+    format: 'Post Carousel 3-4 slide menggunakan foto produk berresolusi tinggi di lingkungan klinik.',
+    checklist: [
+      'Ambil foto detail motif anatomi di bahu dan kerah.',
+      'Buat caption dengan hook emosional tentang rasa bangga sebagai dokter.',
+      'Jadwalkan posting tepat pukul 21:00 WIB (waktu istirahat residen/dokter).'
+    ]
+  },
+  selasa: {
+    hari: 'Selasa',
+    platform: 'Threads',
+    pilar: 'P3 · Edukasi Motif & Budaya (20% Alokasi)',
+    hook: '"Hot-take: Kenapa seragam nakes di Indonesia sering kerasa ngebosenin dan gak punya jiwa seni? Let\'s discuss."',
+    format: 'Polling interaktif / Thread cerita bersambung tentang asal-usul riset motif medis.',
+    checklist: [
+      'Buat pertanyaan polling yang memicu interaksi nakes.',
+      'Siapkan 3-4 tweet berangkai menjelaskan pentingnya medical heritage.',
+      'Balas semua komentar dalam 30 menit pertama untuk menaikkan algoritma.'
+    ]
+  },
+  rabu: {
+    hari: 'Rabu',
+    platform: 'TikTok Video',
+    pilar: 'P1 · Origin & Craftsmanship (20% Alokasi)',
+    hook: '"Proses 45 hari pembuatan batik tulis organ Sphenoid. Dari sketsa anatomi di meja FK, dicanting manual di Solo..."',
+    format: 'Video transisi sinematik proses mencanting malam panas di atas kain katun primisima dengan CTA Cliffhanger di akhir.',
+    checklist: [
+      'Potong video proses canting menjadi klip cepat 1.5 detik per transisi.',
+      'Tambahkan hook teks di 3 detik pertama video.',
+      'Berikan CTA cliffhanger di detik terakhir: "Mau lihat detail organ lainnya? Cek profil kami."'
+    ]
+  },
+  kamis: {
+    hari: 'Kamis',
+    platform: 'WhatsApp Status & Direct Message',
+    pilar: 'P4 · Community & Social Proof (15% Alokasi)',
+    hook: '"Foto candid dr. Tjahya di pameran ISMOAC kemarin: \'Motifnya akurat sekali, sejawat saya langsung nanya beli di mana.\' Terima kasih dok!"',
+    format: 'Dokumentasi foto unboxing / screenshot chat testimoni dengan watermark premium Batik Sejawat.',
+    checklist: [
+      'Siapkan screenshot testimoni WA pembeli premium.',
+      'Buat salinan teks broadcast terbatas (<50 nakes per batch) tanpa kata-kata spam.',
+      'Tampilkan produk "Ready Stock" dengan jumlah terbatas (urgensi elegan).'
+    ]
+  },
+  jumat: {
+    hari: 'Jumat',
+    platform: 'Facebook Reels',
+    pilar: 'P2 · Professional Identity (30% Alokasi)',
+    hook: '"POV: Ketika sejawat spesialis senior memakai batik tulis anatomis di depan residen. Wibawa instan."',
+    format: 'Short Reels video 15-20 detik dengan pergantian visual cepat dan musik latar berkelas.',
+    checklist: [
+      'Edit video reels dengan durasi ketat di 15-20 detik.',
+      'Targetkan posting di jam pulang kerja nakes (pukul 19:00 WIB).',
+      'Pastikan link WA CS disematkan di kolom komentar pertama.'
+    ]
+  },
+  sabtu: {
+    hari: 'Sabtu',
+    platform: 'TikTok Search Content',
+    pilar: 'P1 · Origin & Craftsmanship (20% Alokasi)',
+    hook: '"FK UNS Solo 2017: Kisah awal 4 mahasiswa kedokteran yang bosan dengan motif seragam batik biasa, lalu membuat revolusi..."',
+    format: 'Konten video storytelling POV santai/dokumenter mini tentang sejarah berdirinya Batik Sejawat.',
+    checklist: [
+      'Siapkan foto-foto arsip tahun 2017 saat founder kuliah.',
+      'Gunakan voiceover bernada hangat dan inspiratif.',
+      'Optimalkan deskripsi video dengan kata kunci SEO: "Batik Medis", "Batik Anatomi", "FK UNS".'
+    ]
+  },
+  minggu: {
+    hari: 'Minggu',
+    platform: 'Threads & Instagram Carousel',
+    pilar: 'P3 · Edukasi Motif & Budaya (20% Alokasi)',
+    hook: '"Mengapa motif anatomi Ginjal kami menggunakan teknik parang rusak di tepinya? Arti mendalam tentang perjuangan menyembuhkan."',
+    format: 'Infografik edukasi visual berkualitas tinggi, membandingkan anatomi organ nyata dengan stilisasi batik.',
+    checklist: [
+      'Desain infografik dengan rasio 1:1 warna latar belakang gelap.',
+      'Berikan penjelasan ilmiah singkat medis di setiap slide.',
+      'Selipkan CTA halus: "Simpan postingan ini untuk inspirasi seragam stase Anda berikutnya."'
+    ]
+  }
+};
+
+window.showCalendarDetail = function(dayId, row) {
+  const container = document.getElementById('p-distribusi');
+  if (!container) return;
+  
+  // Highlight row
+  container.querySelectorAll('.week-table tr').forEach(r => r.classList.remove('active'));
+  row.classList.add('active');
+  
+  const detail = calendarDetails[dayId];
+  const box = document.getElementById('cal-detail-box');
+  
+  if (detail && box) {
+    let checklistHtml = '';
+    detail.checklist.forEach(item => {
+      checklistHtml += `<div class="cal-check-item"><i class="ti ti-checkbox"></i> <span>${item}</span></div>`;
+    });
+    
+    box.innerHTML = `
+      <div class="cal-detail-title mb-sm">
+        <i class="ti ti-calendar-event"></i> Detail Rencana Konten: Hari ${detail.hari} (${detail.platform})
+      </div>
+      <div class="card-body" style="padding: 0;">
+        <p class="mb-sm"><b>Pilar Konten:</b> ${detail.pilar}</p>
+        <div style="background: var(--color-bg-base); padding: 10px; border-radius: 6px; border: 1px solid var(--color-border); font-style: italic; font-size: 13px;" class="mb-sm">
+          <strong>Hook / Angle:</strong> ${detail.hook}
+        </div>
+        <p class="mb-sm"><b>Format Visual:</b> ${detail.format}</p>
+        <div class="mt-md">
+          <strong class="font-sans" style="font-size: 11px; text-transform: uppercase; color: var(--color-text-muted);">Creator Checklist:</strong>
+          <div class="cal-checklist mt-sm">
+            ${checklistHtml}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+};
+
+// Initialize calendar drawer on start
+(function initCalendarDrawer() {
+  const firstRow = document.querySelector('.page-ms .week-table tbody tr');
+  if (firstRow) {
+    showCalendarDetail('senin', firstRow);
+  }
+})();
+
+
+// Interactive Timeline Checkboxes, LocalStorage persistence & Roadmap Progress
+window.toggleCheck = function(checkbox) {
+  const item = checkbox.closest('.check-item');
+  if (checkbox.checked) {
+    item.classList.add('done');
+  } else {
+    item.classList.remove('done');
+  }
+  
+  // Save states
+  saveChecklistState();
+  // Update roadmap progress bar
+  updateRoadmapProgress();
+};
+
+function updateRoadmapProgress() {
+  const total = document.querySelectorAll('.page-ms .checklist-wrap .check-item input').length;
+  const checked = document.querySelectorAll('.page-ms .checklist-wrap .check-item input:checked').length;
+  
+  const pct = total > 0 ? Math.round((checked / total) * 100) : 0;
+  
+  const displayVal = document.getElementById('roadmap-progress-pct');
+  const barFill = document.getElementById('roadmap-progress-fill');
+  
+  if (displayVal && barFill) {
+    displayVal.textContent = pct + '%';
+    barFill.style.width = pct + '%';
+    
+    // Dynamic progress color based on state
+    if (pct < 40) {
+      barFill.style.background = 'var(--color-coral)';
+    } else if (pct < 80) {
+      barFill.style.background = 'var(--color-gold)';
+    } else {
+      barFill.style.background = 'var(--color-forest)';
+      displayVal.textContent = pct + '% (Operasional Siap!)';
+    }
+  }
+}
+
+function saveChecklistState() {
+  const states = {};
+  document.querySelectorAll('.checklist-wrap').forEach(wrap => {
+    const listId = wrap.dataset.checklistId;
+    const items = [];
+    wrap.querySelectorAll('.check-item input').forEach((chk, idx) => {
+      items.push(chk.checked);
+    });
+    states[listId] = items;
+  });
+  localStorage.setItem('ms_roadmap_checklists', JSON.stringify(states));
+}
+
+function loadChecklistState() {
+  const saved = localStorage.getItem('ms_roadmap_checklists');
+  if (!saved) {
+    updateRoadmapProgress(); // Update initial 0%
+    return;
+  }
+  try {
+    const states = JSON.parse(saved);
+    document.querySelectorAll('.checklist-wrap').forEach(wrap => {
+      const listId = wrap.dataset.checklistId;
+      if (states[listId]) {
+        wrap.querySelectorAll('.check-item input').forEach((chk, idx) => {
+          if (states[listId][idx]) {
+            chk.checked = true;
+            chk.closest('.check-item').classList.add('done');
+          }
+        });
+      }
+    });
+    // Calculate progress with loaded checkboxes
+    updateRoadmapProgress();
+  } catch(e) {
+    console.error('Failed to load checklist state', e);
+    updateRoadmapProgress();
+  }
+}
+
+// Load checklists on initial parse
+loadChecklistState();
+
+// Initialize Cashflow Chart with Premium Gradients & Styling
 (function initCashflowChart() {
   const canvas = document.getElementById('cashflowChart');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   
+  // Create gorgeous gradients matching the new visual palette
+  const gradIncome = ctx.createLinearGradient(0, 0, 0, 220);
+  gradIncome.addColorStop(0, '#10b981'); // Emerald Glow
+  gradIncome.addColorStop(1, '#0f6e56'); // Deep Medical Teal
+  
+  const gradExpense = ctx.createLinearGradient(0, 0, 0, 220);
+  gradExpense.addColorStop(0, '#f97316'); // Bright Coral Orange
+  gradExpense.addColorStop(1, '#c4442a'); // Warning Dark Coral
+
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -1534,15 +3355,17 @@ window.show = function(id, btn) {
         { 
           label: 'Income', 
           data: [130, 35], 
-          backgroundColor: '#1D9E75',
-          borderRadius: 6,
+          backgroundColor: gradIncome,
+          hoverBackgroundColor: '#059669',
+          borderRadius: 8,
           borderSkipped: false
         },
         { 
           label: 'Expense', 
           data: [103, 56], 
-          backgroundColor: '#D85A30',
-          borderRadius: 6,
+          backgroundColor: gradExpense,
+          hoverBackgroundColor: '#ea580c',
+          borderRadius: 8,
           borderSkipped: false
         }
       ]
@@ -1551,22 +3374,56 @@ window.show = function(id, btn) {
       responsive: true,
       maintainAspectRatio: false,
       plugins: { 
-        legend: { display: false } 
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#0f172a',
+          titleColor: '#ffffff',
+          titleFont: { family: 'Plus Jakarta Sans', size: 12, weight: 'bold' },
+          bodyColor: '#e2e8f0',
+          bodyFont: { family: 'DM Sans', size: 12 },
+          padding: 12,
+          cornerRadius: 8,
+          borderColor: 'rgba(255, 255, 255, 0.1)',
+          borderWidth: 1,
+          displayColors: true,
+          boxWidth: 8,
+          boxHeight: 8,
+          boxPadding: 4,
+          callbacks: {
+            label: function(context) {
+              let label = context.dataset.label || '';
+              if (label) {
+                label += ': ';
+              }
+              if (context.parsed.y !== null) {
+                label += 'Rp ' + context.parsed.y + ' Juta';
+              }
+              return label;
+            }
+          }
+        }
       },
       scales: {
         y: { 
           beginAtZero: true, 
           grid: {
-            color: 'rgba(0, 0, 0, 0.05)'
+            color: 'rgba(226, 232, 240, 0.35)',
+            drawTicks: false
           },
           ticks: { 
-            callback: (v) => 'Rp' + v + 'jt',
-            font: { family: 'DM Sans', size: 11 }
-          } 
+            callback: (v) => 'Rp ' + v + 'jt',
+            font: { family: 'DM Sans', size: 10.5, weight: '500' },
+            color: '#64748b'
+          },
+          border: { dash: [4, 4], color: 'transparent' }
         },
         x: {
           grid: { display: false },
-          ticks: { font: { family: 'DM Sans', size: 11 } }
+          ticks: { 
+            font: { family: 'DM Sans', size: 11, weight: '600' },
+            color: '#475569'
+          },
+          border: { color: 'rgba(226, 232, 240, 0.5)' }
         }
       }
     }
