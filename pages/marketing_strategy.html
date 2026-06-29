@@ -1770,7 +1770,7 @@
     <h2 class="sr-only">Dokumen strategi marketing Batik Sejawat berbasis data — tujuan, persona, funnel, channel, journey, content pilar, key message, distribusi, dan roadmap kuantitatif</h2>
 
     <!-- COVER HERO -->
-    <div class="cover">
+    <div class="cover" id="p-dash">
       <div class="cover-eye">Marketing Strategy Document v2 · Data-Driven</div>
 .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:0.75rem}
 .mg{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.75rem;text-align:center}
@@ -1805,7 +1805,7 @@
 <div class="doc">
 <h2 class="sr-only">Dokumen detail tujuan marketing Batik Sejawat dan Seragaman Sejawat — visi, OKR, dan breakdown target kuantitatif tahunan hingga harian</h2>
 
-<div class="cover">
+<div class="cover" id="p-persona">
   <div class="cover-eye">Bagian 01 dari 10 · Tujuan Marketing</div>
   <div class="cover-h1">Tujuan Marketing — Breakdown Lengkap</div>
   <div class="cover-sub">Dari visi jangka panjang hingga angka target harian, dipisah penuh untuk dua brand: Batik Sejawat (B2C) dan Seragaman Sejawat (B2B).</div>
@@ -2026,7 +2026,7 @@
 <div class="doc">
 <h2 class="sr-only">Dokumen detail buyer persona Batik Sejawat dan Seragaman Sejawat — profil kualitatif dan kuantitatif tiap segmen pembeli</h2>
 
-<div class="cover">
+<div class="cover" id="p-funnel">
   <div class="cover-eye">Bagian 02 dari 10 · Buyer Persona</div>
   <div class="cover-h1">Buyer Persona — Profil Detail per Segmen</div>
   <div class="cover-sub">4 persona B2C untuk Batik Sejawat, 2 persona B2B untuk Seragaman Sejawat — masing-masing dengan profil kualitatif, populasi pasar, dan kontribusi revenue terukur.</div>
@@ -2041,6 +2041,19 @@
       <div class="pname">P1 — dr. Rizka Damayanti</div>
       <div class="prole">Dokter umum / internship, 25-32 tahun, kota besar Jawa-Bali</div>
       <div class="ptags"><span class="ptag t1">Primary buyer</span><span class="ptag tg">Perempuan 70%</span><span class="ptag tg">TikTok & IG native</span></div>
+    </div>
+
+    <div class="nav-row" role="tablist" aria-label="Navigasi bagian strategi marketing">
+      <button class="nb on" onclick="show('dash', this)" role="tab" aria-selected="true" aria-controls="p-dash">01 · Tujuan</button>
+      <button class="nb" onclick="show('persona', this)" role="tab" aria-selected="false" aria-controls="p-persona">02 · Persona</button>
+      <button class="nb" onclick="show('funnel', this)" role="tab" aria-selected="false" aria-controls="p-funnel">03 · Funnel</button>
+      <button class="nb" onclick="show('channel', this)" role="tab" aria-selected="false" aria-controls="p-channel">04 · Channel</button>
+      <button class="nb" onclick="show('journey', this)" role="tab" aria-selected="false" aria-controls="p-journey">05 · Journey</button>
+      <button class="nb" onclick="show('strategi', this)" role="tab" aria-selected="false" aria-controls="p-strategi">06 · Strategi</button>
+      <button class="nb" onclick="show('pilar', this)" role="tab" aria-selected="false" aria-controls="p-pilar">07 · Pilar</button>
+      <button class="nb" onclick="show('keymsg', this)" role="tab" aria-selected="false" aria-controls="p-keymsg">08 · Message</button>
+      <button class="nb" onclick="show('distribusi', this)" role="tab" aria-selected="false" aria-controls="p-distribusi">09 · Distribusi</button>
+      <button class="nb" onclick="show('roadmap', this)" role="tab" aria-selected="false" aria-controls="p-roadmap">10 · Roadmap</button>
     </div>
   </div>
   <div class="quote-block">"Capek jaga malam, tapi tetap mau keliatan profesional dan punya style sendiri. Kalau ada batik yang beneran ngerti dunia dokter — bukan motif bunga yang dikasih nama medis — itu yang mau gue pake."</div>
@@ -2261,7 +2274,7 @@
 <div class="doc">
 <h2 class="sr-only">Dokumen detail marketing funnel Batik Sejawat dan Seragaman Sejawat — data aktual tiap tahap dan rencana implementasi perbaikan</h2>
 
-<div class="cover">
+<div class="cover" id="p-channel">
   <div class="cover-eye">Bagian 03 dari 10 · Marketing Funnel</div>
   <div class="cover-h1">Funnel — Data Aktual & Rencana Implementasi</div>
   <div class="cover-sub">Dua funnel berbeda total: B2C (awareness sosial media → closing WA) dan B2B (Google Maps/referral → closing kontrak). Setiap tahap punya angka aktual dan target terukur.</div>
@@ -2440,7 +2453,7 @@
 <div class="doc">
 <h2 class="sr-only">Dokumen detail strategi channel Batik Sejawat dan Seragaman Sejawat — fungsi, cara kerja, dan prioritas impact vs effort tiap platform</h2>
 
-<div class="cover">
+<div class="cover" id="p-journey">
   <div class="cover-eye">Bagian 04 dari 10 · Channel Strategy</div>
   <div class="cover-h1">Channel — Fungsi, Cara Kerja, dan Prioritas</div>
   <div class="cover-sub">Setiap channel punya satu peran spesifik dalam ekosistem dua brand. Prioritas disusun dari matriks impact vs effort berdasarkan data aktual, bukan asumsi popularitas platform.</div>
@@ -2773,7 +2786,7 @@
 <div class="doc">
 <h2 class="sr-only">Dokumen detail customer journey Batik Sejawat dan Seragaman Sejawat untuk tiap persona, lintas channel, dengan skenario realistis dan strategi perbaikan</h2>
 
-<div class="cover">
+<div class="cover" id="p-strategi">
   <div class="cover-eye">Bagian 05 dari 10 · Customer Journey</div>
   <div class="cover-h1">Customer Journey — Detail per Persona</div>
   <div class="cover-sub">Perjalanan nyata tiap persona lintas channel, dengan skenario realistis berdasarkan data yang sudah ada, dan strategi untuk membuat perjalanan ini lebih pendek dan lebih sering berakhir di closing.</div>
@@ -3169,7 +3182,7 @@
 <div class="doc">
 <h2 class="sr-only">Dokumen strategi inti teknis Batik Sejawat dan Seragaman Sejawat — implementasi lintas divisi, budgeting, dan strategi founder yang realistis</h2>
 
-<div class="cover">
+<div class="cover" id="p-keymsg">
   <div class="cover-eye">Bagian 06 dari 10 · Strategi Inti</div>
   <div class="cover-h1">Strategi Inti — Teknis & Siap Implementasi</div>
   <div class="cover-sub">Disusun sebagai SOP yang bisa langsung dijalankan tanpa interpretasi subjektif — mencakup KOL, ads, WA Business, marketplace, website, branding, fotoshot, alur antar divisi, budgeting, dan strategi founder yang realistis.</div>
@@ -3473,7 +3486,7 @@
 <div class="doc">
 <h2 class="sr-only">Bagian 8 Key Message Batik Sejawat — pesan utama per persona, per pilar, kosakata yang boleh dan dilarang, dan contoh caption siap pakai</h2>
 
-<div class="cover">
+<div class="cover" id="p-distribusi">
   <div class="cover-eye">Bagian 08 dari 10 · Key Message</div>
   <div class="cover-h1">Key Message — Pesan yang Harus Terasa di Setiap Konten</div>
   <div class="cover-sub">Key message bukan tagline iklan — ini adalah inti pesan yang harus dirasakan audiens setelah melihat konten, tersurat maupun tersirat. Disusun berlapis: satu brand message utama, empat pesan per persona, empat pesan per pilar, kosakata yang boleh dan dilarang, dan contoh caption siap pakai.</div>
@@ -3847,7 +3860,7 @@
 
 <div class="doc">
 
-<div class="cover">
+<div class="cover" id="p-roadmap">
   <div class="cover-eye">Bagian 09 dari 10 · Distribusi Konten</div>
   <div class="cover-h1">Distribusi — Frekuensi, Jadwal, dan Alokasi Effort</div>
   <div class="cover-sub">Distribusi bulanan yang realistis: frekuensi per jenis konten (ada yang terjadwal, ada yang insidental), pembagian feed/video/story per channel, dan alokasi effort tim yang terukur.</div>
@@ -4569,7 +4582,7 @@ window.show = function(id, btn) {
   container.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
   if (targetPanel) {
     targetPanel.classList.add('on');
-    window.scrollTo({ top: container.offsetTop - 80, behavior: 'smooth' });
+    targetPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     // Animate custom bar fills in the newly opened panel
     targetPanel.querySelectorAll('.ch-bar, .pilar-fill').forEach(bar => {
@@ -4579,6 +4592,11 @@ window.show = function(id, btn) {
         bar.style.width = targetWidth;
       }, 50);
     });
+  } else {
+    const anchor = document.getElementById(targetId);
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   // Toggle button active class + aria
@@ -5285,6 +5303,10 @@ loadChecklistState();
   padding: 0 1rem;
 }
 
+.page-ms .cover {
+  scroll-margin-top: 146px;
+}
+
 .page-ms .cover,
 .page-ms .card,
 .page-ms .persona-card,
@@ -5554,6 +5576,26 @@ loadChecklistState();
         dashTab.focus();
       }
     });
+  }
+
+  const observedSections = tabs
+    .map((tab) => document.getElementById(tab.getAttribute('aria-controls')))
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window && observedSections.length) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const activeEntry = entries.find((entry) => entry.isIntersecting);
+      if (!activeEntry) return;
+
+      const activeId = activeEntry.target.id;
+      syncTabs(activeId);
+      root.dataset.activePanel = activeId.replace(/^p-/, '');
+    }, {
+      rootMargin: '-24% 0px -60% 0px',
+      threshold: 0.2,
+    });
+
+    observedSections.forEach((section) => sectionObserver.observe(section));
   }
 
   const activeTab = tabs.find((tab) => tab.classList.contains('on')) || tabs[0];
